@@ -8,6 +8,12 @@
 
 #import "FXFinishViewController.h"
 
+#import "FXFinishView.h"
+
+#import "FXMacros.h"
+
+FXViewControllerBaseViewProperty(FXFinishViewController, finishView, FXFinishView);
+
 @interface FXFinishViewController ()
 
 @end

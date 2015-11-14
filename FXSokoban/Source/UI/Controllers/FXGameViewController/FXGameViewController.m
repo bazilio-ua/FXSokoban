@@ -8,6 +8,12 @@
 
 #import "FXGameViewController.h"
 
+#import "FXGameView.h"
+
+#import "FXMacros.h"
+
+FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
+
 @interface FXGameViewController ()
 
 @end

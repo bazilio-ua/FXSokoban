@@ -1,5 +1,5 @@
 //
-//  Macros.h
+//  FXMacros.h
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/12/15.

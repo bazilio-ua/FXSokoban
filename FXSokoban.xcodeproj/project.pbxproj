@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBC1BF76FE60037EE4E /* NSFileManager+FXExtensions.m */; };
+		42C63DC41BF76FE60037EE4E /* UIViewController+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBF1BF76FE60037EE4E /* UIViewController+FXExtensions.m */; };
+		42C63DC51BF76FE60037EE4E /* UIWindow+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DC21BF76FE60037EE4E /* UIWindow+FXExtensions.m */; };
 		42CA259A1BF49AD5001C7485 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA25991BF49AD5001C7485 /* Foundation.framework */; };
 		42CA259C1BF49AD5001C7485 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA259B1BF49AD5001C7485 /* CoreGraphics.framework */; };
 		42CA259E1BF49AD5001C7485 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA259D1BF49AD5001C7485 /* UIKit.framework */; };
@@ -28,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42C63DB91BF76CB60037EE4E /* FXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXMacros.h; sourceTree = "<group>"; };
+		42C63DBB1BF76FE60037EE4E /* NSFileManager+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSFileManager+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		42C63DBC1BF76FE60037EE4E /* NSFileManager+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSFileManager+FXExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		42C63DBE1BF76FE60037EE4E /* UIViewController+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIViewController+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		42C63DBF1BF76FE60037EE4E /* UIViewController+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIViewController+FXExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		42C63DC11BF76FE60037EE4E /* UIWindow+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIWindow+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		42C63DC21BF76FE60037EE4E /* UIWindow+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIWindow+FXExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		42CA25961BF49AD5001C7485 /* FXSokoban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FXSokoban.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42CA25991BF49AD5001C7485 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42CA259B1BF49AD5001C7485 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,7 +68,6 @@
 		42CA25FE1BF4BA41001C7485 /* FXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXViewController.m; sourceTree = "<group>"; };
 		42CA26001BF4BA66001C7485 /* FXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXView.h; sourceTree = "<group>"; };
 		42CA26011BF4BA66001C7485 /* FXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXView.m; sourceTree = "<group>"; };
-		42CA26031BF4BC4D001C7485 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +84,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42C63DBA1BF76FE60037EE4E /* NSFileManager+FXExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				42C63DBB1BF76FE60037EE4E /* NSFileManager+FXExtensions.h */,
+				42C63DBC1BF76FE60037EE4E /* NSFileManager+FXExtensions.m */,
+			);
+			path = "NSFileManager+FXExtensions";
+			sourceTree = "<group>";
+		};
+		42C63DBD1BF76FE60037EE4E /* UIViewController+FXExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				42C63DBE1BF76FE60037EE4E /* UIViewController+FXExtensions.h */,
+				42C63DBF1BF76FE60037EE4E /* UIViewController+FXExtensions.m */,
+			);
+			path = "UIViewController+FXExtensions";
+			sourceTree = "<group>";
+		};
+		42C63DC01BF76FE60037EE4E /* UIWindow+FXExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				42C63DC11BF76FE60037EE4E /* UIWindow+FXExtensions.h */,
+				42C63DC21BF76FE60037EE4E /* UIWindow+FXExtensions.m */,
+			);
+			path = "UIWindow+FXExtensions";
+			sourceTree = "<group>";
+		};
 		42CA258D1BF49AD5001C7485 = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +184,7 @@
 			children = (
 				42CA25D51BF4AAD5001C7485 /* Categories */,
 				42CA25D61BF4AAD5001C7485 /* Classes */,
-				42CA26031BF4BC4D001C7485 /* Macros.h */,
+				42C63DB91BF76CB60037EE4E /* FXMacros.h */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -156,6 +192,9 @@
 		42CA25D51BF4AAD5001C7485 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				42C63DBA1BF76FE60037EE4E /* NSFileManager+FXExtensions */,
+				42C63DBD1BF76FE60037EE4E /* UIViewController+FXExtensions */,
+				42C63DC01BF76FE60037EE4E /* UIWindow+FXExtensions */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -323,14 +362,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C63DC41BF76FE60037EE4E /* UIViewController+FXExtensions.m in Sources */,
 				42CA25DD1BF4AAD5001C7485 /* main.m in Sources */,
 				42CA25EB1BF4B90E001C7485 /* FXFinishViewController.m in Sources */,
 				42CA25F41BF4B976001C7485 /* FXGameView.m in Sources */,
 				42CA25FA1BF4B9C6001C7485 /* FXFinishView.m in Sources */,
 				42CA26021BF4BA66001C7485 /* FXView.m in Sources */,
 				42CA25E61BF4B8E1001C7485 /* FXStartViewController.m in Sources */,
+				42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */,
 				42CA25F71BF4B9A0001C7485 /* FXStartView.m in Sources */,
 				42CA25DB1BF4AAD5001C7485 /* FXAppDelegate.m in Sources */,
+				42C63DC51BF76FE60037EE4E /* UIWindow+FXExtensions.m in Sources */,
 				42CA25F01BF4B927001C7485 /* FXGameViewController.m in Sources */,
 				42CA25FF1BF4BA41001C7485 /* FXViewController.m in Sources */,
 			);
@@ -467,6 +509,7 @@
 				42CA25C41BF49AD5001C7485 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,12 @@
 
 #import "FXStartViewController.h"
 
+#import "FXStartView.h"
+
+#import "FXMacros.h"
+
+FXViewControllerBaseViewProperty(FXStartViewController, startView, FXStartView);
+
 @interface FXStartViewController ()
 
 @end
