@@ -10,4 +10,17 @@
 
 @implementation FXStartView
 
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+		// do start init
+    }
+	
+    return self;
+}
+
 @end
