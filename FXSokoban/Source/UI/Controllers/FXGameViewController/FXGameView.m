@@ -10,4 +10,17 @@
 
 @implementation FXGameView
 
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+		// do level init
+    }
+	
+    return self;
+}
+
 @end

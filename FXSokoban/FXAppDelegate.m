@@ -8,16 +8,24 @@
 
 #import "FXAppDelegate.h"
 
+#import "FXStartViewController.h"
+
+#import "UIWindow+FXExtensions.h"
+#import "UIViewController+FXExtensions.h"
+
 @implementation FXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	UIWindow *window = [UIWindow window];
+	self.window = window;
 	
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+	// Override point for customization after application launch.
+	FXStartViewController *controller = [FXStartViewController controller];
 	
-    return YES;
+	window.rootViewController = controller;
+	[window makeKeyAndVisible];
+	
+	return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

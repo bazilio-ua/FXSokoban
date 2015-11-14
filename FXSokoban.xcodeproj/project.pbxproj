@@ -10,6 +10,10 @@
 		42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBC1BF76FE60037EE4E /* NSFileManager+FXExtensions.m */; };
 		42C63DC41BF76FE60037EE4E /* UIViewController+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBF1BF76FE60037EE4E /* UIViewController+FXExtensions.m */; };
 		42C63DC51BF76FE60037EE4E /* UIWindow+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DC21BF76FE60037EE4E /* UIWindow+FXExtensions.m */; };
+		42C63DC81BF7717D0037EE4E /* FXDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DC71BF7717D0037EE4E /* FXDirection.m */; };
+		42C63DCB1BF771960037EE4E /* FXPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DCA1BF771960037EE4E /* FXPosition.m */; };
+		42C63DCE1BF771A80037EE4E /* FXCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DCD1BF771A80037EE4E /* FXCell.m */; };
+		42C63DD11BF771D10037EE4E /* FXLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DD01BF771D10037EE4E /* FXLevel.m */; };
 		42CA259A1BF49AD5001C7485 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA25991BF49AD5001C7485 /* Foundation.framework */; };
 		42CA259C1BF49AD5001C7485 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA259B1BF49AD5001C7485 /* CoreGraphics.framework */; };
 		42CA259E1BF49AD5001C7485 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA259D1BF49AD5001C7485 /* UIKit.framework */; };
@@ -38,6 +42,14 @@
 		42C63DBF1BF76FE60037EE4E /* UIViewController+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIViewController+FXExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		42C63DC11BF76FE60037EE4E /* UIWindow+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIWindow+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		42C63DC21BF76FE60037EE4E /* UIWindow+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIWindow+FXExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		42C63DC61BF7717D0037EE4E /* FXDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDirection.h; sourceTree = "<group>"; };
+		42C63DC71BF7717D0037EE4E /* FXDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDirection.m; sourceTree = "<group>"; };
+		42C63DC91BF771960037EE4E /* FXPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPosition.h; sourceTree = "<group>"; };
+		42C63DCA1BF771960037EE4E /* FXPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPosition.m; sourceTree = "<group>"; };
+		42C63DCC1BF771A80037EE4E /* FXCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXCell.h; sourceTree = "<group>"; };
+		42C63DCD1BF771A80037EE4E /* FXCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXCell.m; sourceTree = "<group>"; };
+		42C63DCF1BF771D10037EE4E /* FXLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLevel.h; sourceTree = "<group>"; };
+		42C63DD01BF771D10037EE4E /* FXLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLevel.m; sourceTree = "<group>"; };
 		42CA25961BF49AD5001C7485 /* FXSokoban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FXSokoban.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42CA25991BF49AD5001C7485 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42CA259B1BF49AD5001C7485 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -141,11 +153,11 @@
 		42CA25C81BF4AAD5001C7485 /* FXSokoban */ = {
 			isa = PBXGroup;
 			children = (
+				42CA25CD1BF4AAD5001C7485 /* main.m */,
 				42CA25C91BF4AAD5001C7485 /* FXAppDelegate.h */,
 				42CA25CA1BF4AAD5001C7485 /* FXAppDelegate.m */,
 				42CA25CB1BF4AAD5001C7485 /* FXSokoban-Info.plist */,
 				42CA25CC1BF4AAD5001C7485 /* FXSokoban-Prefix.pch */,
-				42CA25CD1BF4AAD5001C7485 /* main.m */,
 				42CA25CE1BF4AAD5001C7485 /* Resource */,
 				42CA25D21BF4AAD5001C7485 /* Source */,
 			);
@@ -202,6 +214,14 @@
 		42CA25D61BF4AAD5001C7485 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				42C63DC61BF7717D0037EE4E /* FXDirection.h */,
+				42C63DC71BF7717D0037EE4E /* FXDirection.m */,
+				42C63DC91BF771960037EE4E /* FXPosition.h */,
+				42C63DCA1BF771960037EE4E /* FXPosition.m */,
+				42C63DCC1BF771A80037EE4E /* FXCell.h */,
+				42C63DCD1BF771A80037EE4E /* FXCell.m */,
+				42C63DCF1BF771D10037EE4E /* FXLevel.h */,
+				42C63DD01BF771D10037EE4E /* FXLevel.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -363,14 +383,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				42C63DC41BF76FE60037EE4E /* UIViewController+FXExtensions.m in Sources */,
+				42C63DCE1BF771A80037EE4E /* FXCell.m in Sources */,
+				42C63DCB1BF771960037EE4E /* FXPosition.m in Sources */,
 				42CA25DD1BF4AAD5001C7485 /* main.m in Sources */,
 				42CA25EB1BF4B90E001C7485 /* FXFinishViewController.m in Sources */,
 				42CA25F41BF4B976001C7485 /* FXGameView.m in Sources */,
 				42CA25FA1BF4B9C6001C7485 /* FXFinishView.m in Sources */,
+				42C63DC81BF7717D0037EE4E /* FXDirection.m in Sources */,
 				42CA26021BF4BA66001C7485 /* FXView.m in Sources */,
 				42CA25E61BF4B8E1001C7485 /* FXStartViewController.m in Sources */,
 				42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */,
 				42CA25F71BF4B9A0001C7485 /* FXStartView.m in Sources */,
+				42C63DD11BF771D10037EE4E /* FXLevel.m in Sources */,
 				42CA25DB1BF4AAD5001C7485 /* FXAppDelegate.m in Sources */,
 				42C63DC51BF76FE60037EE4E /* UIWindow+FXExtensions.m in Sources */,
 				42CA25F01BF4B927001C7485 /* FXGameViewController.m in Sources */,
