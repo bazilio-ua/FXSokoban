@@ -10,4 +10,18 @@
 
 @implementation FXLevel
 
+#pragma mark -
+#pragma mark Class Methods
+
++ (id)levelWithArray:(NSArray *)array {
+	return [[self alloc] initWithArray:array];
+}
+
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
+- (id)initWithArray:(NSArray *)array {
+	return nil;
+}
+
 @end

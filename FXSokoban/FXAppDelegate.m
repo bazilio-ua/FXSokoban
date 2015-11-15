@@ -10,6 +10,8 @@
 
 #import "FXStartViewController.h"
 
+#import "FXDataMap.h"
+
 #import "UIWindow+FXExtensions.h"
 #import "UIViewController+FXExtensions.h"
 
@@ -21,6 +23,7 @@
 	
 	// Override point for customization after application launch.
 	FXStartViewController *controller = [FXStartViewController controller];
+	controller.dataMap = [FXDataMap new];
 	
 	window.rootViewController = controller;
 	[window makeKeyAndVisible];

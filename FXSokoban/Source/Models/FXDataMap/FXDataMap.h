@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class FXLevel;
+
 @interface FXDataMap : NSObject
+
+- (NSUInteger)count;
+- (FXLevel *)levelForNumber:(NSUInteger)number;
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class FXDataMap;
+
 @interface FXViewController : UIViewController
+@property (nonatomic, strong)	FXDataMap	*dataMap;
 
 @end

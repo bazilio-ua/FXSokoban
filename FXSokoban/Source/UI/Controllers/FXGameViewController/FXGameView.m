@@ -23,4 +23,8 @@
     return self;
 }
 
+- (void)drawRect:(CGRect)rect {
+	
+}
+
 @end

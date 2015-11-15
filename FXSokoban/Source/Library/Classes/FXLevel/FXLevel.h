@@ -10,4 +10,7 @@
 
 @interface FXLevel : NSObject
 
++ (id)levelWithArray:(NSArray *)array;
+- (id)initWithArray:(NSArray *)array;
+
 @end
