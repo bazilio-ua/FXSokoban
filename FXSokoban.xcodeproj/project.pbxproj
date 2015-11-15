@@ -10,10 +10,6 @@
 		42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBC1BF76FE60037EE4E /* NSFileManager+FXExtensions.m */; };
 		42C63DC41BF76FE60037EE4E /* UIViewController+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBF1BF76FE60037EE4E /* UIViewController+FXExtensions.m */; };
 		42C63DC51BF76FE60037EE4E /* UIWindow+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DC21BF76FE60037EE4E /* UIWindow+FXExtensions.m */; };
-		42C63DC81BF7717D0037EE4E /* FXDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DC71BF7717D0037EE4E /* FXDirection.m */; };
-		42C63DCB1BF771960037EE4E /* FXPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DCA1BF771960037EE4E /* FXPosition.m */; };
-		42C63DCE1BF771A80037EE4E /* FXCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DCD1BF771A80037EE4E /* FXCell.m */; };
-		42C63DD11BF771D10037EE4E /* FXLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DD01BF771D10037EE4E /* FXLevel.m */; };
 		42CA259A1BF49AD5001C7485 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA25991BF49AD5001C7485 /* Foundation.framework */; };
 		42CA259C1BF49AD5001C7485 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA259B1BF49AD5001C7485 /* CoreGraphics.framework */; };
 		42CA259E1BF49AD5001C7485 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CA259D1BF49AD5001C7485 /* UIKit.framework */; };
@@ -32,6 +28,12 @@
 		42CA25FA1BF4B9C6001C7485 /* FXFinishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25F91BF4B9C6001C7485 /* FXFinishView.m */; };
 		42CA25FF1BF4BA41001C7485 /* FXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25FE1BF4BA41001C7485 /* FXViewController.m */; };
 		42CA26021BF4BA66001C7485 /* FXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA26011BF4BA66001C7485 /* FXView.m */; };
+		42DF17A61BF8D8B100BB8FCB /* FXDataMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17A51BF8D8B100BB8FCB /* FXDataMap.m */; };
+		42DF17B61BF8D90200BB8FCB /* FXPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17A91BF8D90200BB8FCB /* FXPosition.m */; };
+		42DF17B71BF8D90200BB8FCB /* FXPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17AC1BF8D90200BB8FCB /* FXPath.m */; };
+		42DF17B81BF8D90200BB8FCB /* FXLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17AF1BF8D90200BB8FCB /* FXLevel.m */; };
+		42DF17B91BF8D90200BB8FCB /* FXDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17B21BF8D90200BB8FCB /* FXDirection.m */; };
+		42DF17BA1BF8D90200BB8FCB /* FXCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17B51BF8D90200BB8FCB /* FXCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,14 +44,6 @@
 		42C63DBF1BF76FE60037EE4E /* UIViewController+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIViewController+FXExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		42C63DC11BF76FE60037EE4E /* UIWindow+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIWindow+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		42C63DC21BF76FE60037EE4E /* UIWindow+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "UIWindow+FXExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		42C63DC61BF7717D0037EE4E /* FXDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDirection.h; sourceTree = "<group>"; };
-		42C63DC71BF7717D0037EE4E /* FXDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDirection.m; sourceTree = "<group>"; };
-		42C63DC91BF771960037EE4E /* FXPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPosition.h; sourceTree = "<group>"; };
-		42C63DCA1BF771960037EE4E /* FXPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPosition.m; sourceTree = "<group>"; };
-		42C63DCC1BF771A80037EE4E /* FXCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXCell.h; sourceTree = "<group>"; };
-		42C63DCD1BF771A80037EE4E /* FXCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXCell.m; sourceTree = "<group>"; };
-		42C63DCF1BF771D10037EE4E /* FXLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLevel.h; sourceTree = "<group>"; };
-		42C63DD01BF771D10037EE4E /* FXLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLevel.m; sourceTree = "<group>"; };
 		42CA25961BF49AD5001C7485 /* FXSokoban.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FXSokoban.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42CA25991BF49AD5001C7485 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		42CA259B1BF49AD5001C7485 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -80,6 +74,18 @@
 		42CA25FE1BF4BA41001C7485 /* FXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXViewController.m; sourceTree = "<group>"; };
 		42CA26001BF4BA66001C7485 /* FXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXView.h; sourceTree = "<group>"; };
 		42CA26011BF4BA66001C7485 /* FXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXView.m; sourceTree = "<group>"; };
+		42DF17A41BF8D8B100BB8FCB /* FXDataMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDataMap.h; sourceTree = "<group>"; };
+		42DF17A51BF8D8B100BB8FCB /* FXDataMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDataMap.m; sourceTree = "<group>"; };
+		42DF17A81BF8D90200BB8FCB /* FXPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPosition.h; sourceTree = "<group>"; };
+		42DF17A91BF8D90200BB8FCB /* FXPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPosition.m; sourceTree = "<group>"; };
+		42DF17AB1BF8D90200BB8FCB /* FXPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPath.h; sourceTree = "<group>"; };
+		42DF17AC1BF8D90200BB8FCB /* FXPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPath.m; sourceTree = "<group>"; };
+		42DF17AE1BF8D90200BB8FCB /* FXLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLevel.h; sourceTree = "<group>"; };
+		42DF17AF1BF8D90200BB8FCB /* FXLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLevel.m; sourceTree = "<group>"; };
+		42DF17B11BF8D90200BB8FCB /* FXDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDirection.h; sourceTree = "<group>"; };
+		42DF17B21BF8D90200BB8FCB /* FXDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDirection.m; sourceTree = "<group>"; };
+		42DF17B41BF8D90200BB8FCB /* FXCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXCell.h; sourceTree = "<group>"; };
+		42DF17B51BF8D90200BB8FCB /* FXCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,14 +220,11 @@
 		42CA25D61BF4AAD5001C7485 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				42C63DC61BF7717D0037EE4E /* FXDirection.h */,
-				42C63DC71BF7717D0037EE4E /* FXDirection.m */,
-				42C63DC91BF771960037EE4E /* FXPosition.h */,
-				42C63DCA1BF771960037EE4E /* FXPosition.m */,
-				42C63DCC1BF771A80037EE4E /* FXCell.h */,
-				42C63DCD1BF771A80037EE4E /* FXCell.m */,
-				42C63DCF1BF771D10037EE4E /* FXLevel.h */,
-				42C63DD01BF771D10037EE4E /* FXLevel.m */,
+				42DF17B31BF8D90200BB8FCB /* FXCell */,
+				42DF17A71BF8D90200BB8FCB /* FXPosition */,
+				42DF17B01BF8D90200BB8FCB /* FXDirection */,
+				42DF17AA1BF8D90200BB8FCB /* FXPath */,
+				42DF17AD1BF8D90200BB8FCB /* FXLevel */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 		42CA25D71BF4AAD5001C7485 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				42DF17A31BF8D8B100BB8FCB /* FXDataMap */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -315,6 +319,60 @@
 			path = FXViewController;
 			sourceTree = "<group>";
 		};
+		42DF17A31BF8D8B100BB8FCB /* FXDataMap */ = {
+			isa = PBXGroup;
+			children = (
+				42DF17A41BF8D8B100BB8FCB /* FXDataMap.h */,
+				42DF17A51BF8D8B100BB8FCB /* FXDataMap.m */,
+			);
+			path = FXDataMap;
+			sourceTree = "<group>";
+		};
+		42DF17A71BF8D90200BB8FCB /* FXPosition */ = {
+			isa = PBXGroup;
+			children = (
+				42DF17A81BF8D90200BB8FCB /* FXPosition.h */,
+				42DF17A91BF8D90200BB8FCB /* FXPosition.m */,
+			);
+			path = FXPosition;
+			sourceTree = "<group>";
+		};
+		42DF17AA1BF8D90200BB8FCB /* FXPath */ = {
+			isa = PBXGroup;
+			children = (
+				42DF17AB1BF8D90200BB8FCB /* FXPath.h */,
+				42DF17AC1BF8D90200BB8FCB /* FXPath.m */,
+			);
+			path = FXPath;
+			sourceTree = "<group>";
+		};
+		42DF17AD1BF8D90200BB8FCB /* FXLevel */ = {
+			isa = PBXGroup;
+			children = (
+				42DF17AE1BF8D90200BB8FCB /* FXLevel.h */,
+				42DF17AF1BF8D90200BB8FCB /* FXLevel.m */,
+			);
+			path = FXLevel;
+			sourceTree = "<group>";
+		};
+		42DF17B01BF8D90200BB8FCB /* FXDirection */ = {
+			isa = PBXGroup;
+			children = (
+				42DF17B11BF8D90200BB8FCB /* FXDirection.h */,
+				42DF17B21BF8D90200BB8FCB /* FXDirection.m */,
+			);
+			path = FXDirection;
+			sourceTree = "<group>";
+		};
+		42DF17B31BF8D90200BB8FCB /* FXCell */ = {
+			isa = PBXGroup;
+			children = (
+				42DF17B41BF8D90200BB8FCB /* FXCell.h */,
+				42DF17B51BF8D90200BB8FCB /* FXCell.m */,
+			);
+			path = FXCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -383,18 +441,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				42C63DC41BF76FE60037EE4E /* UIViewController+FXExtensions.m in Sources */,
-				42C63DCE1BF771A80037EE4E /* FXCell.m in Sources */,
-				42C63DCB1BF771960037EE4E /* FXPosition.m in Sources */,
+				42DF17B81BF8D90200BB8FCB /* FXLevel.m in Sources */,
+				42DF17B91BF8D90200BB8FCB /* FXDirection.m in Sources */,
 				42CA25DD1BF4AAD5001C7485 /* main.m in Sources */,
+				42DF17A61BF8D8B100BB8FCB /* FXDataMap.m in Sources */,
 				42CA25EB1BF4B90E001C7485 /* FXFinishViewController.m in Sources */,
+				42DF17B61BF8D90200BB8FCB /* FXPosition.m in Sources */,
 				42CA25F41BF4B976001C7485 /* FXGameView.m in Sources */,
+				42DF17B71BF8D90200BB8FCB /* FXPath.m in Sources */,
 				42CA25FA1BF4B9C6001C7485 /* FXFinishView.m in Sources */,
-				42C63DC81BF7717D0037EE4E /* FXDirection.m in Sources */,
 				42CA26021BF4BA66001C7485 /* FXView.m in Sources */,
 				42CA25E61BF4B8E1001C7485 /* FXStartViewController.m in Sources */,
 				42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */,
 				42CA25F71BF4B9A0001C7485 /* FXStartView.m in Sources */,
-				42C63DD11BF771D10037EE4E /* FXLevel.m in Sources */,
+				42DF17BA1BF8D90200BB8FCB /* FXCell.m in Sources */,
 				42CA25DB1BF4AAD5001C7485 /* FXAppDelegate.m in Sources */,
 				42C63DC51BF76FE60037EE4E /* UIWindow+FXExtensions.m in Sources */,
 				42CA25F01BF4B927001C7485 /* FXGameViewController.m in Sources */,
