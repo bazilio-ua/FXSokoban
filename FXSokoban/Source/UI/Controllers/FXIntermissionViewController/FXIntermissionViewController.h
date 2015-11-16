@@ -1,13 +1,13 @@
 //
-//  FXFinishView.m
+//  FXIntermissionViewController.h
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/12/15.
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
-#import "FXFinishView.h"
+#import "FXViewController.h"
 
-@implementation FXFinishView
+@interface FXIntermissionViewController : FXViewController
 
 @end

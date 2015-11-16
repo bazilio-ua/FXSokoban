@@ -1,5 +1,5 @@
 //
-//  FXStartViewController.h
+//  FXFirstViewController.h
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/12/15.
@@ -8,6 +8,6 @@
 
 #import "FXViewController.h"
 
-@interface FXStartViewController : FXViewController
+@interface FXFirstViewController : FXViewController
 
 @end

@@ -1,5 +1,5 @@
 //
-//  FXStartView.h
+//  FXIntermissionView.h
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/12/15.
@@ -8,6 +8,6 @@
 
 #import "FXView.h"
 
-@interface FXStartView : FXView
+@interface FXIntermissionView : FXView
 
 @end

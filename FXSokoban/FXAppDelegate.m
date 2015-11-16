@@ -8,9 +8,9 @@
 
 #import "FXAppDelegate.h"
 
-#import "FXStartViewController.h"
+#import "FXFirstViewController.h"
 
-#import "FXDataMap.h"
+#import "FXLevelPack.h"
 
 #import "UIWindow+FXExtensions.h"
 #import "UIViewController+FXExtensions.h"
@@ -22,11 +22,13 @@
 	self.window = window;
 	
 	// Override point for customization after application launch.
-	FXStartViewController *controller = [FXStartViewController controller];
-	controller.dataMap = [FXDataMap new];
+	FXFirstViewController *controller = [FXFirstViewController controller];
 	
 	window.rootViewController = controller;
 	[window makeKeyAndVisible];
+	
+	// levels data singleton
+	[FXLevelPack sharedInstance];
 	
 	return YES;
 }

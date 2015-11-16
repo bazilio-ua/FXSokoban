@@ -17,8 +17,4 @@
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
-- (void)dealloc {
-	self.dataMap = nil;
-}
-
 @end

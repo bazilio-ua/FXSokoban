@@ -1,13 +1,13 @@
 //
-//  FXViewController.h
+//  FXFirstView.h
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/12/15.
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FXView.h"
 
-@interface FXViewController : UIViewController
+@interface FXFirstView : FXView
 
 @end

@@ -1,5 +1,5 @@
 //
-//  FXDataMap.h
+//  FXLevelPack.h
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/15/15.
@@ -10,9 +10,11 @@
 
 @class FXLevel;
 
-@interface FXDataMap : NSObject
+@interface FXLevelPack : NSObject
+
++ (FXLevelPack *)sharedInstance;
 
 - (NSUInteger)count;
-- (FXLevel *)levelForNumber:(NSUInteger)number;
+- (FXLevel *)levelAtIndex:(NSUInteger)index;
 
 @end
