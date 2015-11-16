@@ -28,17 +28,18 @@
 		42CA25FA1BF4B9C6001C7485 /* FXFinishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25F91BF4B9C6001C7485 /* FXFinishView.m */; };
 		42CA25FF1BF4BA41001C7485 /* FXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25FE1BF4BA41001C7485 /* FXViewController.m */; };
 		42CA26021BF4BA66001C7485 /* FXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA26011BF4BA66001C7485 /* FXView.m */; };
+		42CE56BD1BF9E03A00215785 /* FXDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CE56BB1BF9E03A00215785 /* FXDispatch.m */; };
+		42CE56C11BF9E08A00215785 /* FXObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CE56C01BF9E08A00215785 /* FXObservableObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42CE56C51BF9E86800215785 /* FXLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CE56C41BF9E86800215785 /* FXLevel.m */; };
 		42DF17A61BF8D8B100BB8FCB /* FXDataMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17A51BF8D8B100BB8FCB /* FXDataMap.m */; };
 		42DF17B61BF8D90200BB8FCB /* FXPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17A91BF8D90200BB8FCB /* FXPosition.m */; };
 		42DF17B71BF8D90200BB8FCB /* FXPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17AC1BF8D90200BB8FCB /* FXPath.m */; };
-		42DF17B81BF8D90200BB8FCB /* FXLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17AF1BF8D90200BB8FCB /* FXLevel.m */; };
 		42DF17B91BF8D90200BB8FCB /* FXDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17B21BF8D90200BB8FCB /* FXDirection.m */; };
 		42DF17BA1BF8D90200BB8FCB /* FXCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DF17B51BF8D90200BB8FCB /* FXCell.m */; };
 		42DF17BC1BF8F58800BB8FCB /* datamap.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42DF17BB1BF8F58800BB8FCB /* datamap.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		42C63DB91BF76CB60037EE4E /* FXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXMacros.h; sourceTree = "<group>"; };
 		42C63DBB1BF76FE60037EE4E /* NSFileManager+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSFileManager+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		42C63DBC1BF76FE60037EE4E /* NSFileManager+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSFileManager+FXExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		42C63DBE1BF76FE60037EE4E /* UIViewController+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIViewController+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -75,14 +76,19 @@
 		42CA25FE1BF4BA41001C7485 /* FXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXViewController.m; sourceTree = "<group>"; };
 		42CA26001BF4BA66001C7485 /* FXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXView.h; sourceTree = "<group>"; };
 		42CA26011BF4BA66001C7485 /* FXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXView.m; sourceTree = "<group>"; };
+		42CE56BA1BF9E03A00215785 /* FXDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDispatch.h; sourceTree = "<group>"; };
+		42CE56BB1BF9E03A00215785 /* FXDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDispatch.m; sourceTree = "<group>"; };
+		42CE56BC1BF9E03A00215785 /* FXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXMacros.h; sourceTree = "<group>"; };
+		42CE56BF1BF9E08A00215785 /* FXObservableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXObservableObject.h; sourceTree = "<group>"; };
+		42CE56C01BF9E08A00215785 /* FXObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXObservableObject.m; sourceTree = "<group>"; };
+		42CE56C31BF9E86800215785 /* FXLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLevel.h; sourceTree = "<group>"; };
+		42CE56C41BF9E86800215785 /* FXLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLevel.m; sourceTree = "<group>"; };
 		42DF17A41BF8D8B100BB8FCB /* FXDataMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDataMap.h; sourceTree = "<group>"; };
 		42DF17A51BF8D8B100BB8FCB /* FXDataMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDataMap.m; sourceTree = "<group>"; };
 		42DF17A81BF8D90200BB8FCB /* FXPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPosition.h; sourceTree = "<group>"; };
 		42DF17A91BF8D90200BB8FCB /* FXPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPosition.m; sourceTree = "<group>"; };
 		42DF17AB1BF8D90200BB8FCB /* FXPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPath.h; sourceTree = "<group>"; };
 		42DF17AC1BF8D90200BB8FCB /* FXPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPath.m; sourceTree = "<group>"; };
-		42DF17AE1BF8D90200BB8FCB /* FXLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLevel.h; sourceTree = "<group>"; };
-		42DF17AF1BF8D90200BB8FCB /* FXLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLevel.m; sourceTree = "<group>"; };
 		42DF17B11BF8D90200BB8FCB /* FXDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDirection.h; sourceTree = "<group>"; };
 		42DF17B21BF8D90200BB8FCB /* FXDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDirection.m; sourceTree = "<group>"; };
 		42DF17B41BF8D90200BB8FCB /* FXCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXCell.h; sourceTree = "<group>"; };
@@ -205,7 +211,7 @@
 			children = (
 				42CA25D51BF4AAD5001C7485 /* Categories */,
 				42CA25D61BF4AAD5001C7485 /* Classes */,
-				42C63DB91BF76CB60037EE4E /* FXMacros.h */,
+				42CE56B81BF9E03A00215785 /* Misc */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -223,11 +229,11 @@
 		42CA25D61BF4AAD5001C7485 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				42CE56BE1BF9E08A00215785 /* FXObservableObject */,
 				42DF17B31BF8D90200BB8FCB /* FXCell */,
 				42DF17A71BF8D90200BB8FCB /* FXPosition */,
 				42DF17B01BF8D90200BB8FCB /* FXDirection */,
 				42DF17AA1BF8D90200BB8FCB /* FXPath */,
-				42DF17AD1BF8D90200BB8FCB /* FXLevel */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 		42CA25D71BF4AAD5001C7485 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				42CE56C21BF9E86800215785 /* FXLevel */,
 				42DF17A31BF8D8B100BB8FCB /* FXDataMap */,
 			);
 			path = Models;
@@ -322,6 +329,42 @@
 			path = FXViewController;
 			sourceTree = "<group>";
 		};
+		42CE56B81BF9E03A00215785 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				42CE56B91BF9E03A00215785 /* FXDispatch */,
+				42CE56BC1BF9E03A00215785 /* FXMacros.h */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		42CE56B91BF9E03A00215785 /* FXDispatch */ = {
+			isa = PBXGroup;
+			children = (
+				42CE56BA1BF9E03A00215785 /* FXDispatch.h */,
+				42CE56BB1BF9E03A00215785 /* FXDispatch.m */,
+			);
+			path = FXDispatch;
+			sourceTree = "<group>";
+		};
+		42CE56BE1BF9E08A00215785 /* FXObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				42CE56BF1BF9E08A00215785 /* FXObservableObject.h */,
+				42CE56C01BF9E08A00215785 /* FXObservableObject.m */,
+			);
+			path = FXObservableObject;
+			sourceTree = "<group>";
+		};
+		42CE56C21BF9E86800215785 /* FXLevel */ = {
+			isa = PBXGroup;
+			children = (
+				42CE56C31BF9E86800215785 /* FXLevel.h */,
+				42CE56C41BF9E86800215785 /* FXLevel.m */,
+			);
+			path = FXLevel;
+			sourceTree = "<group>";
+		};
 		42DF17A31BF8D8B100BB8FCB /* FXDataMap */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,15 +390,6 @@
 				42DF17AC1BF8D90200BB8FCB /* FXPath.m */,
 			);
 			path = FXPath;
-			sourceTree = "<group>";
-		};
-		42DF17AD1BF8D90200BB8FCB /* FXLevel */ = {
-			isa = PBXGroup;
-			children = (
-				42DF17AE1BF8D90200BB8FCB /* FXLevel.h */,
-				42DF17AF1BF8D90200BB8FCB /* FXLevel.m */,
-			);
-			path = FXLevel;
 			sourceTree = "<group>";
 		};
 		42DF17B01BF8D90200BB8FCB /* FXDirection */ = {
@@ -445,7 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42C63DC41BF76FE60037EE4E /* UIViewController+FXExtensions.m in Sources */,
-				42DF17B81BF8D90200BB8FCB /* FXLevel.m in Sources */,
+				42CE56C51BF9E86800215785 /* FXLevel.m in Sources */,
 				42DF17B91BF8D90200BB8FCB /* FXDirection.m in Sources */,
 				42CA25DD1BF4AAD5001C7485 /* main.m in Sources */,
 				42DF17A61BF8D8B100BB8FCB /* FXDataMap.m in Sources */,
@@ -457,10 +491,12 @@
 				42CA26021BF4BA66001C7485 /* FXView.m in Sources */,
 				42CA25E61BF4B8E1001C7485 /* FXStartViewController.m in Sources */,
 				42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */,
+				42CE56BD1BF9E03A00215785 /* FXDispatch.m in Sources */,
 				42CA25F71BF4B9A0001C7485 /* FXStartView.m in Sources */,
 				42DF17BA1BF8D90200BB8FCB /* FXCell.m in Sources */,
 				42CA25DB1BF4AAD5001C7485 /* FXAppDelegate.m in Sources */,
 				42C63DC51BF76FE60037EE4E /* UIWindow+FXExtensions.m in Sources */,
+				42CE56C11BF9E08A00215785 /* FXObservableObject.m in Sources */,
 				42CA25F01BF4B927001C7485 /* FXGameViewController.m in Sources */,
 				42CA25FF1BF4BA41001C7485 /* FXViewController.m in Sources */,
 			);

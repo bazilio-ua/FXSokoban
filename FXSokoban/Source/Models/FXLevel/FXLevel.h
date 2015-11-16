@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "FXObservableObject.h"
 
-@interface FXLevel : NSObject
+@interface FXLevel : FXObservableObject
 
 + (id)levelWithArray:(NSArray *)array;
 - (id)initWithArray:(NSArray *)array;
