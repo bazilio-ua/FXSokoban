@@ -10,4 +10,9 @@
 
 @interface FXFirstViewController : FXViewController
 
+- (IBAction)onContinueButton:(id)sender;
+- (IBAction)onStartNewGameButton:(id)sender;
+- (IBAction)onHighScoreButton:(id)sender;
+- (IBAction)onQuitButton:(id)sender;
+
 @end

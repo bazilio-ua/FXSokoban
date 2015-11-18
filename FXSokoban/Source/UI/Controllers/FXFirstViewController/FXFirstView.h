@@ -9,5 +9,9 @@
 #import "FXView.h"
 
 @interface FXFirstView : FXView
+@property (nonatomic, strong)	IBOutlet	UIButton	*continueButton;
+@property (nonatomic, strong)	IBOutlet	UIButton	*startNewGameButton;
+@property (nonatomic, strong)	IBOutlet	UIButton	*highScoreButton;
+@property (nonatomic, strong)	IBOutlet	UIButton	*quitButton;
 
 @end

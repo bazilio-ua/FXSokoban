@@ -20,4 +20,27 @@ FXViewControllerBaseViewProperty(FXFirstViewController, firstView, FXFirstView);
 
 @implementation FXFirstViewController
 
+#pragma mark -
+#pragma mark User Interactions
+
+- (void)onContinueButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+}
+
+- (void)onStartNewGameButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+}
+
+- (void)onHighScoreButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+}
+
+- (void)onQuitButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+}
+
 @end

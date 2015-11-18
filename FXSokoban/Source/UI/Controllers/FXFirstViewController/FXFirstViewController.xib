@@ -10,7 +10,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="FXFirstView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -21,6 +21,9 @@
                     <state key="normal" title="Continue">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onContinueButton:" destination="-1" eventType="touchUpInside" id="ioI-hD-m8k"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POF-ho-5f8">
                     <rect key="frame" x="40" y="147" width="240" height="30"/>
@@ -29,6 +32,9 @@
                     <state key="normal" title="New Game">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onStartNewGameButton:" destination="-1" eventType="touchUpInside" id="gdu-GP-kzF"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06n-2H-d5J">
                     <rect key="frame" x="40" y="189" width="240" height="30"/>
@@ -37,6 +43,9 @@
                     <state key="normal" title="High Score">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onHighScoreButton:" destination="-1" eventType="touchUpInside" id="AVz-Rn-wUG"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9b-GQ-5K4">
                     <rect key="frame" x="40" y="430" width="240" height="30"/>
@@ -44,11 +53,20 @@
                     <state key="normal" title="Quit">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onQuitButton:" destination="-1" eventType="touchUpInside" id="dlZ-SD-pPe"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="continueButton" destination="JTE-AK-PU5" id="b37-ZN-rAF"/>
+                <outlet property="highScoreButton" destination="06n-2H-d5J" id="iIg-yy-QWC"/>
+                <outlet property="quitButton" destination="y9b-GQ-5K4" id="ihZ-Mn-z0R"/>
+                <outlet property="startNewGameButton" destination="POF-ho-5f8" id="Cgf-Lq-1YU"/>
+            </connections>
         </view>
     </objects>
 </document>
