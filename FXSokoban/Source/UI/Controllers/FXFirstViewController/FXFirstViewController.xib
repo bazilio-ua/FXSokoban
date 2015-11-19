@@ -14,6 +14,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nrm-ZF-h2Z" userLabel="firstView">
+                    <rect key="frame" x="80" y="292" width="160" height="130"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTE-AK-PU5">
                     <rect key="frame" x="40" y="105" width="240" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -33,7 +38,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="onStartNewGameButton:" destination="-1" eventType="touchUpInside" id="gdu-GP-kzF"/>
+                        <action selector="onNewGameButton:" destination="-1" eventType="touchUpInside" id="OJh-uW-LeW"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="06n-2H-d5J">
@@ -47,8 +52,18 @@
                         <action selector="onHighScoreButton:" destination="-1" eventType="touchUpInside" id="AVz-Rn-wUG"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYh-0F-DAP">
+                    <rect key="frame" x="40" y="227" width="240" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Change Player">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onChangePlayerButton:" destination="-1" eventType="touchUpInside" id="QbB-61-RcC"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9b-GQ-5K4">
-                    <rect key="frame" x="40" y="430" width="240" height="30"/>
+                    <rect key="frame" x="40" y="431" width="240" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Quit">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -62,10 +77,12 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="aNewGameButton" destination="POF-ho-5f8" id="MNB-sf-87T"/>
+                <outlet property="changePlayerButton" destination="TYh-0F-DAP" id="gT3-sX-4sm"/>
                 <outlet property="continueButton" destination="JTE-AK-PU5" id="b37-ZN-rAF"/>
+                <outlet property="firstView" destination="nrm-ZF-h2Z" id="5hy-kv-rZN"/>
                 <outlet property="highScoreButton" destination="06n-2H-d5J" id="iIg-yy-QWC"/>
                 <outlet property="quitButton" destination="y9b-GQ-5K4" id="ihZ-Mn-z0R"/>
-                <outlet property="startNewGameButton" destination="POF-ho-5f8" id="Cgf-Lq-1YU"/>
             </connections>
         </view>
     </objects>

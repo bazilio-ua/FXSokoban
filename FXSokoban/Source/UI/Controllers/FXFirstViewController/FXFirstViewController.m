@@ -28,12 +28,17 @@ FXViewControllerBaseViewProperty(FXFirstViewController, firstView, FXFirstView);
 	
 }
 
-- (void)onStartNewGameButton:(id)sender {
+- (void)onNewGameButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 }
 
 - (void)onHighScoreButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+}
+
+- (void)onChangePlayerButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 }
