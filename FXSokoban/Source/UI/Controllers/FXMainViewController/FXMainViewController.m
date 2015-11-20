@@ -55,7 +55,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 #pragma mark -
 #pragma mark User Interactions
 
--(void)handleTap:(UITapGestureRecognizer *)sender{
+- (void)handleTap:(UITapGestureRecognizer *)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 	CGPoint location = [sender locationInView:[sender.view superview]];
