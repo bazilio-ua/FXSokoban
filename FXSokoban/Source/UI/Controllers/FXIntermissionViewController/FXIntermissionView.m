@@ -10,4 +10,7 @@
 
 @implementation FXIntermissionView
 
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
 @end

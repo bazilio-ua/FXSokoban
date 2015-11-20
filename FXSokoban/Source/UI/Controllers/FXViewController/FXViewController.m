@@ -17,4 +17,9 @@
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
+- (void)dealloc {
+	self.player = nil;
+	self.level = nil;
+}
+
 @end

@@ -14,7 +14,7 @@
 
 + (FXLevelPack *)sharedInstance;
 
-- (NSUInteger)count;
+- (NSUInteger)totalLevel;
 - (FXLevel *)levelAtIndex:(NSUInteger)index;
 
 @end

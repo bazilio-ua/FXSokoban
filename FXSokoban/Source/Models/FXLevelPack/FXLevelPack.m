@@ -51,13 +51,13 @@ static NSString * const kFXLevelPackRows			= @"Level Rows";
 #pragma mark -
 #pragma mark Public Methods
 
-- (NSUInteger)count {
+- (NSUInteger)totalLevel {
 	return [self.levels count];
 }
 
 - (FXLevel *)levelAtIndex:(NSUInteger)index {
 	FXLevel *level = nil;
-	if (index < [self count]) {
+	if (index < [self totalLevel]) {
 		NSArray *array = self.levels[index][kFXLevelPackRows];
 		level = [FXLevel levelWithArray:array];
 	}

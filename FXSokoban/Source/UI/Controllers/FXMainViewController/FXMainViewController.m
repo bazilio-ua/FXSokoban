@@ -7,10 +7,14 @@
 //
 
 #import "FXMainViewController.h"
-
 #import "FXMainView.h"
 
+#import "FXGameViewController.h"
+
 #import "FXPlayer.h"
+#import "FXLevelPack.h"
+
+#import "UIViewController+FXExtensions.h"
 
 #import "FXMacros.h"
 
@@ -19,6 +23,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 @interface FXMainViewController ()
 
 - (void)setupPlayer;
+- (void)pushGameViewController;
 
 @end
 
@@ -72,7 +77,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 - (void)onNewGameButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
-	
+	[self pushGameViewController];
 }
 
 - (void)onHighScoreButton:(id)sender {
@@ -94,6 +99,17 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 	if ([name length]) {
 		self.player = [FXPlayer playerWithName:name];
 	}
+	
+	NSUInteger index = [userDefaults integerForKey:@"currentLevel"];
+	self.level = [[FXLevelPack sharedInstance] levelAtIndex:index];
+}
+
+- (void)pushGameViewController {
+	FXGameViewController *controller = [FXGameViewController controller];
+	controller.player = self.player;
+	controller.level = self.level;
+	
+	[self.navigationController pushViewController:controller animated:NO];
 }
 
 @end

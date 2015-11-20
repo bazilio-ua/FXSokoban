@@ -20,4 +20,7 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 
 @implementation FXIntermissionViewController
 
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
 @end

@@ -14,4 +14,7 @@
 
 @implementation FXHighScoreViewController
 
+#pragma mark -
+#pragma mark Initializations and Deallocations
+
 @end
