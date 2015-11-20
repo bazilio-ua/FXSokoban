@@ -21,14 +21,14 @@
 		42CA25DD1BF4AAD5001C7485 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25CD1BF4AAD5001C7485 /* main.m */; };
 		42CA25DE1BF4AAD5001C7485 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42CA25CF1BF4AAD5001C7485 /* InfoPlist.strings */; };
 		42CA25DF1BF4AAD5001C7485 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42CA25D11BF4AAD5001C7485 /* Images.xcassets */; };
-		42CA25E61BF4B8E1001C7485 /* FXFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25E41BF4B8E1001C7485 /* FXFirstViewController.m */; };
-		42CA25E71BF4B8E1001C7485 /* FXFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CA25E51BF4B8E1001C7485 /* FXFirstViewController.xib */; };
+		42CA25E61BF4B8E1001C7485 /* FXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25E41BF4B8E1001C7485 /* FXMainViewController.m */; };
+		42CA25E71BF4B8E1001C7485 /* FXMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CA25E51BF4B8E1001C7485 /* FXMainViewController.xib */; };
 		42CA25EB1BF4B90E001C7485 /* FXIntermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25E91BF4B90E001C7485 /* FXIntermissionViewController.m */; };
 		42CA25EC1BF4B90E001C7485 /* FXIntermissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CA25EA1BF4B90E001C7485 /* FXIntermissionViewController.xib */; };
 		42CA25F01BF4B927001C7485 /* FXGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25EE1BF4B927001C7485 /* FXGameViewController.m */; };
 		42CA25F11BF4B927001C7485 /* FXGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42CA25EF1BF4B927001C7485 /* FXGameViewController.xib */; };
 		42CA25F41BF4B976001C7485 /* FXGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25F31BF4B976001C7485 /* FXGameView.m */; };
-		42CA25F71BF4B9A0001C7485 /* FXFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25F61BF4B9A0001C7485 /* FXFirstView.m */; };
+		42CA25F71BF4B9A0001C7485 /* FXMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25F61BF4B9A0001C7485 /* FXMainView.m */; };
 		42CA25FA1BF4B9C6001C7485 /* FXIntermissionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25F91BF4B9C6001C7485 /* FXIntermissionView.m */; };
 		42CA25FF1BF4BA41001C7485 /* FXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25FE1BF4BA41001C7485 /* FXViewController.m */; };
 		42CA26021BF4BA66001C7485 /* FXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA26011BF4BA66001C7485 /* FXView.m */; };
@@ -68,9 +68,9 @@
 		42CA25CD1BF4AAD5001C7485 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		42CA25D01BF4AAD5001C7485 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		42CA25D11BF4AAD5001C7485 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		42CA25E31BF4B8E1001C7485 /* FXFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXFirstViewController.h; sourceTree = "<group>"; };
-		42CA25E41BF4B8E1001C7485 /* FXFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXFirstViewController.m; sourceTree = "<group>"; };
-		42CA25E51BF4B8E1001C7485 /* FXFirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXFirstViewController.xib; sourceTree = "<group>"; };
+		42CA25E31BF4B8E1001C7485 /* FXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXMainViewController.h; sourceTree = "<group>"; };
+		42CA25E41BF4B8E1001C7485 /* FXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXMainViewController.m; sourceTree = "<group>"; };
+		42CA25E51BF4B8E1001C7485 /* FXMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXMainViewController.xib; sourceTree = "<group>"; };
 		42CA25E81BF4B90E001C7485 /* FXIntermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXIntermissionViewController.h; sourceTree = "<group>"; };
 		42CA25E91BF4B90E001C7485 /* FXIntermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXIntermissionViewController.m; sourceTree = "<group>"; };
 		42CA25EA1BF4B90E001C7485 /* FXIntermissionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXIntermissionViewController.xib; sourceTree = "<group>"; };
@@ -79,8 +79,8 @@
 		42CA25EF1BF4B927001C7485 /* FXGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXGameViewController.xib; sourceTree = "<group>"; };
 		42CA25F21BF4B976001C7485 /* FXGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXGameView.h; sourceTree = "<group>"; };
 		42CA25F31BF4B976001C7485 /* FXGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXGameView.m; sourceTree = "<group>"; };
-		42CA25F51BF4B9A0001C7485 /* FXFirstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXFirstView.h; sourceTree = "<group>"; };
-		42CA25F61BF4B9A0001C7485 /* FXFirstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXFirstView.m; sourceTree = "<group>"; };
+		42CA25F51BF4B9A0001C7485 /* FXMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXMainView.h; sourceTree = "<group>"; };
+		42CA25F61BF4B9A0001C7485 /* FXMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXMainView.m; sourceTree = "<group>"; };
 		42CA25F81BF4B9C6001C7485 /* FXIntermissionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXIntermissionView.h; sourceTree = "<group>"; };
 		42CA25F91BF4B9C6001C7485 /* FXIntermissionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXIntermissionView.m; sourceTree = "<group>"; };
 		42CA25FD1BF4BA41001C7485 /* FXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXViewController.h; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				42CA25FC1BF4BA07001C7485 /* FXViewController */,
-				42CA25E21BF4B7A1001C7485 /* FXFirstViewController */,
+				42CA25E21BF4B7A1001C7485 /* FXMainViewController */,
 				42CA25E11BF4B7A1001C7485 /* FXGameViewController */,
 				42CA25E01BF4B7A1001C7485 /* FXIntermissionViewController */,
 				42913C521BFA4777002E5DF0 /* FXHighScoreViewController */,
@@ -328,16 +328,16 @@
 			path = FXGameViewController;
 			sourceTree = "<group>";
 		};
-		42CA25E21BF4B7A1001C7485 /* FXFirstViewController */ = {
+		42CA25E21BF4B7A1001C7485 /* FXMainViewController */ = {
 			isa = PBXGroup;
 			children = (
-				42CA25F51BF4B9A0001C7485 /* FXFirstView.h */,
-				42CA25F61BF4B9A0001C7485 /* FXFirstView.m */,
-				42CA25E31BF4B8E1001C7485 /* FXFirstViewController.h */,
-				42CA25E41BF4B8E1001C7485 /* FXFirstViewController.m */,
-				42CA25E51BF4B8E1001C7485 /* FXFirstViewController.xib */,
+				42CA25F51BF4B9A0001C7485 /* FXMainView.h */,
+				42CA25F61BF4B9A0001C7485 /* FXMainView.m */,
+				42CA25E31BF4B8E1001C7485 /* FXMainViewController.h */,
+				42CA25E41BF4B8E1001C7485 /* FXMainViewController.m */,
+				42CA25E51BF4B8E1001C7485 /* FXMainViewController.xib */,
 			);
-			path = FXFirstViewController;
+			path = FXMainViewController;
 			sourceTree = "<group>";
 		};
 		42CA25FB1BF4B9FE001C7485 /* FXView */ = {
@@ -509,7 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42CA25E71BF4B8E1001C7485 /* FXFirstViewController.xib in Resources */,
+				42CA25E71BF4B8E1001C7485 /* FXMainViewController.xib in Resources */,
 				42CA25F11BF4B927001C7485 /* FXGameViewController.xib in Resources */,
 				42CA25EC1BF4B90E001C7485 /* FXIntermissionViewController.xib in Resources */,
 				42CA25DF1BF4AAD5001C7485 /* Images.xcassets in Resources */,
@@ -539,10 +539,10 @@
 				42CD59A51BFF49FF008E6C3A /* UINavigationController+FXExtensions.m in Sources */,
 				42CA25FA1BF4B9C6001C7485 /* FXIntermissionView.m in Sources */,
 				42CA26021BF4BA66001C7485 /* FXView.m in Sources */,
-				42CA25E61BF4B8E1001C7485 /* FXFirstViewController.m in Sources */,
+				42CA25E61BF4B8E1001C7485 /* FXMainViewController.m in Sources */,
 				42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */,
 				42CE56BD1BF9E03A00215785 /* FXDispatch.m in Sources */,
-				42CA25F71BF4B9A0001C7485 /* FXFirstView.m in Sources */,
+				42CA25F71BF4B9A0001C7485 /* FXMainView.m in Sources */,
 				42CD59A11BFF09F0008E6C3A /* FXPlayer.m in Sources */,
 				42913C591BFA47CF002E5DF0 /* FXHighScoreViewController.m in Sources */,
 				42DF17BA1BF8D90200BB8FCB /* FXCell.m in Sources */,

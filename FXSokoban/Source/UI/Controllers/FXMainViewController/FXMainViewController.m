@@ -1,28 +1,28 @@
 //
-//  FXFirstViewController.m
+//  FXMainViewController.m
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/12/15.
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
-#import "FXFirstViewController.h"
+#import "FXMainViewController.h"
 
-#import "FXFirstView.h"
+#import "FXMainView.h"
 
 #import "FXPlayer.h"
 
 #import "FXMacros.h"
 
-FXViewControllerBaseViewProperty(FXFirstViewController, firstView, FXFirstView);
+FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 
-@interface FXFirstViewController ()
+@interface FXMainViewController ()
 
 - (void)setupPlayer;
 
 @end
 
-@implementation FXFirstViewController
+@implementation FXMainViewController
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -41,10 +41,10 @@ FXViewControllerBaseViewProperty(FXFirstViewController, firstView, FXFirstView);
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
-	UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
-																					  action:@selector(handleSingleTap:)];
-	[self.view addGestureRecognizer:singleFingerTap];
+
+	UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+																				 action:@selector(handleTap:)];
+	[self.view addGestureRecognizer:recognizer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,13 +55,13 @@ FXViewControllerBaseViewProperty(FXFirstViewController, firstView, FXFirstView);
 #pragma mark -
 #pragma mark User Interactions
 
-- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+-(void)handleTap:(UITapGestureRecognizer *)sender{
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
-	CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+	
+	CGPoint location = [sender locationInView:[sender.view superview]];
 	
 	// Do stuff here...
-	NSLog(@"x:%f, y:%f", location.x, location.y);
+	NSLog(@"location x:%f, y:%f", location.x, location.y);
 }
 
 - (void)onContinueButton:(id)sender {

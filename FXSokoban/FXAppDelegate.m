@@ -8,7 +8,7 @@
 
 #import "FXAppDelegate.h"
 
-#import "FXFirstViewController.h"
+#import "FXMainViewController.h"
 
 #import "FXLevelPack.h"
 
@@ -23,7 +23,7 @@
 	self.window = window;
 	
 	// Override point for customization after application launch.
-	FXFirstViewController *controller = [FXFirstViewController controller];
+	FXMainViewController *controller = [FXMainViewController controller];
 	UINavigationController *navigationController = [UINavigationController navigationControllerWithRootViewController:controller];
 	[navigationController setNavigationBarHidden:YES];
 	

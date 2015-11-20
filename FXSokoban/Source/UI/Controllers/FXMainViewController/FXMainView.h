@@ -1,5 +1,5 @@
 //
-//  FXFirstView.h
+//  FXMainView.h
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/12/15.
@@ -8,8 +8,7 @@
 
 #import "FXView.h"
 
-@interface FXFirstView : FXView
-@property (nonatomic, strong)	IBOutlet	UIView		*firstView;
+@interface FXMainView : FXView
 @property (nonatomic, strong)	IBOutlet	UIButton	*continueButton;
 @property (nonatomic, strong)	IBOutlet	UIButton	*aNewGameButton;
 @property (nonatomic, strong)	IBOutlet	UIButton	*highScoreButton;

@@ -1,5 +1,5 @@
 //
-//  FXFirstViewController.h
+//  FXMainViewController.h
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/12/15.
@@ -8,7 +8,7 @@
 
 #import "FXViewController.h"
 
-@interface FXFirstViewController : FXViewController
+@interface FXMainViewController : FXViewController
 
 - (IBAction)onContinueButton:(id)sender;
 - (IBAction)onNewGameButton:(id)sender;

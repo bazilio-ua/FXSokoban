@@ -6,22 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FXSokoban/Source/UI/Controllers/FXFirstViewController/FXFirstView.m"
-            timestampString = "469207305.211283"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "-initWithFrame:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -41,7 +25,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FXSokoban/Source/UI/Controllers/FXFirstViewController/FXFirstViewController.m"
+            filePath = "FXSokoban/Source/UI/Controllers/FXMainViewController/FXMainViewController.m"
             timestampString = "469721086.335541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -57,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FXSokoban/Source/UI/Controllers/FXFirstViewController/FXFirstViewController.m"
+            filePath = "FXSokoban/Source/UI/Controllers/FXMainViewController/FXMainViewController.m"
             timestampString = "469721063.572174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
-            landmarkName = "-handleSingleTap:"
+            landmarkName = "-handleTap:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
