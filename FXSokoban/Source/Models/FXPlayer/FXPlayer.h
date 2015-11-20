@@ -9,5 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface FXPlayer : NSObject
+@property (nonatomic, copy)		NSString	*name;
+@property (nonatomic, assign)	NSUInteger	score;
+@property (nonatomic, assign)	NSUInteger	moves;
+@property (nonatomic, assign)	NSUInteger	level;
+
++ (id)playerWithName:(NSString *)name;
+
+- (id)initWithName:(NSString *)name;
 
 @end

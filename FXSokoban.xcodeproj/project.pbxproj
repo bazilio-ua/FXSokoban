@@ -32,6 +32,8 @@
 		42CA25FA1BF4B9C6001C7485 /* FXIntermissionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25F91BF4B9C6001C7485 /* FXIntermissionView.m */; };
 		42CA25FF1BF4BA41001C7485 /* FXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA25FE1BF4BA41001C7485 /* FXViewController.m */; };
 		42CA26021BF4BA66001C7485 /* FXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CA26011BF4BA66001C7485 /* FXView.m */; };
+		42CD59A11BFF09F0008E6C3A /* FXPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CD59A01BFF09F0008E6C3A /* FXPlayer.m */; };
+		42CD59A51BFF49FF008E6C3A /* UINavigationController+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CD59A41BFF49FF008E6C3A /* UINavigationController+FXExtensions.m */; };
 		42CE56BD1BF9E03A00215785 /* FXDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CE56BB1BF9E03A00215785 /* FXDispatch.m */; };
 		42CE56C11BF9E08A00215785 /* FXObservableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CE56C01BF9E08A00215785 /* FXObservableObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42CE56C51BF9E86800215785 /* FXLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CE56C41BF9E86800215785 /* FXLevel.m */; };
@@ -85,6 +87,10 @@
 		42CA25FE1BF4BA41001C7485 /* FXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXViewController.m; sourceTree = "<group>"; };
 		42CA26001BF4BA66001C7485 /* FXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXView.h; sourceTree = "<group>"; };
 		42CA26011BF4BA66001C7485 /* FXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXView.m; sourceTree = "<group>"; };
+		42CD599F1BFF09F0008E6C3A /* FXPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPlayer.h; sourceTree = "<group>"; };
+		42CD59A01BFF09F0008E6C3A /* FXPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPlayer.m; sourceTree = "<group>"; };
+		42CD59A31BFF49FF008E6C3A /* UINavigationController+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FXExtensions.h"; sourceTree = "<group>"; };
+		42CD59A41BFF49FF008E6C3A /* UINavigationController+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FXExtensions.m"; sourceTree = "<group>"; };
 		42CE56BA1BF9E03A00215785 /* FXDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDispatch.h; sourceTree = "<group>"; };
 		42CE56BB1BF9E03A00215785 /* FXDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDispatch.m; sourceTree = "<group>"; };
 		42CE56BC1BF9E03A00215785 /* FXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXMacros.h; sourceTree = "<group>"; };
@@ -239,6 +245,7 @@
 		42CA25D51BF4AAD5001C7485 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				42CD59A21BFF49FF008E6C3A /* UINavigationController+FXExtensions */,
 				42C63DBA1BF76FE60037EE4E /* NSFileManager+FXExtensions */,
 				42C63DBD1BF76FE60037EE4E /* UIViewController+FXExtensions */,
 				42C63DC01BF76FE60037EE4E /* UIWindow+FXExtensions */,
@@ -261,6 +268,7 @@
 		42CA25D71BF4AAD5001C7485 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				42CD599E1BFF09D7008E6C3A /* FXPlayer */,
 				42CE56C21BF9E86800215785 /* FXLevel */,
 				42DF17A31BF8D8B100BB8FCB /* FXLevelPack */,
 			);
@@ -348,6 +356,24 @@
 				42CA25FE1BF4BA41001C7485 /* FXViewController.m */,
 			);
 			path = FXViewController;
+			sourceTree = "<group>";
+		};
+		42CD599E1BFF09D7008E6C3A /* FXPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				42CD599F1BFF09F0008E6C3A /* FXPlayer.h */,
+				42CD59A01BFF09F0008E6C3A /* FXPlayer.m */,
+			);
+			path = FXPlayer;
+			sourceTree = "<group>";
+		};
+		42CD59A21BFF49FF008E6C3A /* UINavigationController+FXExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				42CD59A31BFF49FF008E6C3A /* UINavigationController+FXExtensions.h */,
+				42CD59A41BFF49FF008E6C3A /* UINavigationController+FXExtensions.m */,
+			);
+			path = "UINavigationController+FXExtensions";
 			sourceTree = "<group>";
 		};
 		42CE56B81BF9E03A00215785 /* Misc */ = {
@@ -510,12 +536,14 @@
 				42913C551BFA47AA002E5DF0 /* FXHighScoreView.m in Sources */,
 				42CA25F41BF4B976001C7485 /* FXGameView.m in Sources */,
 				42DF17B71BF8D90200BB8FCB /* FXPath.m in Sources */,
+				42CD59A51BFF49FF008E6C3A /* UINavigationController+FXExtensions.m in Sources */,
 				42CA25FA1BF4B9C6001C7485 /* FXIntermissionView.m in Sources */,
 				42CA26021BF4BA66001C7485 /* FXView.m in Sources */,
 				42CA25E61BF4B8E1001C7485 /* FXFirstViewController.m in Sources */,
 				42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */,
 				42CE56BD1BF9E03A00215785 /* FXDispatch.m in Sources */,
 				42CA25F71BF4B9A0001C7485 /* FXFirstView.m in Sources */,
+				42CD59A11BFF09F0008E6C3A /* FXPlayer.m in Sources */,
 				42913C591BFA47CF002E5DF0 /* FXHighScoreViewController.m in Sources */,
 				42DF17BA1BF8D90200BB8FCB /* FXCell.m in Sources */,
 				42CA25DB1BF4AAD5001C7485 /* FXAppDelegate.m in Sources */,

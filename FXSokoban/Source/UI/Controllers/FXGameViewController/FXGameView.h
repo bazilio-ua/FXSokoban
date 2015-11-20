@@ -9,5 +9,7 @@
 #import "FXView.h"
 
 @interface FXGameView : FXView
+@property (nonatomic, strong)	IBOutlet	UIView		*gameView;
+@property (nonatomic, strong)	IBOutlet	UIButton	*undoButton;
 
 @end

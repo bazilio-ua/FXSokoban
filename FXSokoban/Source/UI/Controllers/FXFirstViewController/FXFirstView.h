@@ -13,7 +13,6 @@
 @property (nonatomic, strong)	IBOutlet	UIButton	*continueButton;
 @property (nonatomic, strong)	IBOutlet	UIButton	*aNewGameButton;
 @property (nonatomic, strong)	IBOutlet	UIButton	*highScoreButton;
-@property (nonatomic, strong)	IBOutlet	UIButton	*changePlayerButton;
 @property (nonatomic, strong)	IBOutlet	UIButton	*quitButton;
 
 @end

@@ -14,6 +14,7 @@
 
 #import "UIWindow+FXExtensions.h"
 #import "UIViewController+FXExtensions.h"
+#import "UINavigationController+FXExtensions.h"
 
 @implementation FXAppDelegate
 
@@ -23,8 +24,10 @@
 	
 	// Override point for customization after application launch.
 	FXFirstViewController *controller = [FXFirstViewController controller];
+	UINavigationController *navigationController = [UINavigationController navigationControllerWithRootViewController:controller];
+	[navigationController setNavigationBarHidden:YES];
 	
-	window.rootViewController = controller;
+	window.rootViewController = navigationController;
 	[window makeKeyAndVisible];
 	
 	// levels data singleton

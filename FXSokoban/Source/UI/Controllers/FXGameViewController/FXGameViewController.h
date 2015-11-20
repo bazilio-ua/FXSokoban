@@ -10,4 +10,6 @@
 
 @interface FXGameViewController : FXViewController
 
+- (IBAction)onUndoButton:(id)sender;
+
 @end
