@@ -8,6 +8,10 @@
 
 #import "FXObservableObject.h"
 
+NS_ENUM(NSUInteger, FXLevelState) {
+	kFXLevelDidChange
+};
+
 @interface FXLevel : FXObservableObject
 
 + (id)levelWithArray:(NSArray *)array;

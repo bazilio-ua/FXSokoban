@@ -91,6 +91,7 @@
 		42CD59A01BFF09F0008E6C3A /* FXPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPlayer.m; sourceTree = "<group>"; };
 		42CD59A31BFF49FF008E6C3A /* UINavigationController+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FXExtensions.h"; sourceTree = "<group>"; };
 		42CD59A41BFF49FF008E6C3A /* UINavigationController+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FXExtensions.m"; sourceTree = "<group>"; };
+		42CD59A61BFF81A5008E6C3A /* FXLevelObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXLevelObserver.h; sourceTree = "<group>"; };
 		42CE56BA1BF9E03A00215785 /* FXDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXDispatch.h; sourceTree = "<group>"; };
 		42CE56BB1BF9E03A00215785 /* FXDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXDispatch.m; sourceTree = "<group>"; };
 		42CE56BC1BF9E03A00215785 /* FXMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXMacros.h; sourceTree = "<group>"; };
@@ -408,6 +409,7 @@
 			children = (
 				42CE56C31BF9E86800215785 /* FXLevel.h */,
 				42CE56C41BF9E86800215785 /* FXLevel.m */,
+				42CD59A61BFF81A5008E6C3A /* FXLevelObserver.h */,
 			);
 			path = FXLevel;
 			sourceTree = "<group>";

@@ -8,6 +8,8 @@
 
 #import "FXLevel.h"
 
+#import "FXLevelObserver.h"
+
 @implementation FXLevel
 
 #pragma mark -
@@ -22,6 +24,23 @@
 
 - (id)initWithArray:(NSArray *)array {
 	return nil;
+}
+
+#pragma mark -
+#pragma mark Overloaded Methods
+
+- (SEL)selectorForState:(NSUInteger)state {
+	SEL selector = NULL;
+	switch (state) {
+		case kFXLevelDidChange:
+			selector = @selector(levelDidChange:);
+			break;
+			
+		default:
+			break;
+	}
+	
+	return selector;
 }
 
 @end
