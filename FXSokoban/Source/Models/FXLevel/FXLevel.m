@@ -10,6 +10,17 @@
 
 #import "FXLevelObserver.h"
 
+#import "FXPosition.h"
+
+@interface FXLevel ()
+@property (nonatomic, strong)	NSDictionary	*cells;
+@property (nonatomic, strong)	FXPosition		*playerPosition;
+@property (nonatomic, assign)	NSUInteger		rows;
+@property (nonatomic, assign)	NSUInteger		columns;
+@property (nonatomic, assign)	NSUInteger		stones;
+
+@end
+
 @implementation FXLevel
 
 #pragma mark -
@@ -23,7 +34,16 @@
 #pragma mark Initializations and Deallocations
 
 - (id)initWithArray:(NSArray *)array {
-	return nil;
+	self = [super init];
+	if (self) {
+		
+//		for (NSString *row in array) {
+//			//<#statements#>
+//		}
+		
+	}
+	
+	return self;
 }
 
 #pragma mark -
@@ -42,5 +62,8 @@
 	
 	return selector;
 }
+
+#pragma mark -
+#pragma mark Private Methods
 
 @end

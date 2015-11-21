@@ -15,7 +15,6 @@
 @property (nonatomic, assign)	NSUInteger	level;
 
 + (id)playerWithName:(NSString *)name;
-
 - (id)initWithName:(NSString *)name;
 
 @end

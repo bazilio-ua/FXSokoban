@@ -15,7 +15,6 @@ NS_ENUM(NSUInteger, FXLevelState) {
 @interface FXLevel : FXObservableObject
 
 + (id)levelWithArray:(NSArray *)array;
-
 - (id)initWithArray:(NSArray *)array;
 
 @end
