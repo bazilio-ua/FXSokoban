@@ -46,10 +46,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-
-	UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-																				 action:@selector(handleTap:)];
-	[self.view addGestureRecognizer:recognizer];
+	
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,15 +56,6 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 
 #pragma mark -
 #pragma mark User Interactions
-
-- (void)handleTap:(UITapGestureRecognizer *)sender {
-	NSLog(@"%@", NSStringFromSelector(_cmd));
-	
-	CGPoint location = [sender locationInView:[sender.view superview]];
-	
-	// Do stuff here...
-	NSLog(@"location x:%f, y:%f", location.x, location.y);
-}
 
 - (void)onContinueButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
