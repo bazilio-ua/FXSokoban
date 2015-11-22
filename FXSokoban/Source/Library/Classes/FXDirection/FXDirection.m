@@ -89,7 +89,7 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 #pragma mark Private Class Methods
 
 + (FXDirection *)directionForMove:(NSInteger)directionMove withInverseMove:(NSInteger)inverseMove {
-	static FXDirection *__directions[4];
+	static FXDirection *__directions[4] = {nil, nil, nil, nil};
 	if (!__directions[directionMove]) {
 		__directions[directionMove] = [[FXDirection alloc] init];
 		__directions[directionMove].inverseDirection = [FXDirection directionForMove:inverseMove
