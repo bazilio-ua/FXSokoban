@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FXPosition : NSObject
+@interface FXPosition : NSObject <NSCopying>
+@property (nonatomic, readonly)	NSUInteger	row;
+@property (nonatomic, readonly)	NSUInteger	column;
+
++ (id)positionWithRow:(NSUInteger)row column:(NSUInteger)column;
+- (id)initWithRow:(NSUInteger)row column:(NSUInteger)column;
 
 @end
