@@ -13,7 +13,7 @@
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {

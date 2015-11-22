@@ -40,25 +40,18 @@
 #pragma mark NSCopying Protocol
 
 - (id)copyWithZone:(NSZone *)zone {
-	return [[[self class] allocWithZone:zone] initWithRow:self.row
-												   column:self.column];
+	return [[[self class] allocWithZone:zone] initWithRow:self.row column:self.column];
 }
 
 #pragma mark -
 #pragma mark NSObject equality
 
 - (NSUInteger)hash {
-	return (self.column + self.row * 100);
+	return (self.row * 100 + self.column);
 }
 
-- (BOOL)isEqual:(id)object {
-	if (![object isKindOfClass:[self class]]) {
-		return NO;
-	}
-	
-	FXPosition *objectPosition = object;
-	
-	return (self.column == objectPosition.column && self.row == objectPosition.row);
+- (BOOL)isEqual:(FXPosition *)object {
+	return [object isKindOfClass:[self class]] && self.row == object.row && self.column == object.column;
 }
 
 @end

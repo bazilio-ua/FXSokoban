@@ -12,7 +12,7 @@
 
 static NSString * const kFXLevelPackFileName		= @"levelpack";
 static NSString * const kFXLevelPackFileType		= @"plist";
-static NSString * const kFXLevelPackRows			= @"Level Rows";
+static NSString * const kFXLevelPackData			= @"Level Data";
 
 @interface FXLevelPack ()
 @property (nonatomic, strong)	NSArray		*levels;
@@ -39,7 +39,7 @@ static NSString * const kFXLevelPackRows			= @"Level Rows";
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
-- (instancetype)init {
+- (id)init {
 	self = [super init];
 	if (self) {
 		self.levels = [self loadLevelPack];
@@ -58,7 +58,7 @@ static NSString * const kFXLevelPackRows			= @"Level Rows";
 - (FXLevel *)levelAtIndex:(NSUInteger)index {
 	FXLevel *level = nil;
 	if (index < [self totalLevel]) {
-		NSArray *array = self.levels[index][kFXLevelPackRows];
+		NSArray *array = self.levels[index][kFXLevelPackData];
 		level = [FXLevel levelWithArray:array];
 	}
 	
@@ -73,12 +73,16 @@ static NSString * const kFXLevelPackRows			= @"Level Rows";
 													 ofType:kFXLevelPackFileType];
 	NSData *data = [NSData dataWithContentsOfFile:path];
 	
-	NSError *error;
+	NSError *error = nil;
 	NSPropertyListFormat format;
 	id array = [NSPropertyListSerialization propertyListWithData:data
 														 options:NSPropertyListImmutable
 														  format:&format
 														   error:&error];
+	if (error) {
+		NSLog(@"%@", [error localizedDescription]);
+		return nil;
+	}
 	
 	return array;
 }

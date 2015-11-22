@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface FXDirection : NSObject
-
+//way
 @end
