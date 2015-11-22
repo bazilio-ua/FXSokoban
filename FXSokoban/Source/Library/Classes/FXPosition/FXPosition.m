@@ -9,8 +9,8 @@
 #import "FXPosition.h"
 
 @interface FXPosition ()
-@property (nonatomic, assign)	NSUInteger	row;
-@property (nonatomic, assign)	NSUInteger	column;
+@property (nonatomic, assign)	NSInteger	x;
+@property (nonatomic, assign)	NSInteger	y;
 
 @end
 
@@ -19,18 +19,23 @@
 #pragma mark -
 #pragma mark Class Methods
 
-+ (id)positionWithRow:(NSUInteger)row column:(NSUInteger)column {
-	return [[self alloc] initWithRow:row column:column];
++ (id)positionWithCoordinateX:(NSInteger)x
+				  CoordinateY:(NSInteger)y
+{
+	return [[self alloc] initWithCoordinateX:x
+								 CoordinateY:y];
 }
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
-- (id)initWithRow:(NSUInteger)row column:(NSUInteger)column {
+- (id)initWithCoordinateX:(NSInteger)x
+			  CoordinateY:(NSInteger)y
+{
 	self = [super init];
 	if (self) {
-		self.row = row;
-		self.column = column;
+		self.x = x;
+		self.y = y;
 	}
 	
 	return self;
@@ -40,18 +45,19 @@
 #pragma mark NSCopying Protocol
 
 - (id)copyWithZone:(NSZone *)zone {
-	return [[[self class] allocWithZone:zone] initWithRow:self.row column:self.column];
+	return [[[self class] allocWithZone:zone] initWithCoordinateX:self.x
+													  CoordinateY:self.y];
 }
 
 #pragma mark -
 #pragma mark NSObject equality
 
 - (NSUInteger)hash {
-	return (self.row * 100 + self.column);
+	return (self.x * 100 + self.y);
 }
 
 - (BOOL)isEqual:(FXPosition *)object {
-	return [object isKindOfClass:[self class]] && self.row == object.row && self.column == object.column;
+	return [object isKindOfClass:[self class]] && self.x == object.x && self.y == object.y;
 }
 
 @end

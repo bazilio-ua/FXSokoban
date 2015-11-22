@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface FXPosition : NSObject <NSCopying>
-@property (nonatomic, readonly)	NSUInteger	row;
-@property (nonatomic, readonly)	NSUInteger	column;
+@property (nonatomic, readonly)	NSInteger	x;
+@property (nonatomic, readonly)	NSInteger	y;
 
-+ (id)positionWithRow:(NSUInteger)row column:(NSUInteger)column;
-- (id)initWithRow:(NSUInteger)row column:(NSUInteger)column;
++ (id)positionWithCoordinateX:(NSInteger)x
+				  CoordinateY:(NSInteger)y;
+- (id)initWithCoordinateX:(NSInteger)x
+			  CoordinateY:(NSInteger)y;
 
 @end

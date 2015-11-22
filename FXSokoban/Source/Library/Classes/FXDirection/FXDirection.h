@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class FXPosition;
+
 @interface FXDirection : NSObject
-//way
+@property (nonatomic, readonly)	FXDirection		*inverseDirection;
+
++ (FXDirection *)directionMoveUp;
++ (FXDirection *)directionMoveDown;
++ (FXDirection *)directionMoveRight;
++ (FXDirection *)directionMoveLeft;
+
++ (FXDirection *)directionBetweenFromPosition:(FXPosition *)fromPosition
+								   toPosition:(FXPosition *)toPosition;
+
+- (FXPosition *)positionMovedFromPosition:(FXPosition *)position;
+
 @end
