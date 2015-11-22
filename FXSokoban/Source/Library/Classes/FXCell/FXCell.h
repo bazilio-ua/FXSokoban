@@ -21,6 +21,7 @@
 @property (nonatomic, readonly, getter = isWalkable)		BOOL	walkable;
 @property (nonatomic, readonly, getter = isMoveable)		BOOL	moveable;
 
++ (id)cell;
 + (id)cellWithType:(char)type;
 - (id)initWithType:(char)type;
 

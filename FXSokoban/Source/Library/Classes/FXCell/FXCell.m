@@ -39,6 +39,10 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 #pragma mark -
 #pragma mark Class Methods
 
++ (id)cell {
+	return [FXCell cellWithType:kFXCellTypeEarth];
+}
+
 + (id)cellWithType:(char)type {
 	return [[self alloc] initWithType:type];
 }
@@ -189,7 +193,7 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 #pragma mark NSObject
 
 - (NSString *)description {
-	NSString *string = [NSString string];
+	NSString *string = nil;
 	switch (self.type) {
 		case kFXCellTypeEarth:
 			string = @"earth cell";

@@ -8,13 +8,33 @@
 
 #import "FXObservableObject.h"
 
+@class FXCell;
+@class FXPosition;
+@class FXDirection;
+
 NS_ENUM(NSUInteger, FXLevelState) {
 	kFXLevelDidChange
 };
 
 @interface FXLevel : FXObservableObject
+@property (nonatomic, strong)	FXPosition		*playerPosition;
+@property (nonatomic, readonly)	NSInteger		rows;
+@property (nonatomic, readonly)	NSInteger		columns;
+@property (nonatomic, readonly)	BOOL			finished;
 
 + (id)levelWithArray:(NSArray *)array;
 - (id)initWithArray:(NSArray *)array;
+
+- (FXLevel *)snapshot;
+- (FXCell *)cellAtPosition:(FXPosition *)position;
+
+- (BOOL)canWalkInDirection:(FXDirection *)direction;
+- (BOOL)canPushInDirection:(FXDirection *)direction;
+
+- (void)walkInDirection:(FXDirection *)direction;
+- (void)pushInDirection:(FXDirection *)direction;
+- (void)pullInDirection:(FXDirection *)direction;
+
+- (void)registerUndoActionWithSelector:(SEL)selector oldDirection:(FXDirection *)oldDirection;
 
 @end

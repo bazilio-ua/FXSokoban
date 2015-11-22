@@ -42,7 +42,7 @@
 }
 
 #pragma mark -
-#pragma mark NSCopying Protocol
+#pragma mark NSCopying protocol
 
 - (id)copyWithZone:(NSZone *)zone {
 	return [[[self class] allocWithZone:zone] initWithCoordinateX:self.x
