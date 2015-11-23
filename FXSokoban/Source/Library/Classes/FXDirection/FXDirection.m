@@ -10,8 +10,9 @@
 
 #import "FXPosition.h"
 
-static const NSInteger kFXDeltaX[4] = {-1, 1, 0, 0};
-static const NSInteger kFXDeltaY[4] = {0, 0, 1, -1};
+static const NSUInteger	kFXDirectionCount = 4;
+static const NSInteger	kFXDirectionDeltaX[kFXDirectionCount] = {-1, 1, 0, 0};
+static const NSInteger	kFXDirectionDeltaY[kFXDirectionCount] = {0, 0, 1, -1};
 
 NS_ENUM(NSInteger, FXDirectionMoves) {
 	kFXDirectionMoveUp		= 0,
@@ -34,6 +35,19 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 #pragma mark -
 #pragma mark Class Methods
 
++ (FXDirection *)directionForMove:(NSInteger)directionMove withInverseMove:(NSInteger)inverseMove {
+	static FXDirection *__directions[kFXDirectionCount] = {nil, nil, nil, nil};
+	if (!__directions[directionMove]) {
+		__directions[directionMove] = [[FXDirection alloc] init];
+		__directions[directionMove].inverseDirection = [FXDirection directionForMove:inverseMove
+																	 withInverseMove:directionMove];
+		__directions[directionMove].deltaX = kFXDirectionDeltaX[directionMove];
+		__directions[directionMove].deltaY = kFXDirectionDeltaY[directionMove];
+	}
+	
+	return __directions[directionMove];
+}
+
 + (FXDirection *)directionMoveUp {
 	return [FXDirection directionForMove:kFXDirectionMoveUp withInverseMove:kFXDirectionMoveDown];
 }
@@ -54,25 +68,19 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 	NSInteger deltaX = toPosition.x - fromPosition.x;
 	NSInteger deltaY = toPosition.y - fromPosition.y;
 	
-	FXDirection *direction;
-	direction = [FXDirection directionMoveUp];
-	if (direction.deltaX == deltaX && direction.deltaY == deltaY) {
-		return direction;
-	}
+	FXDirection *direction = nil;
+	SEL selectors[kFXDirectionCount] = {
+		@selector(directionMoveUp),
+		@selector(directionMoveDown),
+		@selector(directionMoveRight),
+		@selector(directionMoveLeft)
+	};
 	
-	direction = [FXDirection directionMoveDown];
-	if (direction.deltaX == deltaX && direction.deltaY == deltaY) {
-		return direction;
-	}
-	
-	direction = [FXDirection directionMoveRight];
-	if (direction.deltaX == deltaX && direction.deltaY == deltaY) {
-		return direction;
-	}
-	
-	direction = [FXDirection directionMoveLeft];
-	if (direction.deltaX == deltaX && direction.deltaY == deltaY) {
-		return direction;
+	for (NSUInteger index = 0; index < kFXDirectionCount; index++) {
+		direction = [FXDirection performSelector:selectors[index]];
+		if (direction.deltaX == deltaX && direction.deltaY == deltaY) {
+			return direction;
+		}
 	}
 	
 	return nil;
@@ -83,22 +91,6 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 
 - (FXPosition *)positionMovedFromPosition:(FXPosition *)position {
 	return [FXPosition positionWithCoordinateX:position.x + self.deltaX CoordinateY:position.y + self.deltaY];
-}
-
-#pragma mark -
-#pragma mark Private Class Methods
-
-+ (FXDirection *)directionForMove:(NSInteger)directionMove withInverseMove:(NSInteger)inverseMove {
-	static FXDirection *__directions[4] = {nil, nil, nil, nil};
-	if (!__directions[directionMove]) {
-		__directions[directionMove] = [[FXDirection alloc] init];
-		__directions[directionMove].inverseDirection = [FXDirection directionForMove:inverseMove
-																	 withInverseMove:directionMove];
-		__directions[directionMove].deltaX = kFXDeltaX[directionMove];
-		__directions[directionMove].deltaY = kFXDeltaY[directionMove];
-	}
-	
-	return __directions[directionMove];
 }
 
 @end
