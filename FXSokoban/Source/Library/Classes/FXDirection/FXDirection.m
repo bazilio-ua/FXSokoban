@@ -10,9 +10,8 @@
 
 #import "FXPosition.h"
 
-const NSUInteger		kFXDirectionCount = 4;
-static const NSInteger	kFXDirectionDeltaX[kFXDirectionCount] = {-1, 1, 0, 0};
-static const NSInteger	kFXDirectionDeltaY[kFXDirectionCount] = {0, 0, 1, -1};
+static const NSInteger	kFXDirectionDeltaX[4] = {-1, 1, 0, 0};
+static const NSInteger	kFXDirectionDeltaY[4] = {0, 0, 1, -1};
 
 NS_ENUM(NSInteger, FXDirectionMoves) {
 	kFXDirectionMoveUp		= 0,
@@ -36,7 +35,7 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 #pragma mark Class Methods
 
 + (FXDirection *)directionForMove:(NSInteger)directionMove withInverseMove:(NSInteger)inverseMove {
-	static FXDirection *__directions[kFXDirectionCount] = {nil, nil, nil, nil};
+	static FXDirection *__directions[4] = {nil, nil, nil, nil};
 	if (!__directions[directionMove]) {
 		__directions[directionMove] = [[FXDirection alloc] init];
 		__directions[directionMove].inverseDirection = [FXDirection directionForMove:inverseMove
@@ -69,14 +68,14 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 	NSInteger deltaY = toPosition.y - fromPosition.y;
 	
 	FXDirection *direction = nil;
-	SEL selectors[kFXDirectionCount] = {
+	SEL selectors[4] = {
 		@selector(directionMoveUp),
 		@selector(directionMoveDown),
 		@selector(directionMoveRight),
 		@selector(directionMoveLeft)
 	};
 	
-	for (NSUInteger index = 0; index < kFXDirectionCount; index++) {
+	for (NSUInteger index = 0; index < 4; index++) {
 		direction = [FXDirection performSelector:selectors[index]];
 		if (direction.deltaX == deltaX && direction.deltaY == deltaY) {
 			return direction;

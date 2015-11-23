@@ -78,7 +78,7 @@
 			@selector(directionMoveLeft)
 		};
 		
-		for (NSUInteger index = 0; index < kFXDirectionCount; index++) {
+		for (NSUInteger index = 0; index < 4; index++) {
 			[self moveToDirection:[FXDirection performSelector:selectors[index]]
 					 fromPosition:currentPosition
 				previousPositions:previousPositions

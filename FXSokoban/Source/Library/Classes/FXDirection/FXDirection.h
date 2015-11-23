@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-FOUNDATION_EXPORT const NSUInteger	kFXDirectionCount;
-
 @class FXPosition;
 
 @interface FXDirection : NSObject
