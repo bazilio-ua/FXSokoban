@@ -148,7 +148,7 @@
 	FXPosition *playerPosition = self.playerPosition;
 	FXPosition *nextPlayerPosition = [direction positionMovedFromPosition:playerPosition];
 	FXCell *nextPlayerCell = [self cellAtPosition:nextPlayerPosition];
-	FXPosition *previousTargetPosition = [[direction inverseDirection] positionMovedFromPosition:playerPosition];
+	FXPosition *previousTargetPosition = [direction.inverseDirection positionMovedFromPosition:playerPosition];
 	FXCell *previousTargetCell = [self cellAtPosition:previousTargetPosition];
 	
 	if ([nextPlayerCell isWalkable] && [previousTargetCell isMoveable]) {
@@ -168,7 +168,7 @@
 	if (self.undoManager) {
 		[self.undoManager registerUndoWithTarget:self
 										selector:selector
-										  object:[oldDirection inverseDirection]];
+										  object:oldDirection.inverseDirection];
 	}
 }
 
