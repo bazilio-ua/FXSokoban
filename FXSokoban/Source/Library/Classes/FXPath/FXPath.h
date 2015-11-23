@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class FXLevel;
+@class FXPosition;
+
 @interface FXPath : NSObject
+
++ (id)pathWithLevel:(FXLevel *)level;
+- (id)initWithLevel:(FXLevel *)level;
+
+- (NSArray *)pathToPosition:(FXPosition *)position;
 
 @end

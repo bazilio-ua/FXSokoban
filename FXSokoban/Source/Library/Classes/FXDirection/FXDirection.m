@@ -10,7 +10,7 @@
 
 #import "FXPosition.h"
 
-static const NSUInteger	kFXDirectionCount = 4;
+const NSUInteger		kFXDirectionCount = 4;
 static const NSInteger	kFXDirectionDeltaX[kFXDirectionCount] = {-1, 1, 0, 0};
 static const NSInteger	kFXDirectionDeltaY[kFXDirectionCount] = {0, 0, 1, -1};
 
