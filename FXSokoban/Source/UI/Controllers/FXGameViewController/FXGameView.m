@@ -40,6 +40,9 @@ static const NSUInteger kFXCellHeight = 16;
 	NSInteger rows = level.rows;
 	NSInteger columns = level.columns;
 	
+	CGRect rect1 = rect;
+	CGRect frame = self.levelView.frame;
+	
 	for (NSInteger row = 0; row < rows; row++) {
 		for (NSInteger column = 0; column < columns; column++) {
 			NSLog(@"row: %d column: %d", row, column);
@@ -50,8 +53,9 @@ static const NSUInteger kFXCellHeight = 16;
 			if ([cell isStone]) {
 				[[UIColor orangeColor] set];
 				[UIBezierPath bezierPathWithRect:cellRect];
-				NSLog(@"coord: x %f y %f", cellRect.origin.x, cellRect.origin.y);
 			}
+			
+			NSLog(@"coord: x %f y %f", cellRect.origin.x, cellRect.origin.y);
 			
 		}
 	}
