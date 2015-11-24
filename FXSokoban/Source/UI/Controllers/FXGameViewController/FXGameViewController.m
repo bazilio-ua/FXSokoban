@@ -32,6 +32,9 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
 																				 action:@selector(handleTap:)];
 	[self.view addGestureRecognizer:recognizer];
+	
+	self.gameView.level = self.level;
+	[self.view addSubview:self.gameView.levelView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
