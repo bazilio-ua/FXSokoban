@@ -8,6 +8,8 @@
 
 #import "FXViewController.h"
 
+#import "FXLevel.h"
+
 @interface FXViewController ()
 
 @end
@@ -20,6 +22,17 @@
 - (void)dealloc {
 	self.player = nil;
 	self.level = nil;
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setLevel:(FXLevel *)level {
+	if (_level != level) {
+		[_level removeObserver:self];
+		_level = level;
+		[_level addObserver:self];
+	}
 }
 
 @end
