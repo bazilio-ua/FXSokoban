@@ -49,7 +49,6 @@ static const NSUInteger kFXCellHeight = 16;
 
 	UIView *levelView = self.levelView;
 	CGRect frame = levelView.frame;
-//	CGRect bounds = levelView.bounds;
 	
 	for (NSInteger row = 0; row < rows; row++) {
 		for (NSInteger column = 0; column < columns; column++) {
@@ -98,17 +97,8 @@ static const NSUInteger kFXCellHeight = 16;
 	CGRect frame = levelView.frame;
 	CGRect bounds = levelView.bounds;
 	
-//	CGRect superbounds = levelView.superview.bounds;
-//	CGPoint point = CGPointZero;
-	
-//	CGFloat width = self.level.columns * kFXCellWidth - self.levelView.bounds.size.width;
-//	CGFloat height = self.level.rows * kFXCellHeight - self.levelView.bounds.size.height;
-	
-	CGFloat width = self.level.columns * kFXCellWidth - CGRectGetWidth(bounds);
-	CGFloat height = self.level.rows * kFXCellHeight - CGRectGetHeight(bounds);
-	
-//	CGFloat width = self.level.columns * kFXCellWidth;
-//	CGFloat height = self.level.rows * kFXCellHeight;
+	CGFloat width = level.columns * kFXCellWidth - CGRectGetWidth(bounds);
+	CGFloat height = level.rows * kFXCellHeight - CGRectGetHeight(bounds);
 	
 	frame.size.width += width;
 	frame.size.height += height;
@@ -125,7 +115,19 @@ static const NSUInteger kFXCellHeight = 16;
 	
 	[self.levelView setFrame:frame];
 	[self setNeedsDisplay];
+}
+
+- (void)processLevelWithLocation:(CGPoint)location {
+	UIView *levelView = self.levelView;
+	CGRect frame = levelView.frame;
+
+	NSInteger x = 0;
+	NSInteger y = 0;
 	
+	x = (location.y - frame.origin.y) / kFXCellHeight;
+	y = (location.x - frame.origin.x) / kFXCellWidth;
+	
+	NSLog(@"level: x:%d, y:%d", x, y);
 }
 
 #pragma mark -

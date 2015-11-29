@@ -17,5 +17,6 @@
 @property (nonatomic, strong)	FXLevel		*level;
 
 - (void)setupFrameWithLevel:(FXLevel *)level;
+- (void)processLevelWithLocation:(CGPoint)location;
 
 @end

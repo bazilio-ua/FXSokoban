@@ -31,19 +31,21 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	
 	UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
 																				 action:@selector(handleTap:)];
-//	[self.view addGestureRecognizer:recognizer];
 	[self.gameView.levelView addGestureRecognizer:recognizer];
 	
 	self.gameView.level = self.level;
-	
-//	self.gameView.levelView.backgroundColor = [UIColor lightGrayColor];
-	
 	[self.view addSubview:self.gameView.levelView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+								duration:(NSTimeInterval)duration
+{
+	[self.gameView setupFrameWithLevel:self.level];
 }
 
 #pragma mark -
@@ -56,6 +58,8 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	
 	// Do stuff here...
 	NSLog(@"location x:%f, y:%f", location.x, location.y);
+	
+	[self.gameView processLevelWithLocation:location];
 }
 
 - (void)onUndoButton:(id)sender {
