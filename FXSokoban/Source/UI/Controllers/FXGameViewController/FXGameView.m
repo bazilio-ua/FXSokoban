@@ -18,8 +18,6 @@ static const NSUInteger kFXCellHeight = 16;
 @interface FXGameView ()
 @property (nonatomic, strong)	NSMutableArray *availableMoves;
 
-- (CGRect)rectForLevelCellAtRow:(NSInteger)row column:(NSInteger)column;
-
 @end
 
 @implementation FXGameView
@@ -41,23 +39,33 @@ static const NSUInteger kFXCellHeight = 16;
 		[_level addObserver:self];
 	}
 	
-	[self fillWithLevel:level];
+	[self setupFrameWithLevel:level];
 }
 
 - (void)drawRect:(CGRect)rect {
 	FXLevel *level = self.level;
 	NSInteger rows = level.rows;
 	NSInteger columns = level.columns;
-		
+
+	UIView *levelView = self.levelView;
+	CGRect frame = levelView.frame;
+//	CGRect bounds = levelView.bounds;
+	
 	for (NSInteger row = 0; row < rows; row++) {
 		for (NSInteger column = 0; column < columns; column++) {
 			NSLog(@"row: %d column: %d", row, column);
 			
-			CGRect cellRect = [self rectForLevelCellAtRow:rows - row column:column];
+			CGRect cellRect = CGRectMake(column * kFXCellWidth + frame.origin.x,
+										 row * kFXCellHeight + frame.origin.y,
+										 kFXCellWidth,
+										 kFXCellHeight);
+			
+			NSLog(@"coord: x %f y %f", cellRect.origin.x, cellRect.origin.y);
 			
 			FXPosition *position = [FXPosition positionWithCoordinateX:row CoordinateY:column];
 			FXCell *cell = [level cellAtPosition:position];
 			NSLog(@"cell: %@, position x:%d y:%d", [cell description], position.x, position.y);
+			
 			if ([cell isStone]) {
 				[[UIColor orangeColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
@@ -78,7 +86,6 @@ static const NSUInteger kFXCellHeight = 16;
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
 			}
 			
-			NSLog(@"coord: x %f y %f", cellRect.origin.x, cellRect.origin.y);
 		}
 	}
 }
@@ -86,12 +93,25 @@ static const NSUInteger kFXCellHeight = 16;
 #pragma mark -
 #pragma mark Public Methods
 
-- (void)fillWithLevel:(FXLevel *)level {
-	CGRect frame = self.levelView.frame;
-	CGFloat height = self.level.rows * kFXCellHeight - self.levelView.bounds.size.height;
-	CGFloat width = self.level.columns * kFXCellWidth - self.levelView.bounds.size.width;
-	frame.size.height += height;
+- (void)setupFrameWithLevel:(FXLevel *)level {
+	UIView *levelView = self.levelView;
+	CGRect frame = levelView.frame;
+	CGRect bounds = levelView.bounds;
+	
+//	CGRect superbounds = levelView.superview.bounds;
+//	CGPoint point = CGPointZero;
+	
+//	CGFloat width = self.level.columns * kFXCellWidth - self.levelView.bounds.size.width;
+//	CGFloat height = self.level.rows * kFXCellHeight - self.levelView.bounds.size.height;
+	
+	CGFloat width = self.level.columns * kFXCellWidth - CGRectGetWidth(bounds);
+	CGFloat height = self.level.rows * kFXCellHeight - CGRectGetHeight(bounds);
+	
+//	CGFloat width = self.level.columns * kFXCellWidth;
+//	CGFloat height = self.level.rows * kFXCellHeight;
+	
 	frame.size.width += width;
+	frame.size.height += height;
 	
 	frame.origin.x -= width / 2;
 	if (frame.origin.x < 0) {
@@ -110,14 +130,5 @@ static const NSUInteger kFXCellHeight = 16;
 
 #pragma mark -
 #pragma mark Private Methods
-
-- (CGRect)rectForLevelCellAtRow:(NSInteger)row column:(NSInteger)column {
-	CGRect frame = self.levelView.frame;
-	CGRect bounds = self.levelView.bounds;
-
-	return CGRectMake(row * kFXCellWidth + frame.origin.x, column * kFXCellHeight + frame.origin.y, kFXCellWidth, kFXCellHeight);
-//	return CGRectMake(row * kFXCellWidth + frame.origin.y, column * kFXCellHeight + frame.origin.x, kFXCellWidth, kFXCellHeight);
-	
-}
 
 @end

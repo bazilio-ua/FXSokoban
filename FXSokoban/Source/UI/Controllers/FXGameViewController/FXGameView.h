@@ -16,6 +16,6 @@
 
 @property (nonatomic, strong)	FXLevel		*level;
 
-- (void)fillWithLevel:(FXLevel *)level;
+- (void)setupFrameWithLevel:(FXLevel *)level;
 
 @end
