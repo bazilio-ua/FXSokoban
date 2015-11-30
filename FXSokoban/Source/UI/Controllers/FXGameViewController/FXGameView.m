@@ -11,12 +11,21 @@
 #import "FXLevel.h"
 #import "FXPosition.h"
 #import "FXCell.h"
+#import "FXPath.h"
+#import "FXDirection.h"
 
-static const NSUInteger kFXCellWidth = 16;
-static const NSUInteger kFXCellHeight = 16;
+static const NSUInteger kFXCellWidth	= 16;
+static const NSUInteger kFXCellHeight	= 16;
+
+static const NSTimeInterval kFXTimeInterval	= 0.05;
 
 @interface FXGameView ()
 @property (nonatomic, strong)	NSMutableArray *availableMoves;
+
+- (void)noAvailableMoves;
+- (void)setupTimer;
+- (void)firedTimerWithUserInfo:(id)userInfo;
+- (void)checkNextLevel;
 
 @end
 
@@ -52,18 +61,18 @@ static const NSUInteger kFXCellHeight = 16;
 	
 	for (NSInteger row = 0; row < rows; row++) {
 		for (NSInteger column = 0; column < columns; column++) {
-			NSLog(@"row: %d column: %d", row, column);
+//			NSLog(@"row: %d column: %d", row, column);
 			
 			CGRect cellRect = CGRectMake(column * kFXCellWidth + frame.origin.x,
 										 row * kFXCellHeight + frame.origin.y,
 										 kFXCellWidth,
 										 kFXCellHeight);
 			
-			NSLog(@"coord: x %f y %f", cellRect.origin.x, cellRect.origin.y);
+//			NSLog(@"coord: x %f y %f", cellRect.origin.x, cellRect.origin.y);
 			
 			FXPosition *position = [FXPosition positionWithCoordinateX:row CoordinateY:column];
 			FXCell *cell = [level cellAtPosition:position];
-			NSLog(@"cell: %@, position x:%d y:%d", [cell description], position.x, position.y);
+//			NSLog(@"cell: %@, position x:%d y:%d", [cell description], position.x, position.y);
 			
 			if ([cell isStone]) {
 				[[UIColor orangeColor] set];
@@ -128,9 +137,81 @@ static const NSUInteger kFXCellHeight = 16;
 	y = (location.x - frame.origin.x) / kFXCellWidth;
 	
 	NSLog(@"level: x:%d, y:%d", x, y);
+	
+	FXPosition *position = [FXPosition positionWithCoordinateX:x CoordinateY:y];
+	FXPath *path = [FXPath pathWithLevel:self.level];
+	[self noAvailableMoves];
+	self.availableMoves = [NSMutableArray arrayWithArray:[path pathToPosition:position]];
+	[self setupTimer];
+	
+	if (nil == self.availableMoves) {
+		FXDirection *direction = [FXDirection directionBetweenFromPosition:[self.level playerPosition]
+																toPosition:position];
+		if (direction) {
+			if ([self.level canPushInDirection:direction]) {
+				[self.level pushInDirection:direction];
+				[self checkNextLevel];
+			}
+		}
+	}
 }
 
 #pragma mark -
 #pragma mark Private Methods
+
+- (void)noAvailableMoves {
+	if (self.availableMoves) {
+		self.availableMoves = nil;
+	}
+}
+
+- (void)setupTimer {
+	if (self.availableMoves && [self.availableMoves count] > 0) {
+		[NSTimer scheduledTimerWithTimeInterval:kFXTimeInterval
+										 target:self
+									   selector:@selector(firedTimerWithUserInfo:)
+									   userInfo:nil
+										repeats:NO];
+	} else {
+		[self noAvailableMoves];
+	}
+}
+
+- (void)firedTimerWithUserInfo:(id)userInfo {
+	if (self.availableMoves && [self.availableMoves count] > 0) {
+		FXDirection *direction = [self.availableMoves objectAtIndex:0];
+		[self.availableMoves removeObjectAtIndex:0];
+		[self.level walkInDirection:direction];
+		[self setupTimer];
+	} else {
+		[self noAvailableMoves];
+	}
+}
+
+- (void)checkNextLevel {
+	if ([self.level finished]) {
+		NSLog(@"level is finished");
+		
+		self.level.state = kFXLevelDidFinish;
+		
+		//TODO: change level in user defaults
+		//then
+		//[self setupFrameWithLevel:self.level];
+	}
+}
+
+#pragma mark -
+#pragma mark FXLevelObserver protocol
+
+- (void)levelDidChange:(id)level {
+//	NSLog(@"observer %@ was notifyed with message levelDidChange: from object %@", self, level);
+	
+	[self setNeedsDisplayInRect:self.levelView.frame];
+}
+
+- (void)levelDidFinish:(id)level {
+	NSLog(@"observer %@ was notifyed with message levelDidFinish: from object %@", self, level);
+	
+}
 
 @end

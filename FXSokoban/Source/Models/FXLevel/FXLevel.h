@@ -13,7 +13,8 @@
 @class FXDirection;
 
 NS_ENUM(NSUInteger, FXLevelState) {
-	kFXLevelDidChange
+	kFXLevelDidChange,
+	kFXLevelDidFinish
 };
 
 @interface FXLevel : FXObservableObject

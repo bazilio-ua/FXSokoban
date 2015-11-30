@@ -45,6 +45,8 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 								duration:(NSTimeInterval)duration
 {
+	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+	
 	[self.gameView setupFrameWithLevel:self.level];
 }
 
@@ -64,6 +66,18 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 - (void)onUndoButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+}
+
+#pragma mark -
+#pragma mark FXLevelObserver protocol
+
+- (void)levelDidChange:(id)level {
+//	NSLog(@"observer %@ was notifyed with message levelDidChange: from object %@", self, level);
+}
+
+- (void)levelDidFinish:(id)level {
+	NSLog(@"observer %@ was notifyed with message levelDidFinish: from object %@", self, level);
 	
 }
 

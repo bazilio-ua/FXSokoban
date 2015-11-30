@@ -8,7 +8,9 @@
 
 #import "FXViewController.h"
 
-@interface FXGameViewController : FXViewController
+#import "FXLevelObserver.h"
+
+@interface FXGameViewController : FXViewController <FXLevelObserver>
 
 - (IBAction)onUndoButton:(id)sender;
 

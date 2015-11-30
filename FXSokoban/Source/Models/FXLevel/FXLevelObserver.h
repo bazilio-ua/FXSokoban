@@ -12,5 +12,6 @@
 
 @optional
 - (void)levelDidChange:(id)level;
+- (void)levelDidFinish:(id)level;
 
 @end

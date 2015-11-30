@@ -58,6 +58,12 @@
 #pragma mark Accessors
 
 - (BOOL)finished {
+//	if (self.stones == 0) {
+//		self.state = kFXLevelDidFinish;
+//		return YES;
+//	} else {
+//		return NO;
+//	}
 	return self.stones == 0;
 }
 
@@ -69,6 +75,10 @@
 	switch (state) {
 		case kFXLevelDidChange:
 			selector = @selector(levelDidChange:);
+			break;
+			
+		case kFXLevelDidFinish:
+			selector = @selector(levelDidFinish:);
 			break;
 			
 		default:

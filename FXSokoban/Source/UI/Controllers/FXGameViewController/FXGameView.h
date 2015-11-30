@@ -8,9 +8,11 @@
 
 #import "FXView.h"
 
+#import "FXLevelObserver.h"
+
 @class FXLevel;
 
-@interface FXGameView : FXView
+@interface FXGameView : FXView <FXLevelObserver>
 @property (nonatomic, strong)	IBOutlet	UIView		*levelView;
 @property (nonatomic, strong)	IBOutlet	UIButton	*undoButton;
 
