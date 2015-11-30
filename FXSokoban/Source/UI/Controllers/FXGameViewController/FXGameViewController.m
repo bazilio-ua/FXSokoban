@@ -73,11 +73,12 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 #pragma mark FXLevelObserver protocol
 
 - (void)levelDidChange:(id)level {
-//	NSLog(@"observer %@ was notifyed with message levelDidChange: from object %@", self, level);
+	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
+	
 }
 
 - (void)levelDidFinish:(id)level {
-	NSLog(@"observer %@ was notifyed with message levelDidFinish: from object %@", self, level);
+	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
 }
 

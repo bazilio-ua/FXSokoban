@@ -204,13 +204,13 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 #pragma mark FXLevelObserver protocol
 
 - (void)levelDidChange:(id)level {
-//	NSLog(@"observer %@ was notifyed with message levelDidChange: from object %@", self, level);
+	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
 	[self setNeedsDisplayInRect:self.levelView.frame];
 }
 
 - (void)levelDidFinish:(id)level {
-	NSLog(@"observer %@ was notifyed with message levelDidFinish: from object %@", self, level);
+	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
 }
 
