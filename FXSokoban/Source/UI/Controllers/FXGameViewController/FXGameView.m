@@ -23,8 +23,8 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 @property (nonatomic, strong)	NSMutableArray *availableMoves;
 
 - (void)noAvailableMoves;
-- (void)setupTimer;
-- (void)firedTimerWithUserInfo:(id)userInfo;
+- (void)setupMovesTimer;
+- (void)firedMovesTimerWithUserInfo:(id)userInfo;
 - (void)checkNextLevel;
 
 @end
@@ -70,24 +70,24 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 			
 //			NSLog(@"coord: x %f y %f", cellRect.origin.x, cellRect.origin.y);
 			
-			FXPosition *position = [FXPosition positionWithCoordinateX:row CoordinateY:column];
+			FXPosition *position = [FXPosition positionWithPointX:row pointY:column];
 			FXCell *cell = [level cellAtPosition:position];
 //			NSLog(@"cell: %@, position x:%d y:%d", [cell description], position.x, position.y);
 			
-			if ([cell isStone]) {
-				[[UIColor orangeColor] set];
-				[[UIBezierPath bezierPathWithRect:cellRect] fill];
-			} else if ([cell isGem]) {
-				[[UIColor yellowColor] set];
-				[[UIBezierPath bezierPathWithRect:cellRect] fill];
-			} else if ([cell isTarget]) {
-				[[UIColor blueColor] set];
+			if ([cell isEarth]) {
+				[[UIColor brownColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
 			} else if ([cell isWall]) {
 				[[UIColor blackColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
-			} else if ([cell isEarth]) {
-				[[UIColor brownColor] set];
+			} else if ([cell isStone]) {
+				[[UIColor orangeColor] set];
+				[[UIBezierPath bezierPathWithRect:cellRect] fill];
+			} else if ([cell isTarget]) {
+				[[UIColor blueColor] set];
+				[[UIBezierPath bezierPathWithRect:cellRect] fill];
+			} else if ([cell isGem]) {
+				[[UIColor yellowColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
 			} else if ([cell isPlayer] || [cell isPlayerOnTarget]) {
 				[[UIColor redColor] set];
@@ -138,13 +138,13 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 	
 	NSLog(@"level: x:%d, y:%d", x, y);
 	
-	FXPosition *position = [FXPosition positionWithCoordinateX:x CoordinateY:y];
+	FXPosition *position = [FXPosition positionWithPointX:x pointY:y];
 	FXPath *path = [FXPath pathWithLevel:self.level];
 	[self noAvailableMoves];
 	self.availableMoves = [NSMutableArray arrayWithArray:[path pathToPosition:position]];
-	[self setupTimer];
+	[self setupMovesTimer];
 	
-	if (nil == self.availableMoves) {
+	if (!self.availableMoves) {
 		FXDirection *direction = [FXDirection directionBetweenFromPosition:[self.level playerPosition]
 																toPosition:position];
 		if (direction) {
@@ -165,11 +165,11 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 	}
 }
 
-- (void)setupTimer {
+- (void)setupMovesTimer {
 	if (self.availableMoves && [self.availableMoves count] > 0) {
 		[NSTimer scheduledTimerWithTimeInterval:kFXTimeInterval
 										 target:self
-									   selector:@selector(firedTimerWithUserInfo:)
+									   selector:@selector(firedMovesTimerWithUserInfo:)
 									   userInfo:nil
 										repeats:NO];
 	} else {
@@ -177,12 +177,12 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 	}
 }
 
-- (void)firedTimerWithUserInfo:(id)userInfo {
+- (void)firedMovesTimerWithUserInfo:(id)userInfo {
 	if (self.availableMoves && [self.availableMoves count] > 0) {
 		FXDirection *direction = [self.availableMoves objectAtIndex:0];
 		[self.availableMoves removeObjectAtIndex:0];
 		[self.level walkInDirection:direction];
-		[self setupTimer];
+		[self setupMovesTimer];
 	} else {
 		[self noAvailableMoves];
 	}
@@ -204,13 +204,13 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 #pragma mark FXLevelObserver protocol
 
 - (void)levelDidChange:(id)level {
-	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
+//	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
 	[self setNeedsDisplayInRect:self.levelView.frame];
 }
 
 - (void)levelDidFinish:(id)level {
-	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
+//	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
 }
 

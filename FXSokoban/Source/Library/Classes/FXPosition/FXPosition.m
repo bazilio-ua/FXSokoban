@@ -19,18 +19,18 @@
 #pragma mark -
 #pragma mark Class Methods
 
-+ (id)positionWithCoordinateX:(NSInteger)x
-				  CoordinateY:(NSInteger)y
++ (id)positionWithPointX:(NSInteger)x
+				  pointY:(NSInteger)y
 {
-	return [[self alloc] initWithCoordinateX:x
-								 CoordinateY:y];
+	return [[self alloc] initWithPointX:x
+								 pointY:y];
 }
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
 
-- (id)initWithCoordinateX:(NSInteger)x
-			  CoordinateY:(NSInteger)y
+- (id)initWithPointX:(NSInteger)x
+			  pointY:(NSInteger)y
 {
 	self = [super init];
 	if (self) {
@@ -45,8 +45,8 @@
 #pragma mark NSCopying protocol
 
 - (id)copyWithZone:(NSZone *)zone {
-	return [[[self class] allocWithZone:zone] initWithCoordinateX:self.x
-													  CoordinateY:self.y];
+	return [[[self class] allocWithZone:zone] initWithPointX:self.x
+													  pointY:self.y];
 }
 
 #pragma mark -

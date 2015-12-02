@@ -56,7 +56,7 @@
 	NSMutableDictionary *previousPositions = [NSMutableDictionary dictionary];
 	
 	while ([nextPositions count] > 0) {
-		FXPosition *currentPosition = nextPositions[0];
+		FXPosition *currentPosition = [nextPositions objectAtIndex:0];
 		[nextPositions removeObjectAtIndex:0];
 		if ([currentPosition isEqual:position]) {
 			[nextPositions removeAllObjects];

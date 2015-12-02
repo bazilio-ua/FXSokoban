@@ -12,9 +12,9 @@
 @property (nonatomic, readonly)	NSInteger	x;
 @property (nonatomic, readonly)	NSInteger	y;
 
-+ (id)positionWithCoordinateX:(NSInteger)x
-				  CoordinateY:(NSInteger)y;
-- (id)initWithCoordinateX:(NSInteger)x
-			  CoordinateY:(NSInteger)y;
++ (id)positionWithPointX:(NSInteger)x
+				  pointY:(NSInteger)y;
+- (id)initWithPointX:(NSInteger)x
+			  pointY:(NSInteger)y;
 
 @end

@@ -89,7 +89,7 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 #pragma mark Public Methods
 
 - (FXPosition *)positionMovedFromPosition:(FXPosition *)position {
-	return [FXPosition positionWithCoordinateX:position.x + self.deltaX CoordinateY:position.y + self.deltaY];
+	return [FXPosition positionWithPointX:position.x + self.deltaX pointY:position.y + self.deltaY];
 }
 
 @end

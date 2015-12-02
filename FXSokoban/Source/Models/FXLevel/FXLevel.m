@@ -190,7 +190,7 @@
 	for (NSString *row in array) {
 		NSInteger columnCount;
 		for (columnCount = 0; columnCount < [row length]; columnCount++) {
-			FXPosition *position = [FXPosition positionWithCoordinateX:self.rows CoordinateY:columnCount];
+			FXPosition *position = [FXPosition positionWithPointX:self.rows pointY:columnCount];
 			FXCell *cell = [FXCell cellWithType:[row characterAtIndex:columnCount]];
 			if ([cell isPlayer] || [cell isPlayerOnTarget]) {
 				self.playerPosition = position;
