@@ -32,9 +32,9 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
 																				 action:@selector(handleTap:)];
 	[self.gameView.levelView addGestureRecognizer:recognizer];
+	[self.view addSubview:self.gameView.levelView];
 	
 	self.gameView.level = self.level;
-	[self.view addSubview:self.gameView.levelView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,7 +47,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	
-	[self.gameView setupFrameWithLevel:self.level];
+	self.gameView.level = self.level;
 }
 
 #pragma mark -
@@ -59,7 +59,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	CGPoint location = [sender locationInView:[sender.view superview]];
 	
 	// Do stuff here...
-	NSLog(@"location x:%f, y:%f", location.x, location.y);
+	NSLog(@"tap location x:%f, y:%f", location.x, location.y);
 	
 	[self.gameView processLevelWithLocation:location];
 }

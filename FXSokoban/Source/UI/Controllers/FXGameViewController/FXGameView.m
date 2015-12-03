@@ -25,7 +25,7 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 - (void)noAvailableMoves;
 - (void)setupMovesTimer;
 - (void)firedMovesTimerWithUserInfo:(id)userInfo;
-- (void)checkNextLevel;
+- (void)checkFinished;
 
 @end
 
@@ -52,28 +52,20 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 }
 
 - (void)drawRect:(CGRect)rect {
-	FXLevel *level = self.level;
-	NSInteger rows = level.rows;
-	NSInteger columns = level.columns;
-
 	UIView *levelView = self.levelView;
 	CGRect frame = levelView.frame;
 	
+	FXLevel *level = self.level;
+	NSInteger rows = level.rows;
+	NSInteger columns = level.columns;
 	for (NSInteger row = 0; row < rows; row++) {
 		for (NSInteger column = 0; column < columns; column++) {
-//			NSLog(@"row: %d column: %d", row, column);
-			
 			CGRect cellRect = CGRectMake(column * kFXCellWidth + frame.origin.x,
 										 row * kFXCellHeight + frame.origin.y,
 										 kFXCellWidth,
 										 kFXCellHeight);
-			
-//			NSLog(@"coord: x %f y %f", cellRect.origin.x, cellRect.origin.y);
-			
 			FXPosition *position = [FXPosition positionWithPointX:row pointY:column];
 			FXCell *cell = [level cellAtPosition:position];
-//			NSLog(@"cell: %@, position x:%d y:%d", [cell description], position.x, position.y);
-			
 			if ([cell isEarth]) {
 				[[UIColor brownColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
@@ -93,7 +85,6 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 				[[UIColor redColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
 			}
-			
 		}
 	}
 }
@@ -122,35 +113,32 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 		frame.origin.y = 0;
 	}
 	
-	[self.levelView setFrame:frame];
+	[levelView setFrame:frame];
 	[self setNeedsDisplay];
 }
 
 - (void)processLevelWithLocation:(CGPoint)location {
 	UIView *levelView = self.levelView;
 	CGRect frame = levelView.frame;
-
-	NSInteger x = 0;
-	NSInteger y = 0;
 	
-	x = (location.y - frame.origin.y) / kFXCellHeight;
-	y = (location.x - frame.origin.x) / kFXCellWidth;
+	NSInteger x = (location.y - frame.origin.y) / kFXCellHeight;
+	NSInteger y = (location.x - frame.origin.x) / kFXCellWidth;
+	NSLog(@"level point: x:%d, y:%d", x, y);
 	
-	NSLog(@"level: x:%d, y:%d", x, y);
-	
+	FXLevel *level = self.level;
 	FXPosition *position = [FXPosition positionWithPointX:x pointY:y];
-	FXPath *path = [FXPath pathWithLevel:self.level];
+	FXPath *path = [FXPath pathWithLevel:level];
 	[self noAvailableMoves];
 	self.availableMoves = [NSMutableArray arrayWithArray:[path pathToPosition:position]];
 	[self setupMovesTimer];
 	
 	if (!self.availableMoves) {
-		FXDirection *direction = [FXDirection directionBetweenFromPosition:[self.level playerPosition]
+		FXDirection *direction = [FXDirection directionBetweenFromPosition:[level playerPosition]
 																toPosition:position];
 		if (direction) {
-			if ([self.level canPushInDirection:direction]) {
-				[self.level pushInDirection:direction];
-				[self checkNextLevel];
+			if ([level canPushInDirection:direction]) {
+				[level pushInDirection:direction];
+				[self checkFinished];
 			}
 		}
 	}
@@ -166,7 +154,8 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 }
 
 - (void)setupMovesTimer {
-	if (self.availableMoves && [self.availableMoves count] > 0) {
+	id availableMoves = self.availableMoves;
+	if (availableMoves && [availableMoves count] > 0) {
 		[NSTimer scheduledTimerWithTimeInterval:kFXTimeInterval
 										 target:self
 									   selector:@selector(firedMovesTimerWithUserInfo:)
@@ -178,9 +167,10 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 }
 
 - (void)firedMovesTimerWithUserInfo:(id)userInfo {
-	if (self.availableMoves && [self.availableMoves count] > 0) {
-		FXDirection *direction = [self.availableMoves objectAtIndex:0];
-		[self.availableMoves removeObjectAtIndex:0];
+	id availableMoves = self.availableMoves;
+	if (availableMoves && [availableMoves count] > 0) {
+		FXDirection *direction = [availableMoves objectAtIndex:0];
+		[availableMoves removeObjectAtIndex:0];
 		[self.level walkInDirection:direction];
 		[self setupMovesTimer];
 	} else {
@@ -188,15 +178,11 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 	}
 }
 
-- (void)checkNextLevel {
+- (void)checkFinished {
 	if ([self.level finished]) {
 		NSLog(@"level is finished");
 		
 		self.level.state = kFXLevelDidFinish;
-		
-		//TODO: change level in user defaults
-		//then
-		//[self setupFrameWithLevel:self.level];
 	}
 }
 

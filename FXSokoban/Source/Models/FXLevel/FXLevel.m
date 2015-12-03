@@ -58,12 +58,6 @@
 #pragma mark Accessors
 
 - (BOOL)finished {
-//	if (self.stones == 0) {
-//		self.state = kFXLevelDidFinish;
-//		return YES;
-//	} else {
-//		return NO;
-//	}
 	return self.stones == 0;
 }
 
