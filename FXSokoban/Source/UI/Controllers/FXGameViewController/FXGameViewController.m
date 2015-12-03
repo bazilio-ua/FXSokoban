@@ -54,12 +54,12 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 #pragma mark User Interactions
 
 - (void)handleTap:(UITapGestureRecognizer *)sender {
-	NSLog(@"%@", NSStringFromSelector(_cmd));
+//	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 	CGPoint location = [sender locationInView:[sender.view superview]];
 	
 	// Do stuff here...
-	NSLog(@"tap location x:%f, y:%f", location.x, location.y);
+//	NSLog(@"tap location x:%f, y:%f", location.x, location.y);
 	
 	[self.gameView processLevelWithLocation:location];
 }
