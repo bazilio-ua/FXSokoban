@@ -29,4 +29,37 @@
 	return self;
 }
 
+#pragma mark -
+#pragma mark Public Methods
+
++ (id)readDefaults {
+	FXPlayer *player = nil;
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSDictionary *dictionary = [defaults dictionaryForKey:@"player"];
+	if (dictionary) {
+		NSString *name = [dictionary objectForKey:@"name"];
+		if ([name length]) {
+			player = [FXPlayer playerWithName:name];
+			if (player) {
+				player.level = [[dictionary valueForKey:@"level"] integerValue];
+				player.moves = [[dictionary valueForKey:@"moves"] integerValue];
+				player.pushes = [[dictionary valueForKey:@"pushes"] integerValue];
+				player.goals = [[dictionary valueForKey:@"goals"] integerValue];
+				player.score = [[dictionary valueForKey:@"score"] integerValue];
+				
+			}
+		}
+	}
+	
+	if (!player) {
+		player = [FXPlayer new];
+	}
+	
+	return player;
+}
+
+- (void)writeDefaults {
+	
+}
+
 @end

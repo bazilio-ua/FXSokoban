@@ -19,4 +19,7 @@
 + (id)playerWithName:(NSString *)name;
 - (id)initWithName:(NSString *)name;
 
++ (id)readDefaults;
+- (void)writeDefaults;
+
 @end

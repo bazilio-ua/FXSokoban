@@ -40,7 +40,7 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 #pragma mark Class Methods
 
 + (id)cell {
-	return [FXCell cellWithType:kFXCellTypeEarth];
+	return [[self alloc] initWithType:kFXCellTypeEarth];
 }
 
 + (id)cellWithType:(char)type {

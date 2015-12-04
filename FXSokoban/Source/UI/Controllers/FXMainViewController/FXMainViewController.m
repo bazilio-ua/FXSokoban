@@ -105,6 +105,8 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 	if (!self.player) {
 		self.level = [[FXLevelPack sharedInstance] levelAtIndex:0];
 	}
+	
+//	id plyr = [FXPlayer readDefaults]; //tst
 }
 
 - (void)pushGameViewController {
