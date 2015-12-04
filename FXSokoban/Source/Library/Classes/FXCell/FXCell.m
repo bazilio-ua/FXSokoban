@@ -8,12 +8,12 @@
 
 #import "FXCell.h"
 
-static const char kFXCellTypeEarth			= '-';
+static const char kFXCellTypeGround			= '-';
 static const char kFXCellTypeWall			= '#';
 static const char kFXCellTypeEmpty			= ' ';
-static const char kFXCellTypeStone			= '$';
+static const char kFXCellTypePacket			= '$';
 static const char kFXCellTypeTarget			= '.';
-static const char kFXCellTypeGem			= '*';
+static const char kFXCellTypeGoal			= '*';
 static const char kFXCellTypePlayer			= '@';
 static const char kFXCellTypePlayerOnTarget	= '+';
 
@@ -24,12 +24,12 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 
 @implementation FXCell
 
-@dynamic earth;
+@dynamic ground;
 @dynamic wall;
 @dynamic empty;
-@dynamic stone;
+@dynamic packet;
 @dynamic target;
-@dynamic gem;
+@dynamic goal;
 @dynamic player;
 @dynamic playerOnTarget;
 
@@ -40,7 +40,7 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 #pragma mark Class Methods
 
 + (id)cell {
-	return [[self alloc] initWithType:kFXCellTypeEarth];
+	return [[self alloc] initWithType:kFXCellTypeGround];
 }
 
 + (id)cellWithType:(char)type {
@@ -62,8 +62,8 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 #pragma mark -
 #pragma mark Accessors
 
-- (BOOL)isEarth {
-	return self.type == kFXCellTypeEarth;
+- (BOOL)isGround {
+	return self.type == kFXCellTypeGround;
 }
 
 - (BOOL)isWall {
@@ -74,16 +74,16 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 	return self.type == kFXCellTypeEmpty;
 }
 
-- (BOOL)isStone {
-	return self.type == kFXCellTypeStone;
+- (BOOL)isPacket {
+	return self.type == kFXCellTypePacket;
 }
 
 - (BOOL)isTarget {
 	return self.type == kFXCellTypeTarget;
 }
 
-- (BOOL)isGem {
-	return self.type == kFXCellTypeGem;
+- (BOOL)isGoal {
+	return self.type == kFXCellTypeGoal;
 }
 
 - (BOOL)isPlayer {
@@ -103,23 +103,23 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 - (BOOL)isMoveable {
 	char type = self.type;
 	
-	return type == kFXCellTypeStone || type == kFXCellTypeGem;
+	return type == kFXCellTypePacket || type == kFXCellTypeGoal;
 }
 
 #pragma mark -
 #pragma mark Public Methods
 
-- (NSUInteger)addStone {
-	NSUInteger stone = 0;
+- (NSUInteger)addPacket {
+	NSUInteger packet = 0;
 	char type = self.type;
 	switch (type) {
 		case kFXCellTypeEmpty:
-			type = kFXCellTypeStone;
-			stone++;
+			type = kFXCellTypePacket;
+			packet++;
 			break;
 			
 		case kFXCellTypeTarget:
-			type = kFXCellTypeGem;
+			type = kFXCellTypeGoal;
 			break;
 			
 		default:
@@ -128,19 +128,19 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 	
 	self.type = type;
 	
-	return stone;
+	return packet;
 }
 
-- (NSUInteger)removeStone {
-	NSUInteger stone = 0;
+- (NSUInteger)removePacket {
+	NSUInteger packet = 0;
 	char type = self.type;
 	switch (type) {
-		case kFXCellTypeStone:
+		case kFXCellTypePacket:
 			type = kFXCellTypeEmpty;
-			stone++;
+			packet++;
 			break;
 			
-		case kFXCellTypeGem:
+		case kFXCellTypeGoal:
 			type = kFXCellTypeTarget;
 			break;
 			
@@ -150,7 +150,7 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 	
 	self.type = type;
 	
-	return stone;
+	return packet;
 }
 
 - (void)addPlayer {
@@ -195,8 +195,8 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 - (NSString *)description {
 	NSString *string = nil;
 	switch (self.type) {
-		case kFXCellTypeEarth:
-			string = @"earth cell";
+		case kFXCellTypeGround:
+			string = @"ground cell";
 			break;
 			
 		case kFXCellTypeWall:
@@ -207,16 +207,16 @@ static const char kFXCellTypePlayerOnTarget	= '+';
 			string = @"empty cell";
 			break;
 			
-		case kFXCellTypeStone:
-			string = @"stone cell";
+		case kFXCellTypePacket:
+			string = @"packet cell";
 			break;
 			
 		case kFXCellTypeTarget:
 			string = @"empty target cell";
 			break;
 			
-		case kFXCellTypeGem:
-			string = @"gem cell (stone on target)";
+		case kFXCellTypeGoal:
+			string = @"goal cell (packet on target)";
 			break;
 			
 		case kFXCellTypePlayer:

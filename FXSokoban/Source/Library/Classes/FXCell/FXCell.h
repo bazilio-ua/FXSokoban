@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface FXCell : NSObject
-@property (nonatomic, readonly, getter = isEarth)			BOOL	earth;
+@property (nonatomic, readonly, getter = isGround)			BOOL	ground;
 @property (nonatomic, readonly, getter = isWall)			BOOL	wall;
 @property (nonatomic, readonly, getter = isEmpty)			BOOL	empty;
-@property (nonatomic, readonly, getter = isStone)			BOOL	stone;
+@property (nonatomic, readonly, getter = isPacket)			BOOL	packet;
 @property (nonatomic, readonly, getter = isTarget)			BOOL	target;
-@property (nonatomic, readonly, getter = isGem)				BOOL	gem;
+@property (nonatomic, readonly, getter = isGoal)			BOOL	goal;
 @property (nonatomic, readonly, getter = isPlayer)			BOOL	player;
 @property (nonatomic, readonly, getter = isPlayerOnTarget)	BOOL	playerOnTarget;
 
@@ -25,8 +25,8 @@
 + (id)cellWithType:(char)type;
 - (id)initWithType:(char)type;
 
-- (NSUInteger)addStone;
-- (NSUInteger)removeStone;
+- (NSUInteger)addPacket;
+- (NSUInteger)removePacket;
 
 - (void)addPlayer;
 - (void)removePlayer;

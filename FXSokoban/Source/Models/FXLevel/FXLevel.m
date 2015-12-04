@@ -19,7 +19,7 @@
 @property (nonatomic, strong)	NSDictionary	*cells;
 @property (nonatomic, assign)	NSInteger		rows;
 @property (nonatomic, assign)	NSInteger		columns;
-@property (nonatomic, assign)	NSUInteger		stones;
+@property (nonatomic, assign)	NSUInteger		packets;
 
 - (NSDictionary *)cellsFromArray:(NSArray *)array;
 
@@ -58,7 +58,7 @@
 #pragma mark Accessors
 
 - (BOOL)finished {
-	return self.stones == 0;
+	return self.packets == 0;
 }
 
 #pragma mark -
@@ -91,7 +91,7 @@
 	level.playerPosition = self.playerPosition;
 	level.rows = self.rows;
 	level.columns = self.columns;
-	level.stones = self.stones;
+	level.packets = self.packets;
 	
 	return level;
 }
@@ -138,9 +138,9 @@
 		FXPosition *nextTargetPosition = [direction positionMovedFromPosition:nextPlayerPosition];
 		[[self cellAtPosition:playerPosition] removePlayer];
 		FXCell *nextPlayerCell = [self cellAtPosition:nextPlayerPosition];
-		self.stones = self.stones - [nextPlayerCell removeStone];
+		self.packets = self.packets - [nextPlayerCell removePacket];
 		[nextPlayerCell addPlayer];
-		self.stones = self.stones + [[self cellAtPosition:nextTargetPosition] addStone];
+		self.packets = self.packets + [[self cellAtPosition:nextTargetPosition] addPacket];
 		self.playerPosition = nextPlayerPosition;
 		
 		[self registerUndoActionWithSelector:@selector(pullInDirection:) oldDirection:direction];
@@ -159,8 +159,8 @@
 		FXCell *currentPlayerCell = [self cellAtPosition:playerPosition];
 		[currentPlayerCell removePlayer];
 		[nextPlayerCell addPlayer];
-		self.stones = self.stones - [previousTargetCell removeStone];
-		self.stones = self.stones + [currentPlayerCell addStone];
+		self.packets = self.packets - [previousTargetCell removePacket];
+		self.packets = self.packets + [currentPlayerCell addPacket];
 		self.playerPosition = nextPlayerPosition;
 		
 		[self registerUndoActionWithSelector:@selector(pushInDirection:) oldDirection:direction];
@@ -190,8 +190,8 @@
 				self.playerPosition = position;
 			}
 			
-			if ([cell isStone]) {
-				self.stones =  self.stones + 1;
+			if ([cell isPacket]) {
+				self.packets =  self.packets + 1;
 			}
 			
 			cells[position] = cell;

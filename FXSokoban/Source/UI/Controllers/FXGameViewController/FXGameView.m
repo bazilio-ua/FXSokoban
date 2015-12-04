@@ -66,19 +66,19 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 										 kFXCellHeight);
 			FXPosition *position = [FXPosition positionWithPointX:row pointY:column];
 			FXCell *cell = [level cellAtPosition:position];
-			if ([cell isEarth]) {
+			if ([cell isGround]) {
 				[[UIColor brownColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
 			} else if ([cell isWall]) {
 				[[UIColor blackColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
-			} else if ([cell isStone]) {
+			} else if ([cell isPacket]) {
 				[[UIColor orangeColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
 			} else if ([cell isTarget]) {
 				[[UIColor blueColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
-			} else if ([cell isGem]) {
+			} else if ([cell isGoal]) {
 				[[UIColor yellowColor] set];
 				[[UIBezierPath bezierPathWithRect:cellRect] fill];
 			} else if ([cell isPlayer] || [cell isPlayerOnTarget]) {

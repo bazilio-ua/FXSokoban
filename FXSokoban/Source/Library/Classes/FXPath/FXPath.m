@@ -61,9 +61,9 @@
 		if ([currentPosition isEqual:position]) {
 			[nextPositions removeAllObjects];
 			while (![currentPosition isEqual:playerPosition]) {
-				FXDirection *backTrace = previousPositions[currentPosition];
-				currentPosition = [backTrace positionMovedFromPosition:currentPosition];
-				[nextPositions insertObject:backTrace.inverseDirection atIndex:0];
+				FXDirection *backTrack = previousPositions[currentPosition];
+				currentPosition = [backTrack positionMovedFromPosition:currentPosition];
+				[nextPositions insertObject:backTrack.inverseDirection atIndex:0];
 			}
 			
 			return nextPositions;
