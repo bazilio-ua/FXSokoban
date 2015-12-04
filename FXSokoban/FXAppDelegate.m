@@ -30,9 +30,6 @@
 	window.rootViewController = navigationController;
 	[window makeKeyAndVisible];
 	
-	// levels data singleton
-	[FXLevelPack sharedInstance];
-	
 	return YES;
 }
 

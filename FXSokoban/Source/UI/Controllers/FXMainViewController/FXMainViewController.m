@@ -82,14 +82,29 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 #pragma mark Private Methods
 
 - (void)setupPlayer {
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	NSString *name = [userDefaults objectForKey:@"currentPlayer"];
-	if ([name length]) {
-		self.player = [FXPlayer playerWithName:name];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	NSDictionary *dictionary = [defaults dictionaryForKey:@"player"];
+	if (dictionary) {
+		NSString *name = [dictionary objectForKey:@"name"];
+		if ([name length]) {
+			FXPlayer *player = [FXPlayer playerWithName:name];
+			if (player) {
+				player.level = [[dictionary valueForKey:@"level"] integerValue];
+				player.moves = [[dictionary valueForKey:@"moves"] integerValue];
+				player.pushes = [[dictionary valueForKey:@"pushes"] integerValue];
+				player.goals = [[dictionary valueForKey:@"goals"] integerValue];
+				player.score = [[dictionary valueForKey:@"score"] integerValue];
+				
+				self.level = [[FXLevelPack sharedInstance] levelAtIndex:player.level];
+				self.player = player;
+			}
+		}
 	}
 	
-	NSUInteger index = [userDefaults integerForKey:@"currentLevel"];
-	self.level = [[FXLevelPack sharedInstance] levelAtIndex:index];
+	if (!self.player) {
+		self.level = [[FXLevelPack sharedInstance] levelAtIndex:0];
+	}
 }
 
 - (void)pushGameViewController {
