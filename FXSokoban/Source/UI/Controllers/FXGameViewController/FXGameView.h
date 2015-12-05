@@ -11,12 +11,14 @@
 #import "FXLevelObserver.h"
 
 @class FXLevel;
+@class FXPlayer;
 
 @interface FXGameView : FXView <FXLevelObserver>
 @property (nonatomic, strong)	IBOutlet	UIView		*levelView;
 @property (nonatomic, strong)	IBOutlet	UIButton	*undoButton;
 
 @property (nonatomic, strong)	FXLevel		*level;
+@property (nonatomic, strong)	FXPlayer	*player;
 
 - (void)setupFrameWithLevel:(FXLevel *)level;
 - (void)processLevelWithLocation:(CGPoint)location;

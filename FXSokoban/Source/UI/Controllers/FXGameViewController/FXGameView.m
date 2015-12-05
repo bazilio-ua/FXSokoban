@@ -36,6 +36,7 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 
 - (void)dealloc {
 	self.level = nil;
+	self.player = nil;
 }
 
 #pragma mark -
@@ -50,6 +51,9 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 	
 	[self setupFrameWithLevel:level];
 }
+
+#pragma mark -
+#pragma mark View lifecycle
 
 - (void)drawRect:(CGRect)rect {
 	UIView *levelView = self.levelView;

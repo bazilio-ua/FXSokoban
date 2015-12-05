@@ -16,6 +16,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 @interface FXGameViewController ()
 
+- (void)updatePlayer;
 - (void)pushMainViewController;
 - (void)pushIntermissionViewController;
 
@@ -38,6 +39,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	[self.view addSubview:self.gameView.levelView];
 	
 	self.gameView.level = self.level;
+	self.gameView.player = self.player;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -50,7 +52,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	
-	self.gameView.level = self.level;
+	self.gameView.level = self.level; // FIXME: do setupFrame
 }
 
 #pragma mark -
@@ -72,6 +74,10 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 #pragma mark -
 #pragma mark Private Methods
+
+- (void)updatePlayer {
+	
+}
 
 - (void)pushMainViewController {
 	
