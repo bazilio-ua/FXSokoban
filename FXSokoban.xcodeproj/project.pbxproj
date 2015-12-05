@@ -11,6 +11,7 @@
 		42913C551BFA47AA002E5DF0 /* FXHighScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42913C541BFA47AA002E5DF0 /* FXHighScoreView.m */; };
 		42913C591BFA47CF002E5DF0 /* FXHighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42913C571BFA47CF002E5DF0 /* FXHighScoreViewController.m */; };
 		42913C5A1BFA47CF002E5DF0 /* FXHighScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42913C581BFA47CF002E5DF0 /* FXHighScoreViewController.xib */; };
+		42BDCC6E1C135E2D006A770C /* FXStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BDCC6D1C135E2D006A770C /* FXStats.m */; };
 		42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBC1BF76FE60037EE4E /* NSFileManager+FXExtensions.m */; };
 		42C63DC41BF76FE60037EE4E /* UIViewController+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBF1BF76FE60037EE4E /* UIViewController+FXExtensions.m */; };
 		42C63DC51BF76FE60037EE4E /* UIWindow+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DC21BF76FE60037EE4E /* UIWindow+FXExtensions.m */; };
@@ -51,6 +52,8 @@
 		42913C561BFA47CF002E5DF0 /* FXHighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXHighScoreViewController.h; sourceTree = "<group>"; };
 		42913C571BFA47CF002E5DF0 /* FXHighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXHighScoreViewController.m; sourceTree = "<group>"; };
 		42913C581BFA47CF002E5DF0 /* FXHighScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXHighScoreViewController.xib; sourceTree = "<group>"; };
+		42BDCC6C1C135E2D006A770C /* FXStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXStats.h; sourceTree = "<group>"; };
+		42BDCC6D1C135E2D006A770C /* FXStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXStats.m; sourceTree = "<group>"; };
 		42C63DBB1BF76FE60037EE4E /* NSFileManager+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSFileManager+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		42C63DBC1BF76FE60037EE4E /* NSFileManager+FXExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSFileManager+FXExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		42C63DBE1BF76FE60037EE4E /* UIViewController+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "UIViewController+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -135,6 +138,15 @@
 				42913C581BFA47CF002E5DF0 /* FXHighScoreViewController.xib */,
 			);
 			path = FXHighScoreViewController;
+			sourceTree = "<group>";
+		};
+		42BDCC6B1C135E19006A770C /* FXStats */ = {
+			isa = PBXGroup;
+			children = (
+				42BDCC6C1C135E2D006A770C /* FXStats.h */,
+				42BDCC6D1C135E2D006A770C /* FXStats.m */,
+			);
+			path = FXStats;
 			sourceTree = "<group>";
 		};
 		42C63DBA1BF76FE60037EE4E /* NSFileManager+FXExtensions */ = {
@@ -269,6 +281,7 @@
 		42CA25D71BF4AAD5001C7485 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				42BDCC6B1C135E19006A770C /* FXStats */,
 				42CD599E1BFF09D7008E6C3A /* FXPlayer */,
 				42CE56C21BF9E86800215785 /* FXLevel */,
 				42DF17A31BF8D8B100BB8FCB /* FXLevelPack */,
@@ -542,6 +555,7 @@
 				42CA25FA1BF4B9C6001C7485 /* FXIntermissionView.m in Sources */,
 				42CA26021BF4BA66001C7485 /* FXView.m in Sources */,
 				42CA25E61BF4B8E1001C7485 /* FXMainViewController.m in Sources */,
+				42BDCC6E1C135E2D006A770C /* FXStats.m in Sources */,
 				42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */,
 				42CE56BD1BF9E03A00215785 /* FXDispatch.m in Sources */,
 				42CA25F71BF4B9A0001C7485 /* FXMainView.m in Sources */,

@@ -58,23 +58,23 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 #pragma mark -
 #pragma mark User Interactions
 
-- (void)onContinueButton:(id)sender {
+- (IBAction)onContinueButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 }
 
-- (void)onNewGameButton:(id)sender {
+- (IBAction)onNewGameButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 	[self pushGameViewController];
 }
 
-- (void)onHighScoreButton:(id)sender {
+- (IBAction)onHighScoreButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 }
 
-- (void)onQuitButton:(id)sender {
+- (IBAction)onQuitButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 }

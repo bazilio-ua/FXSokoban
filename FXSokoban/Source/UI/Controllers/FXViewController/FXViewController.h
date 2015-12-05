@@ -10,9 +10,11 @@
 
 @class FXLevel;
 @class FXPlayer;
+@class FXStats;
 
 @interface FXViewController : UIViewController
 @property (nonatomic, strong)	FXLevel		*level;
 @property (nonatomic, strong)	FXPlayer	*player;
+@property (nonatomic, strong)	FXStats		*stats;
 
 @end

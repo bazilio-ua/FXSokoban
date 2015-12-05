@@ -14,6 +14,9 @@
 #import "FXPath.h"
 #import "FXDirection.h"
 
+#import "FXPlayer.h"
+#import "FXStats.h"
+
 static const NSUInteger kFXCellWidth	= 16;
 static const NSUInteger kFXCellHeight	= 16;
 
@@ -37,6 +40,7 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 - (void)dealloc {
 	self.level = nil;
 	self.player = nil;
+	self.stats = nil;
 }
 
 #pragma mark -
@@ -185,6 +189,12 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 - (void)checkFinished {
 	if ([self.level finished]) {
 		NSLog(@"level is finished");
+		
+		self.player.level = self.player.level + 1;
+		self.player.moves = self.player.moves + self.stats.moves;
+		self.player.pushes = self.player.pushes + self.stats.pushes;
+		self.player.goals = self.player.goals + self.stats.goals;
+		self.player.score = self.player.score + self.stats.score;
 		
 		self.level.state = kFXLevelDidFinish;
 	}

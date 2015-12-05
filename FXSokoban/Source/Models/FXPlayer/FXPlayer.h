@@ -6,15 +6,10 @@
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "FXStats.h"
 
-@interface FXPlayer : NSObject
+@interface FXPlayer : FXStats
 @property (nonatomic, copy)		NSString	*name;
-@property (nonatomic, assign)	NSUInteger	level;
-@property (nonatomic, assign)	NSUInteger	moves;
-@property (nonatomic, assign)	NSUInteger	pushes;
-@property (nonatomic, assign)	NSUInteger	goals;
-@property (nonatomic, assign)	NSUInteger	score;
 
 + (id)playerWithName:(NSString *)name;
 - (id)initWithName:(NSString *)name;

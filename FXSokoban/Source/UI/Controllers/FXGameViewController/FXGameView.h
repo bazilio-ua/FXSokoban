@@ -12,6 +12,7 @@
 
 @class FXLevel;
 @class FXPlayer;
+@class FXStats;
 
 @interface FXGameView : FXView <FXLevelObserver>
 @property (nonatomic, strong)	IBOutlet	UIView		*levelView;
@@ -19,6 +20,7 @@
 
 @property (nonatomic, strong)	FXLevel		*level;
 @property (nonatomic, strong)	FXPlayer	*player;
+@property (nonatomic, strong)	FXStats		*stats;
 
 - (void)setupFrameWithLevel:(FXLevel *)level;
 - (void)processLevelWithLocation:(CGPoint)location;

@@ -10,12 +10,17 @@
 
 #import "FXGameView.h"
 
+//#import "FXLevelPack.h"
+#import "FXPlayer.h"
+#import "FXStats.h"
+
 #import "FXMacros.h"
 
 FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 @interface FXGameViewController ()
 
+- (void)setupStats;
 - (void)updatePlayer;
 - (void)pushMainViewController;
 - (void)pushIntermissionViewController;
@@ -26,6 +31,15 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+	if (self) {
+		[self setupStats];
+	}
+	
+	return self;
+}
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -40,6 +54,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	
 	self.gameView.level = self.level;
 	self.gameView.player = self.player;
+	self.gameView.stats = self.stats;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -67,7 +82,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	[self.gameView processLevelWithLocation:location];
 }
 
-- (void)onUndoButton:(id)sender {
+- (IBAction)onUndoButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 }
@@ -75,8 +90,14 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 #pragma mark -
 #pragma mark Private Methods
 
+- (void)setupStats {
+	self.stats = [FXStats new];
+	self.stats.level = self.player.level; // FIXME: self.player doesn't inited at this moment (always 0)
+//	self.level = [[FXLevelPack sharedInstance] levelAtIndex:self.stats.level];
+}
+
 - (void)updatePlayer {
-	
+	[self.player writeDefaults];
 }
 
 - (void)pushMainViewController {
@@ -98,6 +119,8 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 - (void)levelDidFinish:(id)level {
 //	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
+	[self updatePlayer];
+	[self pushIntermissionViewController];
 }
 
 @end

@@ -22,6 +22,7 @@
 - (void)dealloc {
 	self.player = nil;
 	self.level = nil;
+	self.stats = nil;
 }
 
 #pragma mark -
