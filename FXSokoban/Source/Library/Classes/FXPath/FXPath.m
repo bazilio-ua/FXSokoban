@@ -15,10 +15,10 @@
 @interface FXPath ()
 @property (nonatomic, strong)	FXLevel		*level;
 
-- (void)moveToDirection:(FXDirection *)direction
-		   fromPosition:(FXPosition *)position
-	  previousPositions:(NSMutableDictionary *)previousPositions
-		  nextPositions:(NSMutableArray *)nextPositions;
+- (void)mayMoveToDirection:(FXDirection *)direction
+			  fromPosition:(FXPosition *)position
+		 previousPositions:(NSMutableDictionary *)previousPositions
+			 nextPositions:(NSMutableArray *)nextPositions;
 
 @end
 
@@ -79,10 +79,10 @@
 		};
 		
 		for (NSUInteger index = 0; index < 4; index++) {
-			[self moveToDirection:[FXDirection performSelector:selectors[index]]
-					 fromPosition:currentPosition
-				previousPositions:previousPositions
-					nextPositions:nextPositions];
+			[self mayMoveToDirection:[FXDirection performSelector:selectors[index]]
+						fromPosition:currentPosition
+				   previousPositions:previousPositions
+					   nextPositions:nextPositions];
 		}
 	}
 	
@@ -92,10 +92,10 @@
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)moveToDirection:(FXDirection *)direction
-		   fromPosition:(FXPosition *)position
-	  previousPositions:(NSMutableDictionary *)previousPositions
-		  nextPositions:(NSMutableArray *)nextPositions
+- (void)mayMoveToDirection:(FXDirection *)direction
+			  fromPosition:(FXPosition *)position
+		 previousPositions:(NSMutableDictionary *)previousPositions
+			 nextPositions:(NSMutableArray *)nextPositions
 {
 	FXPosition *nextPosition = [direction positionMovedFromPosition:position];
 	if (!previousPositions[nextPosition]) {
