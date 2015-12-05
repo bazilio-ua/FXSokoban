@@ -71,6 +71,17 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 }
 
 #pragma mark -
+#pragma mark Private Methods
+
+- (void)pushMainViewController {
+	
+}
+
+- (void)pushIntermissionViewController {
+	
+}
+
+#pragma mark -
 #pragma mark FXLevelObserver protocol
 
 - (void)levelDidChange:(id)level {
@@ -80,17 +91,6 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 - (void)levelDidFinish:(id)level {
 //	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
-	
-}
-
-#pragma mark -
-#pragma mark Private Methods
-
-- (void)pushMainViewController {
-	
-}
-
-- (void)pushIntermissionViewController {
 	
 }
 
