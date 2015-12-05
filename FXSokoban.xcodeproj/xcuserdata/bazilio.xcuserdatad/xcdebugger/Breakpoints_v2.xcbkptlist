@@ -169,13 +169,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FXSokoban/Source/UI/Controllers/FXMainViewController/FXMainViewController.m"
-            timestampString = "470930295.00772"
+            filePath = "FXSokoban/Source/Models/FXLevel/FXLevel.m"
+            timestampString = "470968477.04253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-setupPlayer"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "-walkInDirection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,13 +185,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FXSokoban/Source/Models/FXLevel/FXLevel.m"
-            timestampString = "470968477.04253"
+            filePath = "FXSokoban/Source/Library/Classes/FXPath/FXPath.m"
+            timestampString = "470969535.638891"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "-walkInDirection:"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-pathToPosition:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FXSokoban/Source/UI/Controllers/FXMainViewController/FXMainViewController.m"
+            timestampString = "471005434.330827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-setupPlayer"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

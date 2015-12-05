@@ -46,7 +46,6 @@
 				player.pushes = [[dictionary valueForKey:@"pushes"] integerValue];
 				player.goals = [[dictionary valueForKey:@"goals"] integerValue];
 				player.score = [[dictionary valueForKey:@"score"] integerValue];
-				
 			}
 		}
 	}
