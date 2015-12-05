@@ -16,11 +16,30 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 
 @interface FXIntermissionViewController ()
 
+- (void)pushMainViewController;
+- (void)pushGameViewController;
+- (void)pushHighScoreViewController;
+
 @end
 
 @implementation FXIntermissionViewController
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)pushMainViewController {
+	
+}
+
+- (void)pushGameViewController {
+	
+}
+
+- (void)pushHighScoreViewController {
+	
+}
 
 @end

@@ -16,6 +16,9 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 @interface FXGameViewController ()
 
+- (void)pushMainViewController;
+- (void)pushIntermissionViewController;
+
 @end
 
 @implementation FXGameViewController
@@ -57,8 +60,6 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 //	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 	CGPoint location = [sender locationInView:[sender.view superview]];
-	
-	// Do stuff here...
 //	NSLog(@"tap location x:%f, y:%f", location.x, location.y);
 	
 	[self.gameView processLevelWithLocation:location];
@@ -79,6 +80,17 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 - (void)levelDidFinish:(id)level {
 //	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
+	
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)pushMainViewController {
+	
+}
+
+- (void)pushIntermissionViewController {
 	
 }
 

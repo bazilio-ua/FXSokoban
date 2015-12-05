@@ -24,6 +24,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 
 - (void)setupPlayer;
 - (void)pushGameViewController;
+- (void)pushHighScoreViewController;
 
 @end
 
@@ -92,6 +93,10 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 	controller.level = self.level;
 	
 	[self.navigationController pushViewController:controller animated:NO];
+}
+
+- (void)pushHighScoreViewController {
+	
 }
 
 @end
