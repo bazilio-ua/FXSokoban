@@ -8,7 +8,7 @@
 
 #import "FXViewController.h"
 
-@interface FXIntermissionViewController : FXViewController
+@interface FXIntermissionViewController : FXViewController <UIAlertViewDelegate>
 
 - (IBAction)onNextLevelButton:(id)sender;
 

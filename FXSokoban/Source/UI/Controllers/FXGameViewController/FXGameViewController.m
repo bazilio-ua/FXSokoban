@@ -86,7 +86,8 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 - (IBAction)onUndoButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	
+
+	[self pushIntermissionViewController]; //tst!
 }
 
 #pragma mark -
