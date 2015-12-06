@@ -9,7 +9,11 @@
 #import "FXIntermissionViewController.h"
 #import "FXIntermissionView.h"
 
+#import "FXGameViewController.h"
+
 #import "FXPlayer.h"
+
+#import "UIViewController+FXExtensions.h"
 
 #import "FXMacros.h"
 
@@ -20,7 +24,6 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 - (void)pushMainViewController;
 - (void)pushGameViewController;
 - (void)pushHighScoreViewController;
-- (void)performAlertView:(UIAlertView *)alertView completion:(void (^)(void))completion;
 
 @end
 
@@ -45,15 +48,11 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 	textField.keyboardType = UIKeyboardTypeDefault;
 	textField.placeholder = @"Enter your name";
 	
-//	if (!self.player.name) {
-//		[alertView show];
-//	}
+	if (!self.player.name) {
+		[alertView show];
+	}
 	
-	[self performAlertView:alertView completion:^{
-		[self.player writeDefaults];
-	}];
-	
-	NSLog(@"yo");
+	[self.player writeDefaults];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -67,6 +66,7 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 - (IBAction)onNextLevelButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
+	[self pushGameViewController];
 }
 
 #pragma mark -
@@ -77,21 +77,14 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 }
 
 - (void)pushGameViewController {
+	FXGameViewController *controller = [FXGameViewController controller];
+	controller.player = self.player;
 	
+	[self.navigationController pushViewController:controller animated:NO];
 }
 
 - (void)pushHighScoreViewController {
 	
-}
-
-- (void)performAlertView:(UIAlertView *)alertView completion:(void (^)(void))completion {
-	if (!self.player.name) {
-		[alertView show];
-	}
-	
-	if (completion) {
-		completion();
-	}
 }
 
 #pragma mark -
@@ -102,6 +95,8 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 	NSLog(@"Entered name: %@", name);
 	if ([name length]) {
 		self.player.name = name;
+		
+		[self.player writeDefaults];
 	}
 }
 

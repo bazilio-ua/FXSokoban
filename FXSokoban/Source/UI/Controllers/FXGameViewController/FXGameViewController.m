@@ -86,8 +86,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 - (IBAction)onUndoButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
-	[self pushIntermissionViewController]; //tst!
+	
 }
 
 #pragma mark -
@@ -124,7 +123,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 - (void)levelDidFinish:(id)level {
 //	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
-	[self updatePlayer]; // TODO: move to intermissionViewController, update it after player is set his name.
+//	[self updatePlayer]; // TODO: move to intermissionViewController, update it after player is set his name.
 	[self pushIntermissionViewController];
 }
 
