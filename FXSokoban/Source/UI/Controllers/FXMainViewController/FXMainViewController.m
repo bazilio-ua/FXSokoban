@@ -12,7 +12,7 @@
 #import "FXGameViewController.h"
 
 #import "FXPlayer.h"
-#import "FXLevelPack.h"
+//#import "FXLevelPack.h"
 
 #import "UIViewController+FXExtensions.h"
 
@@ -84,13 +84,13 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 
 - (void)setupPlayer {
 	self.player = [FXPlayer readDefaults];
-	self.level = [[FXLevelPack sharedInstance] levelAtIndex:self.player.level];
+//	self.level = [[FXLevelPack sharedInstance] levelAtIndex:self.player.level];
 }
 
 - (void)pushGameViewController {
 	FXGameViewController *controller = [FXGameViewController controller];
 	controller.player = self.player;
-	controller.level = self.level;
+//	controller.level = self.level;
 	
 	[self.navigationController pushViewController:controller animated:NO];
 }

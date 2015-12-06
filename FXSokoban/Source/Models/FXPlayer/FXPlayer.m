@@ -58,7 +58,21 @@
 }
 
 - (void)writeDefaults {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+	if (self.name) {
+		[dictionary setObject:self.name forKey:@"name"];
+	}
 	
+	[dictionary setObject:[NSNumber numberWithInteger:self.level] forKey:@"level"];
+	[dictionary setObject:[NSNumber numberWithInteger:self.moves] forKey:@"moves"];
+	[dictionary setObject:[NSNumber numberWithInteger:self.pushes] forKey:@"pushes"];
+	[dictionary setObject:[NSNumber numberWithInteger:self.goals] forKey:@"goals"];
+	[dictionary setObject:[NSNumber numberWithInteger:self.score] forKey:@"score"];
+	NSLog(@"%@", dictionary);
+	
+	[defaults setObject:dictionary forKey:@"player"];
+	[defaults synchronize];
 }
 
 @end

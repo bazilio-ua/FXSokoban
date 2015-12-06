@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class FXLevel;
-@class FXPlayer;
 @class FXStats;
+@class FXPlayer;
+@class FXLevel;
 
 @interface FXViewController : UIViewController
-@property (nonatomic, strong)	FXLevel		*level;
-@property (nonatomic, strong)	FXPlayer	*player;
 @property (nonatomic, strong)	FXStats		*stats;
+@property (nonatomic, strong)	FXPlayer	*player;
+@property (nonatomic, strong)	FXLevel		*level;
 
 @end

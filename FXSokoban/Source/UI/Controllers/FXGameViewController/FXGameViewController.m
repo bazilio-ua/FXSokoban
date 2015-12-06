@@ -11,8 +11,8 @@
 #import "FXGameView.h"
 
 //#import "FXLevelPack.h"
-#import "FXPlayer.h"
 #import "FXStats.h"
+#import "FXPlayer.h"
 
 #import "FXMacros.h"
 
@@ -52,9 +52,9 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	[self.gameView.levelView addGestureRecognizer:recognizer];
 	[self.view addSubview:self.gameView.levelView];
 	
-	self.gameView.level = self.level;
-	self.gameView.player = self.player;
 	self.gameView.stats = self.stats;
+	self.gameView.player = self.player;
+	self.gameView.level = self.level;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -92,7 +92,6 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 - (void)setupStats {
 	self.stats = [FXStats new];
-	self.stats.level = self.player.level; // FIXME: self.player doesn't inited at this moment (always 0)
 //	self.level = [[FXLevelPack sharedInstance] levelAtIndex:self.stats.level];
 }
 

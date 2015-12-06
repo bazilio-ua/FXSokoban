@@ -8,7 +8,9 @@
 
 #import "FXViewController.h"
 
+#import "FXPlayer.h"
 #import "FXLevel.h"
+#import "FXLevelPack.h"
 
 @interface FXViewController ()
 
@@ -20,13 +22,21 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
+	self.stats = nil;
 	self.player = nil;
 	self.level = nil;
-	self.stats = nil;
 }
 
 #pragma mark -
 #pragma mark Accessors
+
+- (void)setPlayer:(FXPlayer *)player {
+	if (_player != player) {
+		_player = player;
+	}
+	
+	self.level = [[FXLevelPack sharedInstance] levelAtIndex:player.level];
+}
 
 - (void)setLevel:(FXLevel *)level {
 	if (_level != level) {

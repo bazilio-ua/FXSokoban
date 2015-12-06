@@ -14,8 +14,8 @@
 #import "FXPath.h"
 #import "FXDirection.h"
 
-#import "FXPlayer.h"
 #import "FXStats.h"
+#import "FXPlayer.h"
 
 static const NSUInteger kFXCellWidth	= 16;
 static const NSUInteger kFXCellHeight	= 16;
@@ -38,13 +38,21 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-	self.level = nil;
-	self.player = nil;
 	self.stats = nil;
+	self.player = nil;
+	self.level = nil;
 }
 
 #pragma mark -
 #pragma mark Accessors
+
+- (void)setPlayer:(FXPlayer *)player {
+	if (_player != player) {
+		_player = player;
+	}
+	
+	self.stats.level = player.level;
+}
 
 - (void)setLevel:(FXLevel *)level {
 	if (_level != level) {
