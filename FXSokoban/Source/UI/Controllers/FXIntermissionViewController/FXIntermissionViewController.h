@@ -10,4 +10,6 @@
 
 @interface FXIntermissionViewController : FXViewController
 
+- (IBAction)onNextLevelButton:(id)sender;
+
 @end

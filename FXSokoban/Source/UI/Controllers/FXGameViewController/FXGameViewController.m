@@ -7,12 +7,14 @@
 //
 
 #import "FXGameViewController.h"
-
 #import "FXGameView.h"
 
-//#import "FXLevelPack.h"
+#import "FXIntermissionViewController.h"
+
 #import "FXStats.h"
 #import "FXPlayer.h"
+
+#import "UIViewController+FXExtensions.h"
 
 #import "FXMacros.h"
 
@@ -92,7 +94,6 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 - (void)setupStats {
 	self.stats = [FXStats new];
-//	self.level = [[FXLevelPack sharedInstance] levelAtIndex:self.stats.level];
 }
 
 - (void)updatePlayer {
@@ -104,7 +105,11 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 }
 
 - (void)pushIntermissionViewController {
+	FXIntermissionViewController *controller = [FXIntermissionViewController controller];
+	controller.player = self.player;
+	controller.stats = self.stats;
 	
+	[self.navigationController pushViewController:controller animated:NO];
 }
 
 #pragma mark -
@@ -118,7 +123,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 - (void)levelDidFinish:(id)level {
 //	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
-	[self updatePlayer];
+	[self updatePlayer]; // TODO: move to intermissionViewController, update it after player is set his name.
 	[self pushIntermissionViewController];
 }
 

@@ -28,6 +28,14 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 #pragma mark Initializations and Deallocations
 
 #pragma mark -
+#pragma mark User Interactions
+
+- (IBAction)onNextLevelButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+}
+
+#pragma mark -
 #pragma mark Private Methods
 
 - (void)pushMainViewController {

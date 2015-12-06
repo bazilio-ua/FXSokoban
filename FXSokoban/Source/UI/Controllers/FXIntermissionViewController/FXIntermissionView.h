@@ -9,5 +9,6 @@
 #import "FXView.h"
 
 @interface FXIntermissionView : FXView
+@property (nonatomic, strong)	IBOutlet	UIButton	*nextLevelButton;
 
 @end
