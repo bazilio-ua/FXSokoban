@@ -14,6 +14,7 @@
 #import "FXStats.h"
 #import "FXPlayer.h"
 #import "FXLevel.h"
+#import "FXLevelPack.h"
 
 #import "UIViewController+FXExtensions.h"
 
@@ -106,9 +107,13 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	[self.gameView processLevelWithLocation:location];
 }
 
-- (IBAction)onUndoButton:(id)sender {
+- (IBAction)onRestartButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
+	self.level = [[FXLevelPack sharedInstance] levelAtIndex:self.player.level];
+	self.gameView.level = self.level; // FIXME: do setupFrame
+	
+	self.undoManager = self.level.undoManager;
 }
 
 #pragma mark -

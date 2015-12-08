@@ -12,6 +12,6 @@
 
 @interface FXGameViewController : FXViewController <FXLevelObserver>
 
-- (IBAction)onUndoButton:(id)sender;
+- (IBAction)onRestartButton:(id)sender;
 
 @end
