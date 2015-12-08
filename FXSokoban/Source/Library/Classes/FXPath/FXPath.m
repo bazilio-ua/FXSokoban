@@ -63,7 +63,7 @@
 			while (![currentPosition isEqual:playerPosition]) {
 				FXDirection *backTrack = previousPositions[currentPosition];
 				currentPosition = [backTrack positionMovedFromPosition:currentPosition];
-				[nextPositions insertObject:backTrack.inverseDirection atIndex:0];
+				[nextPositions insertObject:backTrack.reverseDirection atIndex:0];
 			}
 			
 			return nextPositions;
@@ -100,7 +100,7 @@
 	FXPosition *nextPosition = [direction positionMovedFromPosition:position];
 	if (!previousPositions[nextPosition]) {
 		if ([self.level canWalkInDirection:direction]) {
-			previousPositions[nextPosition] = direction.inverseDirection;
+			previousPositions[nextPosition] = direction.reverseDirection;
 			[nextPositions addObject:nextPosition];
 		}
 	}

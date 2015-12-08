@@ -13,6 +13,7 @@
 
 #import "FXStats.h"
 #import "FXPlayer.h"
+#import "FXLevel.h"
 
 #import "UIViewController+FXExtensions.h"
 
@@ -21,6 +22,7 @@
 FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 @interface FXGameViewController ()
+@property (nonatomic, strong)	NSUndoManager	*undoManager;
 
 - (void)setupStats;
 - (void)updatePlayer;
@@ -30,6 +32,8 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 @end
 
 @implementation FXGameViewController
+
+@synthesize undoManager;
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -57,11 +61,29 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	self.gameView.stats = self.stats;
 	self.gameView.player = self.player;
 	self.gameView.level = self.level;
+	
+	self.undoManager = self.level.undoManager;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	[self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	
+	[self resignFirstResponder];
+}
+
+- (BOOL)canBecomeFirstResponder {
+	return YES;
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation

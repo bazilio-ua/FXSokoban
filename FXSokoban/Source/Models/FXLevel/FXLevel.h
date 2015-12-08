@@ -18,6 +18,8 @@ NS_ENUM(NSUInteger, FXLevelState) {
 };
 
 @interface FXLevel : FXObservableObject
+@property (nonatomic, strong)	NSUndoManager	*undoManager;
+
 @property (nonatomic, strong)	FXPosition		*playerPosition;
 @property (nonatomic, readonly)	NSInteger		rows;
 @property (nonatomic, readonly)	NSInteger		columns;
@@ -39,6 +41,6 @@ NS_ENUM(NSUInteger, FXLevelState) {
 - (void)pushInDirection:(FXDirection *)direction;
 - (void)pullInDirection:(FXDirection *)direction;
 
-- (void)registerUndoActionWithSelector:(SEL)selector oldDirection:(FXDirection *)oldDirection;
+- (void)registerUndoActionWithSelector:(SEL)selector direction:(FXDirection *)direction;
 
 @end

@@ -21,11 +21,11 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 };
 
 @interface FXDirection ()
-@property (nonatomic, strong)	FXDirection		*inverseDirection;
+@property (nonatomic, strong)	FXDirection		*reverseDirection;
 @property (nonatomic, assign)	NSInteger		deltaX;
 @property (nonatomic, assign)	NSInteger		deltaY;
 
-+ (FXDirection *)directionForMove:(NSInteger)directionMove withInverseMove:(NSInteger)inverseMove;
++ (FXDirection *)directionForMove:(NSInteger)directionMove withReverseMove:(NSInteger)reverseMove;
 
 @end
 
@@ -34,12 +34,12 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 #pragma mark -
 #pragma mark Class Methods
 
-+ (FXDirection *)directionForMove:(NSInteger)directionMove withInverseMove:(NSInteger)inverseMove {
++ (FXDirection *)directionForMove:(NSInteger)directionMove withReverseMove:(NSInteger)reverseMove {
 	static FXDirection *__directions[4] = {nil, nil, nil, nil};
 	if (!__directions[directionMove]) {
 		__directions[directionMove] = [[FXDirection alloc] init];
-		__directions[directionMove].inverseDirection = [FXDirection directionForMove:inverseMove
-																	 withInverseMove:directionMove];
+		__directions[directionMove].reverseDirection = [FXDirection directionForMove:reverseMove
+																	 withReverseMove:directionMove];
 		__directions[directionMove].deltaX = kFXDirectionDeltaX[directionMove];
 		__directions[directionMove].deltaY = kFXDirectionDeltaY[directionMove];
 	}
@@ -48,19 +48,19 @@ NS_ENUM(NSInteger, FXDirectionMoves) {
 }
 
 + (FXDirection *)directionMoveUp {
-	return [FXDirection directionForMove:kFXDirectionMoveUp withInverseMove:kFXDirectionMoveDown];
+	return [FXDirection directionForMove:kFXDirectionMoveUp withReverseMove:kFXDirectionMoveDown];
 }
 
 + (FXDirection *)directionMoveDown {
-	return [FXDirection directionForMove:kFXDirectionMoveDown withInverseMove:kFXDirectionMoveUp];
+	return [FXDirection directionForMove:kFXDirectionMoveDown withReverseMove:kFXDirectionMoveUp];
 }
 
 + (FXDirection *)directionMoveRight {
-	return [FXDirection directionForMove:kFXDirectionMoveRight withInverseMove:kFXDirectionMoveLeft];
+	return [FXDirection directionForMove:kFXDirectionMoveRight withReverseMove:kFXDirectionMoveLeft];
 }
 
 + (FXDirection *)directionMoveLeft {
-	return [FXDirection directionForMove:kFXDirectionMoveLeft withInverseMove:kFXDirectionMoveRight];
+	return [FXDirection directionForMove:kFXDirectionMoveLeft withReverseMove:kFXDirectionMoveRight];
 }
 
 + (FXDirection *)directionBetweenFromPosition:(FXPosition *)fromPosition toPosition:(FXPosition *)toPosition {

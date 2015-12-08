@@ -15,7 +15,6 @@
 #import "FXDirection.h"
 
 @interface FXLevel ()
-@property (nonatomic, strong)	NSUndoManager	*undoManager;
 @property (nonatomic, strong)	NSDictionary	*cells;
 @property (nonatomic, assign)	NSInteger		rows;
 @property (nonatomic, assign)	NSInteger		columns;
@@ -128,9 +127,25 @@
 		[[self cellAtPosition:playerPosition] removePlayer];
 		[[self cellAtPosition:nextPlayerPosition] addPlayer];
 		self.playerPosition = nextPlayerPosition;
+		
 		self.moves = self.moves + 1;
 		
-		[self registerUndoActionWithSelector:@selector(walkInDirection:) oldDirection:direction];
+		[self registerUndoActionWithSelector:@selector(walkOutDirection:) direction:direction.reverseDirection];
+		self.state = kFXLevelDidChange;
+	}
+}
+
+- (void)walkOutDirection:(FXDirection *)direction { // Undo
+	if ([self canWalkInDirection:direction]) {
+		FXPosition *playerPosition = self.playerPosition;
+		FXPosition *nextPlayerPosition = [direction positionMovedFromPosition:playerPosition];
+		[[self cellAtPosition:playerPosition] removePlayer];
+		[[self cellAtPosition:nextPlayerPosition] addPlayer];
+		self.playerPosition = nextPlayerPosition;
+		
+		self.moves = self.moves - 1;
+		
+		[self registerUndoActionWithSelector:@selector(walkInDirection:) direction:direction.reverseDirection];
 		self.state = kFXLevelDidChange;
 	}
 }
@@ -142,23 +157,31 @@
 		FXPosition *nextTargetPosition = [direction positionMovedFromPosition:nextPlayerPosition];
 		[[self cellAtPosition:playerPosition] removePlayer];
 		FXCell *nextPlayerCell = [self cellAtPosition:nextPlayerPosition];
-		self.packets = self.packets - [nextPlayerCell removePacket];
+		
+		NSUInteger packet = 0;
+		packet = [nextPlayerCell removePacket];
+		self.packets = self.packets - packet;
+		self.goals = self.goals + packet;
 		[nextPlayerCell addPlayer];
-		self.packets = self.packets + [[self cellAtPosition:nextTargetPosition] addPacket];
+		packet = [[self cellAtPosition:nextTargetPosition] addPacket];
+		self.packets = self.packets + packet;
+		self.goals = self.goals - packet;
+		
 		self.playerPosition = nextPlayerPosition;
+		
 		self.moves = self.moves + 1;
 		self.pushes = self.pushes + 1;
 		
-		[self registerUndoActionWithSelector:@selector(pullInDirection:) oldDirection:direction];
+		[self registerUndoActionWithSelector:@selector(pullInDirection:) direction:direction.reverseDirection];
 		self.state = kFXLevelDidChange;
 	}
 }
 
-- (void)pullInDirection:(FXDirection *)direction { // undo
+- (void)pullInDirection:(FXDirection *)direction { // Undo
 	FXPosition *playerPosition = self.playerPosition;
 	FXPosition *nextPlayerPosition = [direction positionMovedFromPosition:playerPosition];
 	FXCell *nextPlayerCell = [self cellAtPosition:nextPlayerPosition];
-	FXPosition *previousTargetPosition = [direction.inverseDirection positionMovedFromPosition:playerPosition];
+	FXPosition *previousTargetPosition = [direction.reverseDirection positionMovedFromPosition:playerPosition];
 	FXCell *previousTargetCell = [self cellAtPosition:previousTargetPosition];
 	
 	if ([nextPlayerCell isWalkable] && [previousTargetCell isMoveable]) {
@@ -167,18 +190,23 @@
 		[nextPlayerCell addPlayer];
 		self.packets = self.packets - [previousTargetCell removePacket];
 		self.packets = self.packets + [currentPlayerCell addPacket];
+		
 		self.playerPosition = nextPlayerPosition;
 		
-		[self registerUndoActionWithSelector:@selector(pushInDirection:) oldDirection:direction];
+		self.moves = self.moves - 1;
+		self.pushes = self.pushes - 1;
+
+		[self registerUndoActionWithSelector:@selector(pushInDirection:) direction:direction.reverseDirection];
 		self.state = kFXLevelDidChange;
 	}
 }
 
-- (void)registerUndoActionWithSelector:(SEL)selector oldDirection:(FXDirection *)oldDirection {
+- (void)registerUndoActionWithSelector:(SEL)selector direction:(FXDirection *)direction {
 	if (self.undoManager) {
 		[self.undoManager registerUndoWithTarget:self
 										selector:selector
-										  object:oldDirection.inverseDirection];
+										  object:direction];
+		[self.undoManager setActionName:NSLocalizedString(NSStringFromSelector(selector), @"Undo Action")];
 	}
 }
 

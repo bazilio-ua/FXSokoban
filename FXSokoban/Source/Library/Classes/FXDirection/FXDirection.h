@@ -11,7 +11,7 @@
 @class FXPosition;
 
 @interface FXDirection : NSObject
-@property (nonatomic, readonly)	FXDirection		*inverseDirection;
+@property (nonatomic, readonly)	FXDirection		*reverseDirection;
 
 + (FXDirection *)directionMoveUp;
 + (FXDirection *)directionMoveDown;
