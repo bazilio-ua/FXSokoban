@@ -21,6 +21,9 @@ NS_ENUM(NSUInteger, FXLevelState) {
 @property (nonatomic, strong)	FXPosition		*playerPosition;
 @property (nonatomic, readonly)	NSInteger		rows;
 @property (nonatomic, readonly)	NSInteger		columns;
+@property (nonatomic, readonly)	NSUInteger		moves;
+@property (nonatomic, readonly)	NSUInteger		pushes;
+@property (nonatomic, readonly)	NSUInteger		goals;
 @property (nonatomic, readonly)	BOOL			finished;
 
 + (id)levelWithArray:(NSArray *)array;

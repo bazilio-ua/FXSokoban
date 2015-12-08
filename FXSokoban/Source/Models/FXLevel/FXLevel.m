@@ -19,6 +19,9 @@
 @property (nonatomic, strong)	NSDictionary	*cells;
 @property (nonatomic, assign)	NSInteger		rows;
 @property (nonatomic, assign)	NSInteger		columns;
+@property (nonatomic, assign)	NSUInteger		moves;
+@property (nonatomic, assign)	NSUInteger		pushes;
+@property (nonatomic, assign)	NSUInteger		goals;
 @property (nonatomic, assign)	NSUInteger		packets;
 
 - (NSDictionary *)cellsFromArray:(NSArray *)array;
@@ -125,6 +128,7 @@
 		[[self cellAtPosition:playerPosition] removePlayer];
 		[[self cellAtPosition:nextPlayerPosition] addPlayer];
 		self.playerPosition = nextPlayerPosition;
+		self.moves = self.moves + 1;
 		
 		[self registerUndoActionWithSelector:@selector(walkInDirection:) oldDirection:direction];
 		self.state = kFXLevelDidChange;
@@ -142,13 +146,15 @@
 		[nextPlayerCell addPlayer];
 		self.packets = self.packets + [[self cellAtPosition:nextTargetPosition] addPacket];
 		self.playerPosition = nextPlayerPosition;
+		self.moves = self.moves + 1;
+		self.pushes = self.pushes + 1;
 		
 		[self registerUndoActionWithSelector:@selector(pullInDirection:) oldDirection:direction];
 		self.state = kFXLevelDidChange;
 	}
 }
 
-- (void)pullInDirection:(FXDirection *)direction {
+- (void)pullInDirection:(FXDirection *)direction { // undo
 	FXPosition *playerPosition = self.playerPosition;
 	FXPosition *nextPlayerPosition = [direction positionMovedFromPosition:playerPosition];
 	FXCell *nextPlayerCell = [self cellAtPosition:nextPlayerPosition];
