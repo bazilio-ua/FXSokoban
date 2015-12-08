@@ -21,7 +21,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 
 @interface FXMainViewController ()
 
-- (void)setupPlayer;
+//- (void)setupPlayer;
 - (void)pushGameViewController;
 - (void)pushHighScoreViewController;
 
@@ -35,7 +35,8 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-		[self setupPlayer];
+//		[self setupPlayer];
+		self.player = [FXPlayer readDefaults];
 	}
 	
 	return self;
@@ -60,10 +61,15 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 - (IBAction)onContinueButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
+	if (self.player.name) {
+		[self pushGameViewController];
+	}
 }
 
 - (IBAction)onNewGameButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+	self.player = [FXPlayer new];
 	
 	[self pushGameViewController];
 }
@@ -76,14 +82,15 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 - (IBAction)onQuitButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
+	exit(0); // FIXME: Will apple approve this?
 }
 
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)setupPlayer {
-	self.player = [FXPlayer readDefaults];
-}
+//- (void)setupPlayer {
+//	self.player = [FXPlayer readDefaults];
+//}
 
 - (void)pushGameViewController {
 	FXGameViewController *controller = [FXGameViewController controller];

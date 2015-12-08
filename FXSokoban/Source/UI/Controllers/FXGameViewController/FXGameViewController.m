@@ -25,8 +25,8 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 @interface FXGameViewController ()
 @property (nonatomic, strong)	NSUndoManager	*undoManager;
 
-- (void)setupStats;
-- (void)updatePlayer;
+//- (void)setupStats;
+//- (void)updatePlayer;
 - (void)pushMainViewController;
 - (void)pushIntermissionViewController;
 
@@ -42,7 +42,8 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-		[self setupStats];
+//		[self setupStats];
+		self.stats = [FXStats new];
 	}
 	
 	return self;
@@ -92,7 +93,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	
-	self.gameView.level = self.level; // FIXME: do setupFrame
+	self.gameView.level = self.level;
 }
 
 #pragma mark -
@@ -111,7 +112,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
 	self.level = [[FXLevelPack sharedInstance] levelAtIndex:self.player.level];
-	self.gameView.level = self.level; // FIXME: do setupFrame
+	self.gameView.level = self.level;
 	
 	self.undoManager = self.level.undoManager;
 }
@@ -119,13 +120,13 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 #pragma mark -
 #pragma mark Private Methods
 
-- (void)setupStats {
-	self.stats = [FXStats new];
-}
+//- (void)setupStats {
+//	self.stats = [FXStats new];
+//}
 
-- (void)updatePlayer {
-	[self.player writeDefaults];
-}
+//- (void)updatePlayer {
+//	[self.player writeDefaults];
+//}
 
 - (void)pushMainViewController {
 	
