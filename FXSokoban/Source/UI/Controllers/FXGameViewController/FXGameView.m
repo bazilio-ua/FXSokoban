@@ -139,7 +139,7 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 	
 	NSInteger x = (location.y - frame.origin.y) / kFXCellHeight;
 	NSInteger y = (location.x - frame.origin.x) / kFXCellWidth;
-	NSLog(@"level point: x:%d, y:%d", x, y);
+//	NSLog(@"level point: x:%d, y:%d", x, y);
 	
 	FXLevel *level = self.level;
 	FXPosition *position = [FXPosition positionWithPointX:x pointY:y];
