@@ -25,8 +25,6 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 @interface FXGameViewController ()
 @property (nonatomic, strong)	NSUndoManager	*undoManager;
 
-//- (void)setupStats;
-//- (void)updatePlayer;
 - (void)pushMainViewController;
 - (void)pushIntermissionViewController;
 
@@ -42,7 +40,6 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-//		[self setupStats];
 		self.stats = [FXStats new];
 	}
 	
@@ -120,14 +117,6 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 #pragma mark -
 #pragma mark Private Methods
 
-//- (void)setupStats {
-//	self.stats = [FXStats new];
-//}
-
-//- (void)updatePlayer {
-//	[self.player writeDefaults];
-//}
-
 - (void)pushMainViewController {
 	
 }
@@ -151,7 +140,6 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 - (void)levelDidFinish:(id)level {
 //	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
-//	[self updatePlayer]; // TODO: move to intermissionViewController, update it after player is set his name.
 	[self pushIntermissionViewController];
 }
 

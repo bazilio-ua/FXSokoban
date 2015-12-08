@@ -21,7 +21,6 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 
 @interface FXMainViewController ()
 
-//- (void)setupPlayer;
 - (void)pushGameViewController;
 - (void)pushHighScoreViewController;
 
@@ -35,7 +34,6 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-//		[self setupPlayer];
 		self.player = [FXPlayer readDefaults];
 	}
 	
@@ -87,10 +85,6 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 
 #pragma mark -
 #pragma mark Private Methods
-
-//- (void)setupPlayer {
-//	self.player = [FXPlayer readDefaults];
-//}
 
 - (void)pushGameViewController {
 	FXGameViewController *controller = [FXGameViewController controller];
