@@ -10,6 +10,7 @@
 #import "FXIntermissionView.h"
 
 #import "FXGameViewController.h"
+#import "FXMainViewController.h"
 
 #import "FXPlayer.h"
 
@@ -72,11 +73,20 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 	[self pushGameViewController];
 }
 
+- (IBAction)onMainMenuButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+	[self pushMainViewController];
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
 - (void)pushMainViewController {
+	FXMainViewController *controller = [FXMainViewController controller];
+	controller.player = self.player;
 	
+	[self.navigationController pushViewController:controller animated:NO];
 }
 
 - (void)pushGameViewController {

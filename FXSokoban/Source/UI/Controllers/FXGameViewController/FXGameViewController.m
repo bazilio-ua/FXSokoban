@@ -10,6 +10,7 @@
 #import "FXGameView.h"
 
 #import "FXIntermissionViewController.h"
+#import "FXMainViewController.h"
 
 #import "FXPlayer.h"
 #import "FXLevel.h"
@@ -115,11 +116,20 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	self.undoManager = self.level.undoManager;
 }
 
+- (IBAction)onMainMenuButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+	[self pushMainViewController];
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
 - (void)pushMainViewController {
+	FXMainViewController *controller = [FXMainViewController controller];
+	controller.player = self.player;
 	
+	[self.navigationController pushViewController:controller animated:NO];
 }
 
 - (void)pushIntermissionViewController {

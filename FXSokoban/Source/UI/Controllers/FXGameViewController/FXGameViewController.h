@@ -13,5 +13,6 @@
 @interface FXGameViewController : FXViewController <FXLevelObserver, UIAlertViewDelegate>
 
 - (IBAction)onRestartButton:(id)sender;
+- (IBAction)onMainMenuButton:(id)sender;
 
 @end

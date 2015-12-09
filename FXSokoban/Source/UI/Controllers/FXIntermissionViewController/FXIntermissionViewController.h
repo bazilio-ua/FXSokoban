@@ -11,5 +11,6 @@
 @interface FXIntermissionViewController : FXViewController <UIAlertViewDelegate>
 
 - (IBAction)onNextLevelButton:(id)sender;
+- (IBAction)onMainMenuButton:(id)sender;
 
 @end

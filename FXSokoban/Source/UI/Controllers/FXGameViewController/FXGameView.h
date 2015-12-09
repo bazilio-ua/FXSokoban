@@ -17,6 +17,7 @@
 @interface FXGameView : FXView <FXLevelObserver>
 @property (nonatomic, strong)	IBOutlet	UIView		*levelView;
 @property (nonatomic, strong)	IBOutlet	UIButton	*restartButton;
+@property (nonatomic, strong)	IBOutlet	UIButton	*mainMenuButton;
 
 @property (nonatomic, strong)	IBOutlet	UILabel		*levelLabel;
 @property (nonatomic, strong)	IBOutlet	UILabel		*movesLabel;

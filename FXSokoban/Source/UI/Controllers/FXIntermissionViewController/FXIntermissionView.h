@@ -13,6 +13,7 @@
 
 @interface FXIntermissionView : FXView
 @property (nonatomic, strong)	IBOutlet	UIButton	*nextLevelButton;
+@property (nonatomic, strong)	IBOutlet	UIButton	*mainMenuButton;
 
 @property (nonatomic, strong)	IBOutlet	UILabel		*nameLabel;
 @property (nonatomic, strong)	IBOutlet	UILabel		*levelLabel;

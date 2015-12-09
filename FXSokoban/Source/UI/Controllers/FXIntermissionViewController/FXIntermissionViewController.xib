@@ -123,12 +123,24 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="d0v-qS-U6K">
+                    <rect key="frame" x="0.0" y="20" width="76" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="Main menu">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onMainMenuButton:" destination="-1" eventType="touchUpInside" id="3we-ex-R44"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <connections>
                 <outlet property="goalsLabel" destination="aiN-o6-4ne" id="Pkp-Gx-Xoh"/>
                 <outlet property="levelLabel" destination="QqN-wL-UZU" id="cWU-6M-RA0"/>
+                <outlet property="mainMenuButton" destination="d0v-qS-U6K" id="sc3-GS-iHQ"/>
                 <outlet property="movesLabel" destination="BSx-x1-gc8" id="zCf-7X-Mjk"/>
                 <outlet property="nameLabel" destination="7hR-Ns-szW" id="ndS-4N-Pxs"/>
                 <outlet property="nextLevelButton" destination="L4v-Ah-TWx" id="Cdf-HF-6HD"/>
