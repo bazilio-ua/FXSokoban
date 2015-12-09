@@ -17,11 +17,16 @@
 @interface FXGameView : FXView <FXLevelObserver>
 @property (nonatomic, strong)	IBOutlet	UIView		*levelView;
 @property (nonatomic, strong)	IBOutlet	UIButton	*restartButton;
+@property (nonatomic, strong)	IBOutlet	UILabel		*movesLabel;
+@property (nonatomic, strong)	IBOutlet	UILabel		*pushesLabel;
+@property (nonatomic, strong)	IBOutlet	UILabel		*goalsLabel;
 
 @property (nonatomic, strong)	FXStats		*stats;
 @property (nonatomic, strong)	FXPlayer	*player;
 @property (nonatomic, strong)	FXLevel		*level;
 
+- (void)fillWithPlayer:(FXPlayer *)player;
+- (void)fillWithLevel:(FXLevel *)level;
 - (void)setupFrameWithLevel:(FXLevel *)level;
 - (void)processLevelWithLocation:(CGPoint)location;
 

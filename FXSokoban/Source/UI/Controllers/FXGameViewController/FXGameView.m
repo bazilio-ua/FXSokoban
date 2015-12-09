@@ -62,6 +62,7 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 	}
 	
 	[self setupFrameWithLevel:level];
+	[self fillWithLevel:level];
 }
 
 #pragma mark -
@@ -107,6 +108,16 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 
 #pragma mark -
 #pragma mark Public Methods
+
+- (void)fillWithPlayer:(FXPlayer *)player {
+	
+}
+
+- (void)fillWithLevel:(FXLevel *)level {
+	self.movesLabel.text = [NSString stringWithFormat:@"%d", level.moves];
+	self.pushesLabel.text = [NSString stringWithFormat:@"%d", level.pushes];
+	self.goalsLabel.text = [NSString stringWithFormat:@"%d", level.goals];
+}
 
 - (void)setupFrameWithLevel:(FXLevel *)level {
 	UIView *levelView = self.levelView;
@@ -215,6 +226,8 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 //	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
 	[self setNeedsDisplayInRect:self.levelView.frame];
+	
+	[self fillWithLevel:level];
 }
 
 - (void)levelDidFinish:(id)level {
