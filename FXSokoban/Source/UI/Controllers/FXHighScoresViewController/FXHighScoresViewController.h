@@ -1,13 +1,13 @@
 //
-//  FXHighScoreView.h
+//  FXHighScoresViewController.h
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/16/15.
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
-#import "FXView.h"
+#import "FXViewController.h"
 
-@interface FXHighScoreView : FXView
+@interface FXHighScoresViewController : FXViewController
 
 @end

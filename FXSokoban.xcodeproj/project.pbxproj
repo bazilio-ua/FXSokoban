@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		42913C511BFA4290002E5DF0 /* levelpack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42913C501BFA4290002E5DF0 /* levelpack.plist */; };
-		42913C551BFA47AA002E5DF0 /* FXHighScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42913C541BFA47AA002E5DF0 /* FXHighScoreView.m */; };
-		42913C591BFA47CF002E5DF0 /* FXHighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42913C571BFA47CF002E5DF0 /* FXHighScoreViewController.m */; };
-		42913C5A1BFA47CF002E5DF0 /* FXHighScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42913C581BFA47CF002E5DF0 /* FXHighScoreViewController.xib */; };
+		42913C551BFA47AA002E5DF0 /* FXHighScoresView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42913C541BFA47AA002E5DF0 /* FXHighScoresView.m */; };
+		42913C591BFA47CF002E5DF0 /* FXHighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42913C571BFA47CF002E5DF0 /* FXHighScoresViewController.m */; };
+		42913C5A1BFA47CF002E5DF0 /* FXHighScoresViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42913C581BFA47CF002E5DF0 /* FXHighScoresViewController.xib */; };
 		42BDCC6E1C135E2D006A770C /* FXStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 42BDCC6D1C135E2D006A770C /* FXStats.m */; };
 		42C63DC31BF76FE60037EE4E /* NSFileManager+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBC1BF76FE60037EE4E /* NSFileManager+FXExtensions.m */; };
 		42C63DC41BF76FE60037EE4E /* UIViewController+FXExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42C63DBF1BF76FE60037EE4E /* UIViewController+FXExtensions.m */; };
@@ -47,11 +47,11 @@
 
 /* Begin PBXFileReference section */
 		42913C501BFA4290002E5DF0 /* levelpack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = levelpack.plist; sourceTree = "<group>"; };
-		42913C531BFA47AA002E5DF0 /* FXHighScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXHighScoreView.h; sourceTree = "<group>"; };
-		42913C541BFA47AA002E5DF0 /* FXHighScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXHighScoreView.m; sourceTree = "<group>"; };
-		42913C561BFA47CF002E5DF0 /* FXHighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXHighScoreViewController.h; sourceTree = "<group>"; };
-		42913C571BFA47CF002E5DF0 /* FXHighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXHighScoreViewController.m; sourceTree = "<group>"; };
-		42913C581BFA47CF002E5DF0 /* FXHighScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXHighScoreViewController.xib; sourceTree = "<group>"; };
+		42913C531BFA47AA002E5DF0 /* FXHighScoresView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXHighScoresView.h; sourceTree = "<group>"; };
+		42913C541BFA47AA002E5DF0 /* FXHighScoresView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXHighScoresView.m; sourceTree = "<group>"; };
+		42913C561BFA47CF002E5DF0 /* FXHighScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXHighScoresViewController.h; sourceTree = "<group>"; };
+		42913C571BFA47CF002E5DF0 /* FXHighScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXHighScoresViewController.m; sourceTree = "<group>"; };
+		42913C581BFA47CF002E5DF0 /* FXHighScoresViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FXHighScoresViewController.xib; sourceTree = "<group>"; };
 		42BDCC6C1C135E2D006A770C /* FXStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXStats.h; sourceTree = "<group>"; };
 		42BDCC6D1C135E2D006A770C /* FXStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXStats.m; sourceTree = "<group>"; };
 		42C63DBB1BF76FE60037EE4E /* NSFileManager+FXExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSFileManager+FXExtensions.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -128,16 +128,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		42913C521BFA4777002E5DF0 /* FXHighScoreViewController */ = {
+		42913C521BFA4777002E5DF0 /* FXHighScoresViewController */ = {
 			isa = PBXGroup;
 			children = (
-				42913C531BFA47AA002E5DF0 /* FXHighScoreView.h */,
-				42913C541BFA47AA002E5DF0 /* FXHighScoreView.m */,
-				42913C561BFA47CF002E5DF0 /* FXHighScoreViewController.h */,
-				42913C571BFA47CF002E5DF0 /* FXHighScoreViewController.m */,
-				42913C581BFA47CF002E5DF0 /* FXHighScoreViewController.xib */,
+				42913C531BFA47AA002E5DF0 /* FXHighScoresView.h */,
+				42913C541BFA47AA002E5DF0 /* FXHighScoresView.m */,
+				42913C561BFA47CF002E5DF0 /* FXHighScoresViewController.h */,
+				42913C571BFA47CF002E5DF0 /* FXHighScoresViewController.m */,
+				42913C581BFA47CF002E5DF0 /* FXHighScoresViewController.xib */,
 			);
-			path = FXHighScoreViewController;
+			path = FXHighScoresViewController;
 			sourceTree = "<group>";
 		};
 		42BDCC6B1C135E19006A770C /* FXStats */ = {
@@ -305,7 +305,7 @@
 				42CA25E21BF4B7A1001C7485 /* FXMainViewController */,
 				42CA25E11BF4B7A1001C7485 /* FXGameViewController */,
 				42CA25E01BF4B7A1001C7485 /* FXIntermissionViewController */,
-				42913C521BFA4777002E5DF0 /* FXHighScoreViewController */,
+				42913C521BFA4777002E5DF0 /* FXHighScoresViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -528,7 +528,7 @@
 				42CA25F11BF4B927001C7485 /* FXGameViewController.xib in Resources */,
 				42CA25EC1BF4B90E001C7485 /* FXIntermissionViewController.xib in Resources */,
 				42CA25DF1BF4AAD5001C7485 /* Images.xcassets in Resources */,
-				42913C5A1BFA47CF002E5DF0 /* FXHighScoreViewController.xib in Resources */,
+				42913C5A1BFA47CF002E5DF0 /* FXHighScoresViewController.xib in Resources */,
 				42913C511BFA4290002E5DF0 /* levelpack.plist in Resources */,
 				42CA25DE1BF4AAD5001C7485 /* InfoPlist.strings in Resources */,
 			);
@@ -548,7 +548,7 @@
 				42DF17A61BF8D8B100BB8FCB /* FXLevelPack.m in Sources */,
 				42CA25EB1BF4B90E001C7485 /* FXIntermissionViewController.m in Sources */,
 				42DF17B61BF8D90200BB8FCB /* FXPosition.m in Sources */,
-				42913C551BFA47AA002E5DF0 /* FXHighScoreView.m in Sources */,
+				42913C551BFA47AA002E5DF0 /* FXHighScoresView.m in Sources */,
 				42CA25F41BF4B976001C7485 /* FXGameView.m in Sources */,
 				42DF17B71BF8D90200BB8FCB /* FXPath.m in Sources */,
 				42CD59A51BFF49FF008E6C3A /* UINavigationController+FXExtensions.m in Sources */,
@@ -560,7 +560,7 @@
 				42CE56BD1BF9E03A00215785 /* FXDispatch.m in Sources */,
 				42CA25F71BF4B9A0001C7485 /* FXMainView.m in Sources */,
 				42CD59A11BFF09F0008E6C3A /* FXPlayer.m in Sources */,
-				42913C591BFA47CF002E5DF0 /* FXHighScoreViewController.m in Sources */,
+				42913C591BFA47CF002E5DF0 /* FXHighScoresViewController.m in Sources */,
 				42DF17BA1BF8D90200BB8FCB /* FXCell.m in Sources */,
 				42CA25DB1BF4AAD5001C7485 /* FXAppDelegate.m in Sources */,
 				42C63DC51BF76FE60037EE4E /* UIWindow+FXExtensions.m in Sources */,

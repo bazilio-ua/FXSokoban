@@ -23,7 +23,7 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 
 - (void)pushMainViewController;
 - (void)pushGameViewController;
-- (void)pushHighScoreViewController;
+- (void)pushHighScoresViewController;
 
 @end
 
@@ -86,7 +86,7 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 	[self.navigationController pushViewController:controller animated:NO];
 }
 
-- (void)pushHighScoreViewController {
+- (void)pushHighScoresViewController {
 	
 }
 

@@ -22,7 +22,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 @interface FXMainViewController ()
 
 - (void)pushGameViewController;
-- (void)pushHighScoreViewController;
+- (void)pushHighScoresViewController;
 
 @end
 
@@ -93,7 +93,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 	[self.navigationController pushViewController:controller animated:NO];
 }
 
-- (void)pushHighScoreViewController {
+- (void)pushHighScoresViewController {
 	
 }
 

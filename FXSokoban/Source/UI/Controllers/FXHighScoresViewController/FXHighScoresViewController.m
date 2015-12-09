@@ -1,18 +1,18 @@
 //
-//  FXHighScoreViewController.m
+//  FXHighScoresViewController.m
 //  FXSokoban
 //
 //  Created by Basil Nikityuk on 11/16/15.
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
-#import "FXHighScoreViewController.h"
+#import "FXHighScoresViewController.h"
 
-@interface FXHighScoreViewController ()
+@interface FXHighScoresViewController ()
 
 @end
 
-@implementation FXHighScoreViewController
+@implementation FXHighScoresViewController
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
