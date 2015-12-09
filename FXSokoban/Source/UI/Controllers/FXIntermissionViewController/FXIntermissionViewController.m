@@ -53,6 +53,9 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 	}
 	
 	[self.player writeDefaults];
+	
+	self.intermissionView.player = self.player;
+	self.intermissionView.stats = self.stats;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -97,6 +100,8 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 		self.player.name = name;
 		
 		[self.player writeDefaults];
+		
+		self.intermissionView.player = self.player;
 	}
 }
 

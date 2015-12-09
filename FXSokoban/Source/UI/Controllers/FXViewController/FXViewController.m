@@ -22,9 +22,9 @@
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-	self.stats = nil;
 	self.player = nil;
 	self.level = nil;
+	self.stats = nil;
 }
 
 #pragma mark -

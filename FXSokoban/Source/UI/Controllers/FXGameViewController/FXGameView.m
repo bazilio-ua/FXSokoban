@@ -14,8 +14,8 @@
 #import "FXPath.h"
 #import "FXDirection.h"
 
-#import "FXStats.h"
 #import "FXPlayer.h"
+#import "FXStats.h"
 
 static const NSUInteger kFXCellWidth	= 16;
 static const NSUInteger kFXCellHeight	= 16;
@@ -39,9 +39,9 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 #pragma mark Initializations and Deallocations
 
 - (void)dealloc {
-	self.stats = nil;
 	self.player = nil;
 	self.level = nil;
+	self.stats = nil;
 }
 
 #pragma mark -

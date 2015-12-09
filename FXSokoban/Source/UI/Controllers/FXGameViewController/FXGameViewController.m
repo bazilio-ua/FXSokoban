@@ -11,9 +11,9 @@
 
 #import "FXIntermissionViewController.h"
 
-#import "FXStats.h"
 #import "FXPlayer.h"
 #import "FXLevel.h"
+#import "FXStats.h"
 #import "FXLevelPack.h"
 
 #import "UIViewController+FXExtensions.h"
@@ -57,9 +57,9 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	[self.gameView.levelView addGestureRecognizer:recognizer];
 	[self.view addSubview:self.gameView.levelView];
 	
-	self.gameView.stats = self.stats;
 	self.gameView.player = self.player;
 	self.gameView.level = self.level;
+	self.gameView.stats = self.stats;
 	
 	self.undoManager = self.level.undoManager;
 }
