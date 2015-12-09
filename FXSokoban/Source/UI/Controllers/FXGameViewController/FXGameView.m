@@ -51,7 +51,8 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 		_player = player;
 	}
 	
-	self.stats.level = player.level;
+	self.stats.level = player.level; // fixme
+	[self fillWithPlayer:player];
 }
 
 - (void)setLevel:(FXLevel *)level {
@@ -110,13 +111,20 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 #pragma mark Public Methods
 
 - (void)fillWithPlayer:(FXPlayer *)player {
-	
+	self.levelLabel.text = [NSString stringWithFormat:@"%d", player.level + 1];
 }
 
 - (void)fillWithLevel:(FXLevel *)level {
 	self.movesLabel.text = [NSString stringWithFormat:@"%d", level.moves];
 	self.pushesLabel.text = [NSString stringWithFormat:@"%d", level.pushes];
 	self.goalsLabel.text = [NSString stringWithFormat:@"%d", level.goals];
+	
+	NSUInteger score = 0;
+	if (level.moves || level.pushes) {
+		score = level.goals * level.goals * 100 / (level.moves + level.pushes);
+	}
+	
+	self.scoreLabel.text = [NSString stringWithFormat:@"%d", score];
 }
 
 - (void)setupFrameWithLevel:(FXLevel *)level {
