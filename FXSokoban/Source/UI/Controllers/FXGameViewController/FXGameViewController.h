@@ -10,7 +10,7 @@
 
 #import "FXLevelObserver.h"
 
-@interface FXGameViewController : FXViewController <FXLevelObserver>
+@interface FXGameViewController : FXViewController <FXLevelObserver, UIAlertViewDelegate>
 
 - (IBAction)onRestartButton:(id)sender;
 

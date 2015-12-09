@@ -41,8 +41,8 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Save your result"
 														message:@"Please enter your name\n for High-Scores rank:"
 													   delegate:self
-											  cancelButtonTitle:@"Continue"
-											  otherButtonTitles:nil];
+											  cancelButtonTitle:nil
+											  otherButtonTitles:@"Continue", nil];
 	alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
 	UITextField *textField = [alertView textFieldAtIndex:0];
 	textField.keyboardType = UIKeyboardTypeDefault;
@@ -92,6 +92,12 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 
 #pragma mark -
 #pragma mark UIAlertViewDelegate protocol
+
+- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView {
+	NSString *name = [[alertView textFieldAtIndex:0] text];
+	
+	return ([name length]);
+}
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
 	NSString *name = [[alertView textFieldAtIndex:0] text];

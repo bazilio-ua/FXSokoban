@@ -27,6 +27,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 
 - (void)pushMainViewController;
 - (void)pushIntermissionViewController;
+- (void)showCompletedAlertView;
 
 @end
 
@@ -129,6 +130,24 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 	[self.navigationController pushViewController:controller animated:NO];
 }
 
+- (void)showCompletedAlertView {
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Well done!"
+														message:@"Press OK to continue"
+													   delegate:self
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+	[alertView show];
+}
+
+#pragma mark -
+#pragma mark UIAlertViewDelegate protocol
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 0) {
+		[self pushIntermissionViewController];
+	}
+}
+
 #pragma mark -
 #pragma mark FXLevelObserver protocol
 
@@ -140,7 +159,8 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 - (void)levelDidFinish:(id)level {
 //	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
-	[self pushIntermissionViewController];
+//	[self pushIntermissionViewController];
+	[self showCompletedAlertView];
 }
 
 @end
