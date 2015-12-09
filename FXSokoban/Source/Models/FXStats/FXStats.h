@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface FXStats : NSObject
-@property (nonatomic, assign)	NSUInteger	level;
 @property (nonatomic, assign)	NSUInteger	moves;
 @property (nonatomic, assign)	NSUInteger	pushes;
 @property (nonatomic, assign)	NSUInteger	goals;

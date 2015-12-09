@@ -29,6 +29,7 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 - (void)setupMovesTimer;
 - (void)firedMovesTimerWithUserInfo:(id)userInfo;
 - (void)checkFinished;
+- (void)updatePlayer;
 
 @end
 
@@ -51,7 +52,6 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 		_player = player;
 	}
 	
-	self.stats.level = player.level; // fixme
 	[self fillWithPlayer:player];
 }
 
@@ -111,19 +111,24 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 #pragma mark Public Methods
 
 - (void)fillWithPlayer:(FXPlayer *)player {
-	self.levelLabel.text = [NSString stringWithFormat:@"%d", player.level + 1];
+	self.levelLabel.text = [NSString stringWithFormat:@"%d", player.levelIndex + 1];
 }
 
 - (void)fillWithLevel:(FXLevel *)level {
-	self.movesLabel.text = [NSString stringWithFormat:@"%d", level.moves];
-	self.pushesLabel.text = [NSString stringWithFormat:@"%d", level.pushes];
-	self.goalsLabel.text = [NSString stringWithFormat:@"%d", level.goals];
+	self.stats.moves = level.moves;
+	self.stats.pushes = level.pushes;
+	self.stats.goals = level.goals;
 	
 	NSUInteger score = 0;
 	if (level.moves || level.pushes) {
 		score = level.goals * level.goals * 100 / (level.moves + level.pushes);
 	}
 	
+	self.stats.score = score;
+	
+	self.movesLabel.text = [NSString stringWithFormat:@"%d", level.moves];
+	self.pushesLabel.text = [NSString stringWithFormat:@"%d", level.pushes];
+	self.goalsLabel.text = [NSString stringWithFormat:@"%d", level.goals];
 	self.scoreLabel.text = [NSString stringWithFormat:@"%d", score];
 }
 
@@ -217,14 +222,13 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 	if ([self.level finished]) {
 		NSLog(@"level is finished");
 		
-		self.player.level = self.player.level + 1;
-		self.player.moves = self.player.moves + self.stats.moves;
-		self.player.pushes = self.player.pushes + self.stats.pushes;
-		self.player.goals = self.player.goals + self.stats.goals;
-		self.player.score = self.player.score + self.stats.score;
-		
 		self.level.state = kFXLevelDidFinish;
 	}
+}
+
+- (void)updatePlayer {
+	self.player.levelIndex = self.player.levelIndex + 1;
+	self.player.totalScore = self.player.totalScore + self.stats.score;
 }
 
 #pragma mark -
@@ -241,6 +245,7 @@ static const NSTimeInterval kFXTimeInterval	= 0.05;
 - (void)levelDidFinish:(id)level {
 //	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), level);
 	
+	[self updatePlayer];
 }
 
 @end

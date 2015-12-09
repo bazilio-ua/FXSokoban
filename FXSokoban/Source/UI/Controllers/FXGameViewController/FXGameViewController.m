@@ -108,7 +108,7 @@ FXViewControllerBaseViewProperty(FXGameViewController, gameView, FXGameView);
 - (IBAction)onRestartButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
-	self.level = [[FXLevelPack sharedInstance] levelAtIndex:self.player.level];
+	self.level = [[FXLevelPack sharedInstance] levelAtIndex:self.player.levelIndex];
 	self.gameView.level = self.level;
 	
 	self.undoManager = self.level.undoManager;

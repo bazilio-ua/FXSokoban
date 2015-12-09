@@ -41,11 +41,8 @@
 		if ([name length]) {
 			player = [FXPlayer playerWithName:name];
 			if (player) {
-				player.level = [[dictionary valueForKey:@"level"] integerValue];
-				player.moves = [[dictionary valueForKey:@"moves"] integerValue];
-				player.pushes = [[dictionary valueForKey:@"pushes"] integerValue];
-				player.goals = [[dictionary valueForKey:@"goals"] integerValue];
-				player.score = [[dictionary valueForKey:@"score"] integerValue];
+				player.levelIndex = [[dictionary valueForKey:@"levelIndex"] integerValue];
+				player.totalScore = [[dictionary valueForKey:@"totalScore"] integerValue];
 			}
 		}
 	}
@@ -63,11 +60,8 @@
 	if (self.name) {
 		[dictionary setObject:self.name forKey:@"name"];
 		
-		[dictionary setObject:[NSNumber numberWithInteger:self.level] forKey:@"level"];
-		[dictionary setObject:[NSNumber numberWithInteger:self.moves] forKey:@"moves"];
-		[dictionary setObject:[NSNumber numberWithInteger:self.pushes] forKey:@"pushes"];
-		[dictionary setObject:[NSNumber numberWithInteger:self.goals] forKey:@"goals"];
-		[dictionary setObject:[NSNumber numberWithInteger:self.score] forKey:@"score"];
+		[dictionary setObject:[NSNumber numberWithInteger:self.levelIndex] forKey:@"levelIndex"];
+		[dictionary setObject:[NSNumber numberWithInteger:self.totalScore] forKey:@"totalScore"];
 		NSLog(@"%@", dictionary);
 	}
 	

@@ -35,7 +35,7 @@
 		_player = player;
 	}
 	
-	self.level = [[FXLevelPack sharedInstance] levelAtIndex:player.level];
+	self.level = [[FXLevelPack sharedInstance] levelAtIndex:player.levelIndex];
 }
 
 - (void)setLevel:(FXLevel *)level {
