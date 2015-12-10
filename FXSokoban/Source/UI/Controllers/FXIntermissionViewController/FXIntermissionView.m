@@ -44,7 +44,7 @@
 #pragma mark Public Methods
 
 - (void)fillWithPlayer:(FXPlayer *)player {
-	self.nameLabel.text = [NSString stringWithFormat:@"%@!", player.name];
+	self.nameLabel.text = (player.name) ? [NSString stringWithFormat:@"%@!", player.name] : nil;
 	self.levelLabel.text = [NSString stringWithFormat:@"%d", player.levelIndex];
 	self.totalScoreLabel.text = [NSString stringWithFormat:@"%d", player.totalScore];
 }
