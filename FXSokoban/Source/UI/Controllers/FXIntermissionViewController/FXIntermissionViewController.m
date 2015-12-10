@@ -116,7 +116,7 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 - (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView {
 	NSString *name = [[alertView textFieldAtIndex:0] text];
 	
-	return ([name length]);
+	return ([name length]) ? YES : NO;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

@@ -64,7 +64,7 @@
 }
 
 #pragma mark -
-#pragma mark Overloaded Methods
+#pragma mark FXObservableObject overriden Methods
 
 - (SEL)selectorForState:(NSUInteger)state {
 	SEL selector = NULL;
@@ -78,6 +78,7 @@
 			break;
 			
 		default:
+			selector = [super selectorForState:state];
 			break;
 	}
 	

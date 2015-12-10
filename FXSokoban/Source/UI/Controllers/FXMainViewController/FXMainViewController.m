@@ -48,6 +48,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	self.mainView.player = self.player;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
