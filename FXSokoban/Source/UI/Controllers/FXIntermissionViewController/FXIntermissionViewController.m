@@ -41,7 +41,7 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 	[super viewDidLoad];
 	
 	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Save your result"
-														message:@"Please enter your name\n for High-Scores rank:"
+														message:@"Please enter your name\n for High Scores rank:"
 													   delegate:self
 											  cancelButtonTitle:nil
 											  otherButtonTitles:@"Continue", nil];
