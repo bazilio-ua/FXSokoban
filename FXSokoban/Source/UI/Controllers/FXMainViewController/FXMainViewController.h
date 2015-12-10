@@ -8,7 +8,7 @@
 
 #import "FXViewController.h"
 
-@interface FXMainViewController : FXViewController
+@interface FXMainViewController : FXViewController <UIAlertViewDelegate>
 
 - (IBAction)onContinueButton:(id)sender;
 - (IBAction)onNewGameButton:(id)sender;

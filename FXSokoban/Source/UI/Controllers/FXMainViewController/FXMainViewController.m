@@ -24,6 +24,7 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 
 - (void)pushGameViewController;
 - (void)pushHighScoresViewController;
+- (void)showNewGameAlertView;
 
 @end
 
@@ -68,9 +69,14 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 - (IBAction)onNewGameButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
-	self.player = [FXPlayer new];
-	
-	[self pushGameViewController];
+	if (self.player.name) {
+		[self showNewGameAlertView];
+	} else {
+		self.player = [FXPlayer new];
+		[self.player writeDefaults];
+		
+		[self pushGameViewController];
+	}
 }
 
 - (IBAction)onHighScoresButton:(id)sender {
@@ -100,6 +106,29 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 	controller.player = self.player;
 	
 	[self.navigationController pushViewController:controller animated:NO];
+}
+
+- (void)showNewGameAlertView {
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Start new game?"
+														message:@"All current progress will be overwritten"
+													   delegate:self
+											  cancelButtonTitle:@"No"
+											  otherButtonTitles:@"Yes", nil];
+	[alertView show];
+}
+
+#pragma mark -
+#pragma mark UIAlertViewDelegate protocol
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) { // 'No' button
+		return;
+	} else if (buttonIndex == 1) {
+		self.player = [FXPlayer new];
+		[self.player writeDefaults];
+		
+		[self pushGameViewController];
+    }
 }
 
 @end

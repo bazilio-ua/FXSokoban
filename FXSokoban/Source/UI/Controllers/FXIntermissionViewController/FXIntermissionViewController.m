@@ -124,7 +124,6 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 	NSLog(@"Entered name: %@", name);
 	if ([name length]) {
 		self.player.name = name;
-		
 		[self.player writeDefaults];
 		
 		self.intermissionView.player = self.player;
