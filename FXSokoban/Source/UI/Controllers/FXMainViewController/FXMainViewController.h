@@ -12,7 +12,7 @@
 
 - (IBAction)onContinueButton:(id)sender;
 - (IBAction)onNewGameButton:(id)sender;
-- (IBAction)onHighScoreButton:(id)sender;
+- (IBAction)onHighScoresButton:(id)sender;
 - (IBAction)onQuitButton:(id)sender;
 
 @end

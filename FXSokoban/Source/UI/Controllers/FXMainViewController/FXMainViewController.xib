@@ -37,14 +37,14 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="06n-2H-d5J">
-                    <rect key="frame" x="100" y="189" width="120" height="30"/>
+                    <rect key="frame" x="100" y="185" width="120" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" title="High Score">
+                    <state key="normal" title="High Scores">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="onHighScoreButton:" destination="-1" eventType="touchUpInside" id="AVz-Rn-wUG"/>
+                        <action selector="onHighScoresButton:" destination="-1" eventType="touchUpInside" id="b3v-k6-WAd"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="y9b-GQ-5K4">
@@ -63,7 +63,7 @@
             <connections>
                 <outlet property="aNewGameButton" destination="POF-ho-5f8" id="MNB-sf-87T"/>
                 <outlet property="continueButton" destination="JTE-AK-PU5" id="b37-ZN-rAF"/>
-                <outlet property="highScoreButton" destination="06n-2H-d5J" id="iIg-yy-QWC"/>
+                <outlet property="highScoresButton" destination="06n-2H-d5J" id="msx-GF-cib"/>
                 <outlet property="quitButton" destination="y9b-GQ-5K4" id="ihZ-Mn-z0R"/>
             </connections>
         </view>

@@ -11,7 +11,7 @@
 @interface FXMainView : FXView
 @property (nonatomic, strong)	IBOutlet	UIButton	*continueButton;
 @property (nonatomic, strong)	IBOutlet	UIButton	*aNewGameButton;
-@property (nonatomic, strong)	IBOutlet	UIButton	*highScoreButton;
+@property (nonatomic, strong)	IBOutlet	UIButton	*highScoresButton;
 @property (nonatomic, strong)	IBOutlet	UIButton	*quitButton;
 
 @end

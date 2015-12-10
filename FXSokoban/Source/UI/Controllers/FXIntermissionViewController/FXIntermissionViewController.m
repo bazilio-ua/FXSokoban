@@ -11,6 +11,7 @@
 
 #import "FXGameViewController.h"
 #import "FXMainViewController.h"
+#import "FXHighScoresViewController.h"
 
 #import "FXPlayer.h"
 
@@ -79,6 +80,12 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 	[self pushMainViewController];
 }
 
+- (IBAction)onHighScoresButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+	[self pushHighScoresViewController];
+}
+
 #pragma mark -
 #pragma mark Private Methods
 
@@ -97,7 +104,10 @@ FXViewControllerBaseViewProperty(FXIntermissionViewController, intermissionView,
 }
 
 - (void)pushHighScoresViewController {
+	FXHighScoresViewController *controller = [FXHighScoresViewController controller];
+	controller.player = self.player;
 	
+	[self.navigationController pushViewController:controller animated:NO];
 }
 
 #pragma mark -

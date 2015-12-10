@@ -10,4 +10,6 @@
 
 @interface FXHighScoresViewController : FXViewController
 
+- (IBAction)onMainMenuButton:(id)sender;
+
 @end

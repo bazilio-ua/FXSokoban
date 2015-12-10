@@ -10,6 +10,7 @@
 #import "FXMainView.h"
 
 #import "FXGameViewController.h"
+#import "FXHighScoresViewController.h"
 
 #import "FXPlayer.h"
 
@@ -72,9 +73,10 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 	[self pushGameViewController];
 }
 
-- (IBAction)onHighScoreButton:(id)sender {
+- (IBAction)onHighScoresButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
+	[self pushHighScoresViewController];
 }
 
 - (IBAction)onQuitButton:(id)sender {
@@ -94,7 +96,10 @@ FXViewControllerBaseViewProperty(FXMainViewController, mainView, FXMainView);
 }
 
 - (void)pushHighScoresViewController {
+	FXHighScoresViewController *controller = [FXHighScoresViewController controller];
+	controller.player = self.player;
 	
+	[self.navigationController pushViewController:controller animated:NO];
 }
 
 @end

@@ -12,5 +12,6 @@
 
 - (IBAction)onNextLevelButton:(id)sender;
 - (IBAction)onMainMenuButton:(id)sender;
+- (IBAction)onHighScoresButton:(id)sender;
 
 @end

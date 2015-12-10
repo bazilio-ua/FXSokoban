@@ -9,5 +9,6 @@
 #import "FXView.h"
 
 @interface FXHighScoresView : FXView
+@property (nonatomic, strong)	IBOutlet	UIButton	*mainMenuButton;
 
 @end

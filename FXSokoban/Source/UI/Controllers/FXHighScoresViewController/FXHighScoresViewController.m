@@ -8,7 +8,13 @@
 
 #import "FXHighScoresViewController.h"
 
+#import "FXMainViewController.h"
+
+#import "UIViewController+FXExtensions.h"
+
 @interface FXHighScoresViewController ()
+
+- (void)pushMainViewController;
 
 @end
 
@@ -16,5 +22,24 @@
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
+
+#pragma mark -
+#pragma mark User Interactions
+
+- (IBAction)onMainMenuButton:(id)sender {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+	[self pushMainViewController];
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)pushMainViewController {
+	FXMainViewController *controller = [FXMainViewController controller];
+	controller.player = self.player;
+	
+	[self.navigationController pushViewController:controller animated:NO];
+}
 
 @end
