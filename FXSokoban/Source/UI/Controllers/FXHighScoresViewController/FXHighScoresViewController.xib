@@ -25,10 +25,22 @@
                         <action selector="onMainMenuButton:" destination="-1" eventType="touchUpInside" id="Bif-Kt-hkA"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yjj-hd-u9j">
+                    <rect key="frame" x="106" y="66" width="108" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="Leaderboard">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onLeaderboardButton:" destination="-1" eventType="touchUpInside" id="p7v-ka-3HI"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <connections>
+                <outlet property="leaderboardButton" destination="yjj-hd-u9j" id="dRy-pQ-H1T"/>
                 <outlet property="mainMenuButton" destination="0Va-9i-zFh" id="2ca-2o-bKa"/>
             </connections>
         </view>

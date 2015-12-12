@@ -10,5 +10,6 @@
 
 @interface FXHighScoresView : FXView
 @property (nonatomic, strong)	IBOutlet	UIButton	*mainMenuButton;
+@property (nonatomic, strong)	IBOutlet	UIButton	*leaderboardButton;
 
 @end
