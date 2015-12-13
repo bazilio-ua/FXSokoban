@@ -10,6 +10,8 @@
 
 #import "FXMainViewController.h"
 
+#import "FXGameCenter.h"
+
 #import "UIViewController+FXExtensions.h"
 
 @interface FXHighScoresViewController ()
@@ -20,27 +22,6 @@
 @end
 
 @implementation FXHighScoresViewController
-
-#pragma mark -
-#pragma mark Class Methods
-
-+ (BOOL)isGameCenterAvailable {
-	static BOOL __available = NO;
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
-		// Check for presence of GKLocalPlayer API.
-		Class gcClass = (NSClassFromString(@"GKLocalPlayer"));
-		
-		// The device must be running running iOS 6.0 or later.
-		NSString *requiredSystemVersion = @"6.0";
-		NSString *currentSystemVersion = [[UIDevice currentDevice] systemVersion];
-		BOOL osVersionSupported = ([currentSystemVersion compare:requiredSystemVersion
-														 options:NSNumericSearch] != NSOrderedAscending);
-		__available = (gcClass && osVersionSupported);
-	});
-	
-	return __available;
-}
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -60,32 +41,16 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	// do init
-	self.gameCenterAuthenticationComplete = NO;
-	
-	if ([[self class] isGameCenterAvailable]) {
-		GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
-		
-		id authenticateHandler = ^(UIViewController *controller, NSError *error) {
-			if (!error) {
-				if (controller) {
-					[[[[[UIApplication sharedApplication] delegate] window] rootViewController] presentViewController:controller
-																											 animated:YES
-																										   completion:nil];
-				} else if (localPlayer.isAuthenticated) {
-					self.gameCenterAuthenticationComplete = YES;
-					if (!self.currentPlayerID || ![self.currentPlayerID isEqualToString:localPlayer.playerID]) {
-						self.currentPlayerID = localPlayer.playerID; // player change their ID
-					}
-				} else {
-					self.gameCenterAuthenticationComplete = NO;
-				}
-			} else {
-				NSLog(@"%@", [error localizedDescription]);
-			}
-		};
-		
-		[localPlayer setAuthenticateHandler:authenticateHandler];
+	if ([FXGameCenter isAvailable]) {
+		self.gameCenter = [[FXGameCenter alloc] init];
+		[self.gameCenter authenticateLocalPlayer];
+	} else {
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Game Center support required!"
+															message:@"For current device Game Center is unavailable."
+														   delegate:nil
+												  cancelButtonTitle:@"OK"
+												  otherButtonTitles:nil];
+		[alertView show];
 	}
 }
 
@@ -97,7 +62,6 @@
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
 	
-	self.gameCenterAuthenticationComplete = NO;
 }
 
 #pragma mark -

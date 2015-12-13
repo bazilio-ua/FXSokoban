@@ -10,11 +10,10 @@
 
 #import "FXViewController.h"
 
-@interface FXHighScoresViewController : FXViewController <GKGameCenterControllerDelegate>
-@property (nonatomic, strong) NSString *currentPlayerID;
-@property (nonatomic, assign, getter = isGameCenterAuthenticationComplete) BOOL gameCenterAuthenticationComplete;
+@class FXGameCenter;
 
-+ (BOOL)isGameCenterAvailable;
+@interface FXHighScoresViewController : FXViewController <GKGameCenterControllerDelegate>
+@property (nonatomic, strong)	FXGameCenter	*gameCenter;
 
 - (IBAction)onMainMenuButton:(id)sender;
 - (IBAction)onLeaderboardButton:(id)sender;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424B38AA1C1DEE7C00038B51 /* FXGameCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 424B38A91C1DEE7C00038B51 /* FXGameCenter.m */; };
 		42913C511BFA4290002E5DF0 /* levelpack.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42913C501BFA4290002E5DF0 /* levelpack.plist */; };
 		42913C551BFA47AA002E5DF0 /* FXHighScoresView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42913C541BFA47AA002E5DF0 /* FXHighScoresView.m */; };
 		42913C591BFA47CF002E5DF0 /* FXHighScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42913C571BFA47CF002E5DF0 /* FXHighScoresViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		424B38A81C1DEE7C00038B51 /* FXGameCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXGameCenter.h; sourceTree = "<group>"; };
+		424B38A91C1DEE7C00038B51 /* FXGameCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXGameCenter.m; sourceTree = "<group>"; };
 		42913C501BFA4290002E5DF0 /* levelpack.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = levelpack.plist; sourceTree = "<group>"; };
 		42913C531BFA47AA002E5DF0 /* FXHighScoresView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXHighScoresView.h; sourceTree = "<group>"; };
 		42913C541BFA47AA002E5DF0 /* FXHighScoresView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXHighScoresView.m; sourceTree = "<group>"; };
@@ -131,6 +134,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424B38A71C1DEE4500038B51 /* FXGameCenter */ = {
+			isa = PBXGroup;
+			children = (
+				424B38A81C1DEE7C00038B51 /* FXGameCenter.h */,
+				424B38A91C1DEE7C00038B51 /* FXGameCenter.m */,
+			);
+			path = FXGameCenter;
+			sourceTree = "<group>";
+		};
 		42913C521BFA4777002E5DF0 /* FXHighScoresViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +297,7 @@
 		42CA25D71BF4AAD5001C7485 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				424B38A71C1DEE4500038B51 /* FXGameCenter */,
 				42BDCC6B1C135E19006A770C /* FXStats */,
 				42CD599E1BFF09D7008E6C3A /* FXPlayer */,
 				42CE56C21BF9E86800215785 /* FXLevel */,
@@ -584,6 +597,7 @@
 				42CE56C11BF9E08A00215785 /* FXObservableObject.m in Sources */,
 				42CA25F01BF4B927001C7485 /* FXGameViewController.m in Sources */,
 				42CA25FF1BF4BA41001C7485 /* FXViewController.m in Sources */,
+				424B38AA1C1DEE7C00038B51 /* FXGameCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -456,12 +456,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FXSokoban/Source/UI/Controllers/FXHighScoresViewController/FXHighScoresViewController.m"
-            timestampString = "471609731.653243"
+            timestampString = "471727942.950992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "-viewDidDisappear:"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-onMainMenuButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -471,13 +471,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FXSokoban/Source/UI/Controllers/FXHighScoresViewController/FXHighScoresViewController.m"
-            timestampString = "471710018.901467"
+            filePath = "FXSokoban/Source/Models/FXGameCenter/FXGameCenter.m"
+            timestampString = "471727942.950992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-init"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FXSokoban/Source/UI/Controllers/FXHighScoresViewController/FXHighScoresViewController.m"
+            timestampString = "471727942.950992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-onLeaderboardButton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
