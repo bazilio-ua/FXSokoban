@@ -7,17 +7,26 @@
 //
 
 #import "FXHighScoresViewController.h"
+#import "FXHighScoresView.h"
 
 #import "FXMainViewController.h"
 
+#import "FXPlayer.h"
 #import "FXGameCenter.h"
 
 #import "UIViewController+FXExtensions.h"
+
+#import "FXMacros.h"
+
+static NSString * const kFXLeaderboardIdentifier	= @"com.idapgroup.puzzlerific.FXSokobanLeaderboard";
+
+FXViewControllerBaseViewProperty(FXHighScoresViewController, highScoresView, FXHighScoresView);
 
 @interface FXHighScoresViewController ()
 
 - (void)pushMainViewController;
 - (void)pushGameCenterViewController;
+- (void)submitCurrentScoreToGameCenter;
 
 @end
 
@@ -41,6 +50,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	// FIXME: need redone 
 	if ([FXGameCenter isAvailable]) {
 		self.gameCenter = [[FXGameCenter alloc] init];
 		[self.gameCenter authenticateLocalPlayer];
@@ -76,6 +86,15 @@
 - (IBAction)onLeaderboardButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
+//	if (!self.gameCenter.authenticationComplete) {
+//		return;
+//	}
+	if (![GKLocalPlayer localPlayer].authenticated) {
+		return;
+	}
+	
+	[self pushGameCenterViewController];
+	[self submitCurrentScoreToGameCenter];
 }
 
 #pragma mark -
@@ -89,14 +108,33 @@
 }
 
 - (void)pushGameCenterViewController {
+    GKGameCenterViewController* gameCenterController = [[GKGameCenterViewController alloc] init];
+    gameCenterController.viewState = GKGameCenterViewControllerStateLeaderboards;
+	gameCenterController.leaderboardIdentifier = kFXLeaderboardIdentifier;
+    gameCenterController.gameCenterDelegate = self;
 	
+    [self presentViewController:gameCenterController animated:YES completion:nil];
+}
+
+- (void)submitCurrentScoreToGameCenter {
+	GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier:kFXLeaderboardIdentifier
+														  forPlayer:self.gameCenter.currentPlayerID];
+	score.value = self.player.totalScore;
+	
+	if (score.value) {
+		[GKScore reportScores:@[score] withCompletionHandler:^(NSError *error) {
+			if (error) {
+				NSLog(@"%@", [error localizedDescription]);
+			}
+		}];
+	}
 }
 
 #pragma mark -
 #pragma mark GKGameCenterControllerDelegate protocol
 
 - (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController {
-	
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

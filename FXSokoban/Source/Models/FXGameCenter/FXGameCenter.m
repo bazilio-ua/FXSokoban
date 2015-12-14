@@ -6,7 +6,11 @@
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
+#import <GameKit/GameKit.h>
+
 #import "FXGameCenter.h"
+
+#import "FXMacros.h"
 
 @implementation FXGameCenter
 
@@ -55,7 +59,9 @@
 	GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
 	
 	// TODO: fix retain loop
+	FXWeakify(self);
 	id authenticateHandler = ^(UIViewController *controller, NSError *error) {
+		FXStrongify(self);
 		if (!error) {
 			if (controller) {
 				[[[[[UIApplication sharedApplication] delegate] window] rootViewController] presentViewController:controller

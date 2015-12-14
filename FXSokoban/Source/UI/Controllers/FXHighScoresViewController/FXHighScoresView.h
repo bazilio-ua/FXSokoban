@@ -11,5 +11,6 @@
 @interface FXHighScoresView : FXView
 @property (nonatomic, strong)	IBOutlet	UIButton	*mainMenuButton;
 @property (nonatomic, strong)	IBOutlet	UIButton	*leaderboardButton;
+@property (nonatomic, assign, getter = isGameCenterAuthenticated)	BOOL	gameCenterAuthenticated;
 
 @end
