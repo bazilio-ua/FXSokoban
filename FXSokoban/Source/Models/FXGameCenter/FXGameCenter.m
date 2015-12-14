@@ -14,6 +14,8 @@
 
 @implementation FXGameCenter
 
+@dynamic authenticated;
+
 #pragma mark -
 #pragma mark Class Methods
 
@@ -46,10 +48,17 @@
 - (id)init {
 	self = [super init];
 	if (self) {
-		self.authenticationComplete = NO;
+		// do init
 	}
 	
 	return self;
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (BOOL)isAuthenticated {
+	return [[GKLocalPlayer localPlayer] isAuthenticated];
 }
 
 #pragma mark -
@@ -58,7 +67,6 @@
 - (void)authenticateLocalPlayer {
 	GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
 	
-	// TODO: fix retain loop
 	FXWeakify(self);
 	id authenticateHandler = ^(UIViewController *controller, NSError *error) {
 		FXStrongify(self);
@@ -68,13 +76,11 @@
 																										 animated:YES
 																									   completion:nil];
 			} else if (localPlayer.isAuthenticated) {
-				self.authenticationComplete = YES;
 				if (!self.currentPlayerID || ![self.currentPlayerID isEqualToString:localPlayer.playerID]) {
 					self.currentPlayerID = localPlayer.playerID; // player changed his ID
 					self.currentPlayerAlias = localPlayer.alias;
 				}
 			} else {
-				self.authenticationComplete = NO;
 			}
 		} else {
 			NSLog(@"%@", [error localizedDescription]);

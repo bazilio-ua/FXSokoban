@@ -37,10 +37,8 @@
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
-	
-	[self.leaderboardButton setEnabled:[FXGameCenter isAvailable]];
-	
-//	[self updateLeaderboardButton];
+		
+	[self updateLeaderboardButton];
 }
 
 #pragma mark -

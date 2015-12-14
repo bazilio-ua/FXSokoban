@@ -11,7 +11,7 @@
 @interface FXGameCenter : NSObject // TODO: inherit from observable object, for observing authentication status
 @property (nonatomic, copy) NSString *currentPlayerID;
 @property (nonatomic, copy) NSString *currentPlayerAlias;
-@property (nonatomic, assign, getter = isAuthenticationComplete) BOOL authenticationComplete;
+@property (nonatomic, readonly, getter = isAuthenticated)			BOOL	authenticated;
 
 + (BOOL)isAvailable;
 

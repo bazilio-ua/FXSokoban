@@ -50,7 +50,6 @@ FXViewControllerBaseViewProperty(FXHighScoresViewController, highScoresView, FXH
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	// FIXME: need redone 
 	if ([FXGameCenter isAvailable]) {
 		self.gameCenter = [[FXGameCenter alloc] init];
 		[self.gameCenter authenticateLocalPlayer];
@@ -62,6 +61,12 @@ FXViewControllerBaseViewProperty(FXHighScoresViewController, highScoresView, FXH
 												  otherButtonTitles:nil];
 		[alertView show];
 	}
+	
+	if (self.gameCenter.authenticated) {
+		[self submitCurrentScoreToGameCenter];
+	}
+	
+	self.highScoresView.gameCenterAuthenticated = self.gameCenter.authenticated;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -86,15 +91,10 @@ FXViewControllerBaseViewProperty(FXHighScoresViewController, highScoresView, FXH
 - (IBAction)onLeaderboardButton:(id)sender {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	
-//	if (!self.gameCenter.authenticationComplete) {
-//		return;
-//	}
-	if (![GKLocalPlayer localPlayer].authenticated) {
-		return;
+	if (self.gameCenter.authenticated) {
+		[self pushGameCenterViewController];
+		[self submitCurrentScoreToGameCenter];
 	}
-	
-	[self pushGameCenterViewController];
-	[self submitCurrentScoreToGameCenter];
 }
 
 #pragma mark -
