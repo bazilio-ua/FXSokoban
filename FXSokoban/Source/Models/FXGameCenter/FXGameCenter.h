@@ -6,9 +6,13 @@
 //  Copyright (c) 2015 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "FXObservableObject.h"
 
-@interface FXGameCenter : NSObject // TODO: inherit from observable object, for observing authentication status
+NS_ENUM(NSUInteger, FXGameCenterState) {
+	kFXGameCenterDidAuthenticate
+};
+
+@interface FXGameCenter : FXObservableObject
 @property (nonatomic, copy) NSString *currentPlayerID;
 @property (nonatomic, copy) NSString *currentPlayerAlias;
 @property (nonatomic, readonly, getter = isAuthenticated)			BOOL	authenticated;

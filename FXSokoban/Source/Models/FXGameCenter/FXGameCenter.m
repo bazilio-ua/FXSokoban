@@ -9,6 +9,7 @@
 #import <GameKit/GameKit.h>
 
 #import "FXGameCenter.h"
+#import "FXGameCenterObserver.h"
 
 #import "FXMacros.h"
 
@@ -62,6 +63,24 @@
 }
 
 #pragma mark -
+#pragma mark FXObservableObject overriden Methods
+
+- (SEL)selectorForState:(NSUInteger)state {
+	SEL selector = NULL;
+	switch (state) {
+		case kFXGameCenterDidAuthenticate:
+			selector = @selector(gameCenterDidAuthenticate:);
+			break;
+			
+		default:
+			selector = [super selectorForState:state];
+			break;
+	}
+	
+	return selector;
+}
+
+#pragma mark -
 #pragma mark Public Methods
 
 - (void)authenticateLocalPlayer {
@@ -80,7 +99,10 @@
 					self.currentPlayerID = localPlayer.playerID; // player changed his ID
 					self.currentPlayerAlias = localPlayer.alias;
 				}
+				
+				self.state = kFXGameCenterDidAuthenticate;
 			} else {
+				// do else stuff
 			}
 		} else {
 			NSLog(@"%@", [error localizedDescription]);

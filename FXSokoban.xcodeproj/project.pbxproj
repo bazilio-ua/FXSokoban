@@ -107,6 +107,7 @@
 		42CE56C01BF9E08A00215785 /* FXObservableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXObservableObject.m; sourceTree = "<group>"; };
 		42CE56C31BF9E86800215785 /* FXLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLevel.h; sourceTree = "<group>"; };
 		42CE56C41BF9E86800215785 /* FXLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLevel.m; sourceTree = "<group>"; };
+		42D466AD1C1EC19200DA5F5D /* FXGameCenterObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXGameCenterObserver.h; sourceTree = "<group>"; };
 		42DF17A41BF8D8B100BB8FCB /* FXLevelPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLevelPack.h; sourceTree = "<group>"; };
 		42DF17A51BF8D8B100BB8FCB /* FXLevelPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLevelPack.m; sourceTree = "<group>"; };
 		42DF17A81BF8D90200BB8FCB /* FXPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPosition.h; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 			children = (
 				424B38A81C1DEE7C00038B51 /* FXGameCenter.h */,
 				424B38A91C1DEE7C00038B51 /* FXGameCenter.m */,
+				42D466AD1C1EC19200DA5F5D /* FXGameCenterObserver.h */,
 			);
 			path = FXGameCenter;
 			sourceTree = "<group>";

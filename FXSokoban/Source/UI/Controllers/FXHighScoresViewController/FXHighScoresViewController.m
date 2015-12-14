@@ -38,10 +38,23 @@ FXViewControllerBaseViewProperty(FXHighScoresViewController, highScoresView, FXH
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 	if (self) {
-		// do init
+		if ([FXGameCenter isAvailable]) {
+			self.gameCenter = [[FXGameCenter alloc] init];
+		}
 	}
 	
 	return self;
+}
+
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setGameCenter:(FXGameCenter *)gameCenter {
+	if (_gameCenter != gameCenter) {
+		[_gameCenter removeObserver:self];
+		_gameCenter = gameCenter;
+		[_gameCenter addObserver:self];
+	}
 }
 
 #pragma mark -
@@ -51,8 +64,9 @@ FXViewControllerBaseViewProperty(FXHighScoresViewController, highScoresView, FXH
 	[super viewDidLoad];
 	
 	if ([FXGameCenter isAvailable]) {
-		self.gameCenter = [[FXGameCenter alloc] init];
-		[self.gameCenter authenticateLocalPlayer];
+		if (!self.gameCenter.authenticated) {
+			[self.gameCenter authenticateLocalPlayer];
+		}
 	} else {
 		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Game Center support required!"
 															message:@"For current device Game Center is unavailable."
@@ -66,7 +80,7 @@ FXViewControllerBaseViewProperty(FXHighScoresViewController, highScoresView, FXH
 		[self submitCurrentScoreToGameCenter];
 	}
 	
-	self.highScoresView.gameCenterAuthenticated = self.gameCenter.authenticated;
+	self.highScoresView.gameCenter = self.gameCenter;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -93,7 +107,6 @@ FXViewControllerBaseViewProperty(FXHighScoresViewController, highScoresView, FXH
 	
 	if (self.gameCenter.authenticated) {
 		[self pushGameCenterViewController];
-		[self submitCurrentScoreToGameCenter];
 	}
 }
 
@@ -135,6 +148,17 @@ FXViewControllerBaseViewProperty(FXHighScoresViewController, highScoresView, FXH
 
 - (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController {
 	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark FXGameCenterObserver protocol
+
+- (void)gameCenterDidAuthenticate:(id)object {
+	NSLog(@"observer %@ was notifyed with message %@ from object %@", self, NSStringFromSelector(_cmd), object);
+	
+	if (self.gameCenter.authenticated) {
+		[self submitCurrentScoreToGameCenter];
+	}
 }
 
 @end

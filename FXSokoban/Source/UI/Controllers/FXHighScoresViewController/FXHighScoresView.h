@@ -8,9 +8,14 @@
 
 #import "FXView.h"
 
-@interface FXHighScoresView : FXView
+#import "FXGameCenterObserver.h"
+
+@class FXGameCenter;
+
+@interface FXHighScoresView : FXView <FXGameCenterObserver>
 @property (nonatomic, strong)	IBOutlet	UIButton	*mainMenuButton;
 @property (nonatomic, strong)	IBOutlet	UIButton	*leaderboardButton;
-@property (nonatomic, assign, getter = isGameCenterAuthenticated)	BOOL	gameCenterAuthenticated;
+
+@property (nonatomic, strong)	FXGameCenter			*gameCenter;
 
 @end

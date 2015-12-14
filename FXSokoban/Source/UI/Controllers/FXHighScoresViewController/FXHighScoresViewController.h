@@ -10,9 +10,11 @@
 
 #import "FXViewController.h"
 
+#import "FXGameCenterObserver.h"
+
 @class FXGameCenter;
 
-@interface FXHighScoresViewController : FXViewController <GKGameCenterControllerDelegate>
+@interface FXHighScoresViewController : FXViewController <FXGameCenterObserver, GKGameCenterControllerDelegate>
 @property (nonatomic, strong)	FXGameCenter	*gameCenter;
 
 - (IBAction)onMainMenuButton:(id)sender;
